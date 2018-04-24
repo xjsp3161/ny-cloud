@@ -10,7 +10,7 @@ package com.nycloud.common.util;
 public class Constant {
 
     /** HTTP 业务处理响应正常码 **/
-    public static final int HTTP_RESPONSE_SUCCESS_CODE = 0;
+    public static final int RESULT_SUCCESS = 0;
     public static final String SUCCESS = "SUCCESS";
 
 }

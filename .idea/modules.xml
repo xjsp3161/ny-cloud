@@ -3,15 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/admin/admin.iml" filepath="$PROJECT_DIR$/admin/admin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/admin_main.iml" filepath="$PROJECT_DIR$/.idea/modules/admin_main.iml" group="admin" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/admin_test.iml" filepath="$PROJECT_DIR$/.idea/modules/admin_test.iml" group="admin" />
-      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" group="common" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common_main.iml" filepath="$PROJECT_DIR$/.idea/modules/common_main.iml" group="common" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common_test.iml" filepath="$PROJECT_DIR$/.idea/modules/common_test.iml" group="common" />
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka/eureka.iml" filepath="$PROJECT_DIR$/eureka/eureka.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka_main.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka_main.iml" group="eureka" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka_test.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka_test.iml" group="eureka" />
-      <module fileurl="file://$PROJECT_DIR$/admin/model.iml" filepath="$PROJECT_DIR$/admin/model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ny-cloud.iml" filepath="$PROJECT_DIR$/ny-cloud.iml" />
     </modules>
   </component>
 </project>

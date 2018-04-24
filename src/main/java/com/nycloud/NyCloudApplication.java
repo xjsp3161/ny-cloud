@@ -1,12 +1,12 @@
-package com.nycloud.eureka;
+package com.nycloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EurekaApplication {
+public class NyCloudApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EurekaApplication.class, args);
+		SpringApplication.run(NyCloudApplication.class, args);
 	}
 }

@@ -13,11 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
  * @version: 1.0
  **/
 @RestController
+@RequestMapping(value = "api/sys/admin/user")
 public class SysUserController {
 
-    private static final String URL = "api/sys/user";
-
-    @RequestMapping(value = URL + "", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public HttpResponse list() {
         return new HttpResponse().success();
     }

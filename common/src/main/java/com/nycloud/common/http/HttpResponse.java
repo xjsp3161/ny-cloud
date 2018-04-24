@@ -11,9 +11,6 @@ import lombok.*;
  * @version: 1.0
  **/
 @Data
-@Getter
-@Setter
-@ToString
 public class HttpResponse <T> {
 
     /** 错误码 **/
@@ -24,7 +21,7 @@ public class HttpResponse <T> {
     private T data;
 
     public HttpResponse success() {
-        this.code = Constant.HTTP_RESPONSE_SUCCESS_CODE;
+        this.code = Constant.RESULT_SUCCESS;
         return this;
     }
 
