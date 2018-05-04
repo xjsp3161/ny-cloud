@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: nycloud-auth-server
+  profiles:
+    active: nycloud-auth-server
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/nycloud-admin?useUnicode=true&characterEncoding=utf-8&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 123456
+    driverClassName: com.mysql.jdbc.Driver
+server:
+  port: 8761
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8760/eureka/ #服务注册中心地址
+  instance:
+    hostname: localhost

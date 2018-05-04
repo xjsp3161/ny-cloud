@@ -6,13 +6,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="admin" />
+        <module name="api-gateway" />
+        <module name="auth-server" />
         <module name="eureka-server" />
         <module name="ny-cloud" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="admin" target="1.8" />
       <module name="api-gateway" target="1.8" />
+      <module name="api-gateway_main" target="1.8" />
+      <module name="api-gateway_test" target="1.8" />
+      <module name="auth-server" target="1.8" />
+      <module name="cloud-gateway" target="1.8" />
+      <module name="demo" target="1.8" />
       <module name="eureka-server" target="1.8" />
+      <module name="gateway" target="1.8" />
       <module name="ny-cloud" target="1.8" />
     </bytecodeTargetLevel>
   </component>
