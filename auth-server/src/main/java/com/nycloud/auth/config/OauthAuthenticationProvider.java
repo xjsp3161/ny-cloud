@@ -12,6 +12,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
 
 /**
@@ -38,7 +39,9 @@ public class OauthAuthenticationProvider implements AuthenticationProvider {
             throw new BadCredentialsException("用户名或密码错误。");
         }
         Collection<? extends GrantedAuthority> authorities = new HashSet<>();
-        return new UsernamePasswordAuthenticationToken(sysUser.getUsername(), sysUser.getPassword(),
+
+        User user = new User(sysUser.getUsername(), sysUser.getPassword(), new HashSet<>());
+        return new UsernamePasswordAuthenticationToken(user, sysUser.getPassword(),
                 authorities);
     }
 
