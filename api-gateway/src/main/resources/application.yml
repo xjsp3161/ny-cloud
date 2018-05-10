@@ -50,10 +50,8 @@ security:
     client:
       access-token-uri: /oauth/token
       user-authorization-uri: /oauth/authorize
-      client-id: my-trusted-client
-      client-secret: secret
+      client-id: frontend
+      client-secret: frontend
     resource:
       user-info-uri: /userinfo
       token-info-uri: /oauth/check_token
-      prefer-token-info: false
-  filter-order: 1

@@ -1,6 +1,6 @@
 package com.nycloud.auth.security;
 
-import com.nycloud.auth.mapper.SysUserMapper;
+import com.nycloud.auth.dao.SysUserMapper;
 import com.nycloud.auth.model.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;

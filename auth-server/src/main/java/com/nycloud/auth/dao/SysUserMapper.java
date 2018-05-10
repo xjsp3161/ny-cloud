@@ -1,4 +1,4 @@
-package com.nycloud.auth.mapper;
+package com.nycloud.auth.dao;
 
 import com.nycloud.auth.model.SysUser;
 import org.apache.ibatis.annotations.*;

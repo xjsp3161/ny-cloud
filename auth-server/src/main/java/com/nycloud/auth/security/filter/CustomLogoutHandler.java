@@ -1,5 +1,4 @@
-package com.nycloud.auth.config.handler;
-
+package com.nycloud.auth.security.filter;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -12,18 +11,18 @@ import org.springframework.security.oauth2.common.exceptions.BadClientCredential
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
 import org.springframework.util.Assert;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 /**
- * @description:
- * @author: super.wu
- * @date: Created in 2018/5/4 0004
- * @modified By:
- * @version: 1.0
- **/
+ * @author keets
+ * @date 2017/10/17
+ */
 public class CustomLogoutHandler implements LogoutHandler {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CustomLogoutHandler.class);
+
 
     @Autowired
     private TokenStore tokenStore;
@@ -34,7 +33,7 @@ public class CustomLogoutHandler implements LogoutHandler {
         String token = request.getHeader("Authorization");
         Assert.hasText(token, "token must be set");
         if (isJwtBearerToken(token)) {
-            token = token.substring(6).trim();
+            token = token.substring(6);
             OAuth2AccessToken existingAccessToken = tokenStore.readAccessToken(token);
             OAuth2RefreshToken refreshToken;
             if (existingAccessToken != null) {

@@ -16,3 +16,6 @@ eureka:
       defaultZone: http://localhost:8760/eureka/
   instance:
     hostname: localhost
+mybatis:
+  type-aliases-package: com.nycloud.admin.model
+  mapper-locations: "classpath*:mapper/*.xml"

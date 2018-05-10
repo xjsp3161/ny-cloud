@@ -1,14 +1,12 @@
 package com.nycloud.admin.controller;
 
-import com.nycloud.admin.model.SysUser;
+import com.nycloud.admin.service.SysUserService;
+import com.nycloud.common.dto.RequestDto;
+import com.nycloud.common.vo.HttpResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * @description:
@@ -21,15 +19,12 @@ import java.util.Map;
 @RequestMapping(value = "api/sysUser")
 public class SysUserController {
 
+    @Autowired
+    private SysUserService sysUserService;
+
     @GetMapping("")
-    public List<SysUser> index() {
-        SysUser sysUser = new SysUser();
-        sysUser.setUsername("admin");
-        sysUser.setNickName("超级管理员");
-        List list = new ArrayList(){{
-            add(sysUser);
-        }};
-        return list;
+    public HttpResponse index(RequestDto requestDto) {
+        return new HttpResponse().success(sysUserService.findByPageList(requestDto));
     }
 
 }

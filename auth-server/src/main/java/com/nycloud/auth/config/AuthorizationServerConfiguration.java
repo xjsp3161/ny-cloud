@@ -1,25 +1,25 @@
 package com.nycloud.auth.config;
 
+import com.nycloud.auth.config.custom.CustomAuthorizationTokenServices;
+import com.nycloud.auth.config.custom.CustomJwtAccessTokenConverter;
+import com.nycloud.auth.config.custom.CustomRedisTokenStore;
+import com.nycloud.auth.config.impl.ClientDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
-import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
-import org.springframework.security.oauth2.provider.OAuth2Authentication;
+import org.springframework.security.oauth2.provider.ClientDetailsService;
+import org.springframework.security.oauth2.provider.token.AuthorizationServerTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
-import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @description:
@@ -32,47 +32,23 @@ import java.util.Map;
 @EnableAuthorizationServer
 public class AuthorizationServerConfiguration  extends AuthorizationServerConfigurerAdapter {
 
+    /**
+     * 认证管理器，当你选择了资源所有者密码（password）授权类型的时候，
+     * 请设置这个属性注入一个 AuthenticationManager 对象
+     */
     @Autowired
     @Qualifier("authenticationManagerBean")
     private AuthenticationManager authenticationManager;
 
-
+    /**
+     * 缓存
+     */
     @Autowired
-    private OauthAuthenticationProvider authenticationProvider;
+    private RedisConnectionFactory redisConnectionFactory;
 
 
     /**
-     * 配置OAuth2的客户端相关信息
-     * @param clients
-     * @throws Exception
-     */
-    @Override
-    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.inMemory()
-                .withClient("my-trusted-client")
-                .secret("secret")
-                .redirectUris("http://localhost:8761/callback")
-                .authorizedGrantTypes("authorization_code", "client_credentials", "refresh_token",
-                        "password", "implicit")
-                .scopes("all")
-                .accessTokenValiditySeconds(60);
-    }
-
-    /**
-     * 配置身份认证器，配置认证方式，TokenStore，TokenGranter，OAuth2RequestFactory
-     * @param endpoints
-     * @throws Exception
-     */
-    @Override
-    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        endpoints.authenticationManager(authenticationManager);
-        endpoints.accessTokenConverter(accessTokenConverter());
-        endpoints.tokenStore(tokenStore());
-    }
-
-
-    /**
-     * 对应于配置AuthorizationServer安全认证的相关信息，创建ClientCredentialsTokenEndpointFilter核心过滤器
+     * 配置令牌端点(Token Endpoint)的安全约束.
      * @param security
      * @throws Exception
      */
@@ -81,40 +57,62 @@ public class AuthorizationServerConfiguration  extends AuthorizationServerConfig
         security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
     }
 
+    /**
+     * 配置客户端详情服务（ClientDetailsService），客户端详情信息在这里进行初始化，你能够把客户端详情信息写死在这里或者是通过数据库来存储调取详情信息
+     * @param clients
+     * @throws Exception
+     */
+    @Override
+    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+        clients.withClientDetails(clientDetailsService());
+    }
 
     /**
-     * token converter
-     *
+     * 配置授权（authorization）以及令牌（token）的访问端点和令牌服务(token services)
+     * @param endpoints
+     * @throws Exception
+     */
+    @Override
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+        endpoints.authenticationManager(authenticationManager)
+                 .tokenStore(tokenStore())
+                 .tokenServices(authorizationServerTokenServices())
+                 .accessTokenConverter(accessTokenConverter());
+    }
+
+    /**
+     * 使用Jwt的方式生成token
      * @return
      */
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
-        JwtAccessTokenConverter accessTokenConverter = new JwtAccessTokenConverter() {
-            /***
-             * 重写增强token方法,用于自定义一些token返回的信息
-             */
-            @Override
-            public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
-                String userName = authentication.getUserAuthentication().getName();
-                User user = (User) authentication.getUserAuthentication().getPrincipal();// 与登录时候放进去的UserDetail实现类一直查看link{SecurityConfiguration}
-                /** 自定义一些token属性 ***/
-                final Map<String, Object> additionalInformation = new HashMap<>();
-                additionalInformation.put("userName", userName);
-                additionalInformation.put("roles", user.getAuthorities());
-                ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(additionalInformation);
-                OAuth2AccessToken enhancedToken = super.enhance(accessToken, authentication);
-                return enhancedToken;
-            }
+        JwtAccessTokenConverter converter = new CustomJwtAccessTokenConverter();
+        converter.setSigningKey("secret");
+        return converter;
+    }
 
-        };
-        accessTokenConverter.setSigningKey("123");// 测试用,资源服务使用相同的字符达到一个对称加密的效果,生产时候使用RSA非对称加密方式
-        return accessTokenConverter;
+    /**
+     * 使用自定义的TokenServices
+     * @return
+     */
+    @Bean
+    public AuthorizationServerTokenServices authorizationServerTokenServices() {
+        CustomAuthorizationTokenServices customTokenServices = new CustomAuthorizationTokenServices();
+        customTokenServices.setTokenStore(tokenStore());
+        customTokenServices.setSupportRefreshToken(true);
+        customTokenServices.setReuseRefreshToken(false);
+        customTokenServices.setClientDetailsService(clientDetailsService());
+        customTokenServices.setTokenEnhancer(accessTokenConverter());
+        return customTokenServices;
     }
 
     @Bean
     public TokenStore tokenStore() {
-        TokenStore tokenStore = new JwtTokenStore(accessTokenConverter());
-        return tokenStore;
+       return new CustomRedisTokenStore(redisConnectionFactory);
     }
 
+    @Bean
+    public ClientDetailsService clientDetailsService() {
+        return new ClientDetailsServiceImpl();
+    }
 }

@@ -60,7 +60,7 @@ public class HeaderEnhanceFilter implements Filter {
                         Map properties = new ObjectMapper().readValue(decoded, Map.class);
 
                         String userId = (String) properties.get(SecurityConstants.USER_ID_IN_HEADER);
-
+                        RequestContext.getCurrentContext()
                         RequestContext.getCurrentContext().addZuulRequestHeader(SecurityConstants.USER_ID_IN_HEADER, userId);
                     } catch (Exception e) {
                         LOGGER.error("Failed to customize header for the request, but still release it as the it would be regarded without any user details.", e);
