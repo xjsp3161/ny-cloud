@@ -2,53 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2bd8d8f-addf-44c0-9a07-9cef01e8481a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysUserMapper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysUserService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/admin/src/main/resources/mapper/SysUserMapper.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/AuthenticationManagerConfig.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/custom/CustomAuthenticationProvider.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/custom/CustomAuthenticationToken.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/custom/CustomAuthorizationTokenServices.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/custom/CustomJwtAccessTokenConverter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/custom/CustomRedisTokenStore.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/custom/CustomUserDetails.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/impl/ClientDetailsServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/security/CustomCheckPermission.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/security/filter/CustomLogoutHandler.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/security/filter/CustomSecurityFilter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/security/filter/SecureResourceFilterInvocationDefinitionSource.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/security/filter/SecurityAccessDecisionManager.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/.mvn/wrapper/maven-wrapper.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/.mvn/wrapper/maven-wrapper.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/pom.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/constants/HttpConstant.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/dto/RequestDto.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/utils/DateTimeUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/utils/TextUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/vo/HttpResponse.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/vo/ResponsePage.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/hs_err_pid15056.log" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/admin/pom.xml" afterPath="$PROJECT_DIR$/admin/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/AdminApplication.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/AdminApplication.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserController.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserController.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysUser.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysUser.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/admin/src/main/resources/application.yml" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/config/FilterConfig.java" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/config/FilterConfig.java" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/security/HeaderEnhanceFilter.java" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/security/HeaderEnhanceFilter.java" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" />
-      <change beforePath="$PROJECT_DIR$/auth-server/pom.xml" afterPath="$PROJECT_DIR$/auth-server/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/AuthorizationServerConfiguration.java" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/AuthorizationServerConfiguration.java" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/OauthAuthenticationProvider.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/WebSecurityConfiguration.java" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/WebSecurityConfiguration.java" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/handler/CustomLogoutHandler.java" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/handler/CustomLogoutHandler.java" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/controller/SysUserController.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/mapper/SysUserMapper.java" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/dao/SysUserMapper.java" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/security/UserDetailsServiceImpl.java" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/security/UserDetailsServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/service/impl/SysUserServiceImpl.java" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/service/impl/SysUserServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/auth-server/src/main/resources/application.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -107,12 +61,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HeaderEnhanceFilter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HeaderEnhanceFilter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/security/HeaderEnhanceFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="59" column="51" lean-forward="true" selection-start-line="59" selection-start-column="51" selection-end-line="59" selection-end-column="51" />
-              <folding />
+            <state relative-caret-position="537">
+              <caret line="61" column="101" lean-forward="false" selection-start-line="61" selection-start-column="101" selection-end-line="61" selection-end-column="101" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -163,11 +119,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HttpResponse.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HttpResponse.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/src/main/java/com/nycloud/common/vo/HttpResponse.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="471">
               <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="8" lean-forward="true" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -207,16 +173,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RequestDto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/src/main/java/com/nycloud/common/dto/RequestDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -337,11 +293,11 @@
         <option value="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/request/RequestDto.java" />
         <option value="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/config/FilterConfig.java" />
-        <option value="$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/security/HeaderEnhanceFilter.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/dto/RequestDto.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/vo/ResponsePage.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysUserService.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/vo/HttpResponse.java" />
+        <option value="$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/security/HeaderEnhanceFilter.java" />
       </list>
     </option>
   </component>
@@ -409,55 +365,47 @@
             <path>
               <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="gateway" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="security" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -670,12 +618,12 @@
       <workItem from="1525566930770" duration="17546000" />
       <workItem from="1525653483372" duration="7824000" />
       <workItem from="1525739582728" duration="32291000" />
-      <workItem from="1525825650299" duration="27029000" />
+      <workItem from="1525825650299" duration="27210000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159252000" />
+    <option name="totallyTimeSpent" value="159433000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -801,14 +749,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/nycloud/common/utils/TextUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/src/main/java/com/nycloud/common/CommonApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -1155,14 +1095,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/security/HeaderEnhanceFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="59" column="51" lean-forward="true" selection-start-line="59" selection-start-column="51" selection-end-line="59" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysUserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -1228,6 +1160,24 @@
         <state relative-caret-position="471">
           <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" lean-forward="true" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/security/HeaderEnhanceFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="61" column="101" lean-forward="false" selection-start-line="61" selection-start-column="101" selection-end-line="61" selection-end-column="101" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
