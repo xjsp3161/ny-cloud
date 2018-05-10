@@ -46,5 +46,9 @@ public class HttpResponse <T> {
         return this;
     }
 
+    public static HttpResponse errorParams() {
+        return new HttpResponse().error(HttpConstant.PARAM_ERROR, HttpConstant.PARAM_ERROR_TEXT);
+    }
+
 }
 

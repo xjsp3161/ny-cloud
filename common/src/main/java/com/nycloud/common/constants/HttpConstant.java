@@ -13,4 +13,7 @@ public class HttpConstant {
     public static final int RESULT_SUCCESS = 0;
     public static final String SUCCESS = "SUCCESS";
 
+    public static final int PARAM_ERROR = -1;
+    public static final String PARAM_ERROR_TEXT = "参数错误";
+
 }

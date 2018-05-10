@@ -1,7 +1,7 @@
 package com.nycloud.admin.service;
 
-import com.nycloud.admin.mapper.SysUserMapper;
-import com.nycloud.admin.model.SysUser;
+import com.nycloud.admin.mapper.SysUserGroupMapper;
+import com.nycloud.admin.model.SysUserGroup;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,6 +12,6 @@ import org.springframework.stereotype.Service;
  * @version: 1.0
  **/
 @Service
-public class SysUserService extends BaseService<SysUserMapper, SysUser> {
+public class SysUserGroupService extends BaseService<SysUserGroupMapper, SysUserGroup> {
 
 }

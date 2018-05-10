@@ -26,22 +26,22 @@
   <update id="updateByPrimaryKey" parameterType="com.nycloud.admin.model.SysUser">
     update sys_user
     set username = #{username,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=BIGINT},
-      last_password_change = #{lastPasswordChange,jdbcType=BIGINT},
-      enable = #{enable,jdbcType=INTEGER},
-      authorities = #{authorities,jdbcType=VARCHAR},
-      nick_name = #{nickName,jdbcType=VARCHAR}
+    password = #{password,jdbcType=VARCHAR},
+    create_time = #{createTime,jdbcType=BIGINT},
+    last_password_change = #{lastPasswordChange,jdbcType=BIGINT},
+    enable = #{enable,jdbcType=INTEGER},
+    authorities = #{authorities,jdbcType=VARCHAR},
+    nick_name = #{nickName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select id, username, password, create_time, last_password_change, enable, authorities, 
+    select id, username, password, create_time, last_password_change, enable, authorities,
     nick_name
     from sys_user
     where id = #{id,jdbcType=INTEGER}
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
-    select id, username, password, create_time, last_password_change, enable, authorities, 
+    select id, username, password, create_time, last_password_change, enable, authorities,
     nick_name
     from sys_user
   </select>

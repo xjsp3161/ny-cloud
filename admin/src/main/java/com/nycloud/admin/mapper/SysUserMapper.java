@@ -1,6 +1,5 @@
 package com.nycloud.admin.mapper;
 
-
 import com.nycloud.admin.model.SysUser;
 import tk.mybatis.mapper.common.Mapper;
 
