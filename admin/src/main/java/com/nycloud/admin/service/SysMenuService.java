@@ -2,8 +2,8 @@ package com.nycloud.admin.service;
 
 import com.nycloud.admin.mapper.SysMenuMapper;
 import com.nycloud.admin.model.SysMenu;
+import com.nycloud.admin.vo.MenuTree;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,19 +17,21 @@ import java.util.List;
 @Service
 public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
 
-    public List<SysMenu> loadAllMenuTreeList() {
-        List<SysMenu> list = this.mapper.selectAll();
-        List<SysMenu> result = new ArrayList<>();
-        for (SysMenu menu: list) {
+    public List<MenuTree> loadAllMenuTreeList() {
+        List<SysMenu> list = this.mapper.selectByEnableAll(1);
+        List<MenuTree> result = new ArrayList<>();
+        for (SysMenu sysMenu: list) {
+            MenuTree menu = new MenuTree(sysMenu);
             if (menu.getLevel() == 1) {
                 menu.setChildren(new ArrayList<>());
                 result.add(menu);
             } else {
                 for (int i = 0; i < result.size(); i ++) {
-                    SysMenu child = result.get(i);
+                    MenuTree child = result.get(i);
                     if (!menu.getParentId().equals(child.getId())) {
                         this.parseMenu(result, menu);
                     } else {
+                        menu.setParentName(menu.getTitle());
                         child.getChildren().add(menu);
                     }
                     break;
@@ -44,9 +46,9 @@ public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
      * @param list
      * @param menu
      */
-    private void parseMenu(List<SysMenu> list, SysMenu menu) {
+    private void parseMenu(List<MenuTree> list, MenuTree menu) {
         for (int i = 0; i < list.size(); i ++) {
-            SysMenu sysMenu = list.get(i);
+            MenuTree sysMenu = list.get(i);
             if (!sysMenu.getId().equals(menu.getParentId())) {
                 if (sysMenu.getChildren() != null && sysMenu.getChildren().size() > 0) {
                     this.parseMenu(sysMenu.getChildren(), menu);
@@ -56,10 +58,11 @@ public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
                 }
             } else {
                 if (sysMenu.getChildren() == null) {
-                    sysMenu.setChildren(new ArrayList<SysMenu>(){{
+                    sysMenu.setChildren(new ArrayList<MenuTree>(){{
                         add(menu);
                     }});
                 } else {
+                    menu.setParentName(sysMenu.getTitle());
                     sysMenu.getChildren().add(menu);
                 }
                 break;

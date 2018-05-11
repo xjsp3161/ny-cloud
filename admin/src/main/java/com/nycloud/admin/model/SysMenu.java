@@ -1,34 +1,31 @@
 package com.nycloud.admin.model;
 
-import java.util.List;
 
 public class SysMenu {
-
-    private Integer id;
-
-    private String title;
-
-    private String url;
-
-    private String icon;
-
-    private Integer parentId;
-
-    private Integer sort;
-
-    private Integer level;
-
-    private String name;
-
-    private String path;
-
-    private String component;
-
-    private String description;
-
-    private Integer enable;
-
-    private List<SysMenu> children;
+    /** 菜单Id **/
+    protected Integer id;
+    /** 菜单标题 **/
+    protected String title;
+    /** 菜单接口路径 **/
+    protected String url;
+    /** 菜单图标 **/
+    protected String icon;
+    /** 父级Id **/
+    protected Integer parentId;
+    /** 排序 **/
+    protected Integer sort;
+    /** 等级 **/
+    protected Integer level;
+    /** 前端国际化名称 **/
+    protected String name;
+    /** 前端访问路径 **/
+    protected String path;
+    /** 前端组件 **/
+    protected String component;
+    /** 描述 **/
+    protected String description;
+    /** 是否启用 **/
+    protected Integer enable;
 
     public Integer getId() {
         return id;
@@ -126,11 +123,4 @@ public class SysMenu {
         this.enable = enable;
     }
 
-    public List<SysMenu> getChildren() {
-        return children;
-    }
-
-    public void setChildren(List<SysMenu> children) {
-        this.children = children;
-    }
 }

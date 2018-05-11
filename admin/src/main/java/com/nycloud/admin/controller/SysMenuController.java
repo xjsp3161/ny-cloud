@@ -38,6 +38,21 @@ public class SysMenuController {
         return new HttpResponse().success();
     }
 
+    @PutMapping
+    public HttpResponse update(@Validated @RequestBody SysMenu sysMenu, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return HttpResponse.errorParams();
+        }
+        sysMenuService.updateById(sysMenu);
+        return new HttpResponse().success();
+    }
+
+    @DeleteMapping
+    public HttpResponse delete(@PathVariable Integer id) {
+        sysMenuService.deleteById(id);
+        return new HttpResponse().success();
+    }
+
     @GetMapping("/tree")
     public HttpResponse tree() {
         return new HttpResponse().success(sysMenuService.loadAllMenuTreeList());
