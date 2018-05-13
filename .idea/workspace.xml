@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2bd8d8f-addf-44c0-9a07-9cef01e8481a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/vo/MenuTree.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysMenuController.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysMenuController.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysMenuMapper.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysMenuMapper.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysMenu.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysMenu.java" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysMenuService.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysMenuService.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/resources/mapper/SysMenuMapper.xml" afterPath="$PROJECT_DIR$/admin/src/main/resources/mapper/SysMenuMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/resources/mapper/SysRoleMapper.xml" afterPath="$PROJECT_DIR$/admin/src/main/resources/mapper/SysRoleMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/resources/mapper/SysUserGroupMapper.xml" afterPath="$PROJECT_DIR$/admin/src/main/resources/mapper/SysUserGroupMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/resources/mapper/SysUserMapper.xml" afterPath="$PROJECT_DIR$/admin/src/main/resources/mapper/SysUserMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/security/CustomRemoteTokenServices.java" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/security/CustomRemoteTokenServices.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -70,12 +62,12 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="SysMenuService.java" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SysMenuService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysMenuService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="20" column="51" lean-forward="true" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+            <state relative-caret-position="-301">
+              <caret line="28" column="52" lean-forward="true" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,10 +75,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="HeaderEnhanceFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/security/HeaderEnhanceFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="98" column="61" lean-forward="true" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="SysMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
+            <state relative-caret-position="16">
               <caret line="13" column="30" lean-forward="false" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
               <folding>
                 <element signature="e#637#638#0" expanded="true" />
@@ -140,21 +142,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/BaseService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SysMenuMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysMenuMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+            <state relative-caret-position="112">
+              <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -162,21 +154,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SysMenuMapper.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SysMenuMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/main/resources/mapper/SysMenuMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+            <state relative-caret-position="0">
+              <caret line="0" column="25" lean-forward="true" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
               <folding>
                 <marker date="1526027726586" expanded="true" signature="1191:1377" ph="select id, t... sys_menu" />
               </folding>
@@ -217,11 +199,22 @@
       <file leaf-file-name="SysMenuController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysMenuController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state relative-caret-position="307">
+              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding>
-                <element signature="e#1841#1842#0" expanded="true" />
+                <element signature="e#1763#1764#0" expanded="true" />
+                <element signature="e#1850#1851#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SysUserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -339,14 +332,14 @@
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/vo/MenuTreeVo.java" />
         <option value="$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/security/CustomRemoteTokenServices.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/vo/MenuTree.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysMenuController.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysMenu.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysMenuService.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysMenuMapper.java" />
         <option value="$PROJECT_DIR$/admin/src/main/resources/mapper/SysRoleMapper.xml" />
         <option value="$PROJECT_DIR$/admin/src/main/resources/mapper/SysUserGroupMapper.xml" />
         <option value="$PROJECT_DIR$/admin/src/main/resources/mapper/SysUserMapper.xml" />
         <option value="$PROJECT_DIR$/admin/src/main/resources/mapper/SysMenuMapper.xml" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysMenuController.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysMenuService.java" />
       </list>
     </option>
   </component>
@@ -400,10 +393,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -454,29 +443,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -576,6 +552,18 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="api-gateway" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -641,18 +629,6 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <module name="api-gateway" />
-      <envs />
-    </configuration>
     <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.EurekaServerApplication" />
       <item index="1" class="java.lang.String" itemvalue="Spring Boot.AuthServerApplication" />
@@ -684,12 +660,13 @@
       <workItem from="1525566930770" duration="17546000" />
       <workItem from="1525653483372" duration="7824000" />
       <workItem from="1525739582728" duration="32291000" />
-      <workItem from="1525825650299" duration="58906000" />
+      <workItem from="1525825650299" duration="59504000" />
+      <workItem from="1526190047350" duration="4152000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191129000" />
+    <option name="totallyTimeSpent" value="195879000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -721,14 +698,13 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32637364" sideWeight="0.4978678" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33076924" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33076924" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25809878" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2607541" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -738,6 +714,7 @@
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21428572" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -810,12 +787,6 @@
           <properties />
           <option name="timeStamp" value="120" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysMenuService.java</url>
-          <line>20</line>
-          <properties />
-          <option name="timeStamp" value="127" />
-        </line-breakpoint>
       </breakpoints>
       <option name="time" value="128" />
     </breakpoint-manager>
@@ -831,7 +802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="8" lean-forward="true" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -840,16 +810,6 @@
         <state relative-caret-position="112">
           <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/security/HeaderEnhanceFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="105" column="68" lean-forward="false" selection-start-line="105" selection-start-column="68" selection-end-line="105" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -899,9 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-176">
           <caret line="53" column="9" lean-forward="false" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -909,7 +866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -917,11 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-192">
           <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <element signature="e#9458#9488#0" expanded="false" />
-            <element signature="e#9558#9559#0" expanded="false" />
-            <element signature="e#9609#9610#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -929,7 +880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="16" column="47" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,7 +895,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -961,7 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
           <caret line="2" column="51" lean-forward="false" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -989,7 +937,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1007,7 +954,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-386">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1015,7 +961,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="432" column="106" lean-forward="false" selection-start-line="432" selection-start-column="106" selection-end-line="432" selection-end-column="106" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,7 +968,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1031,7 +975,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="491" column="48" lean-forward="false" selection-start-line="491" selection-start-column="48" selection-end-line="491" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1039,7 +982,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1047,7 +989,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1063,11 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-          <folding>
-            <marker date="1525833763067" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1525833763067" expanded="true" signature="160:316" ph="..." />
-            <marker date="1525833763067" expanded="true" signature="385:478" ph="@{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1083,7 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1091,7 +1026,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="14" column="66" lean-forward="false" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1099,17 +1033,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1117,281 +1040,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="78" column="26" lean-forward="false" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
-          <folding>
-            <marker date="1519641757451" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1519641757451" expanded="false" signature="148:467" ph="..." />
-            <marker date="1519641757451" expanded="true" signature="790:797" ph="{}" />
-            <marker date="1519641757451" expanded="false" signature="849:860" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="898:904" ph=" }" />
-            <marker date="1519641757451" expanded="false" signature="959:970" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="990:996" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="1056:1448" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="1508:1519" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="1543:1549" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="1609:2003" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="2056:2391" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="2446:2457" ph=" { " />
-            <marker date="1519641757451" expanded="true" signature="2477:2483" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="2543:2935" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="2995:3006" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="3030:3036" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="3096:3490" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="3533:3544" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="3583:3589" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="3639:3717" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="3767:3778" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="3815:3821" ph=" }" />
-            <marker date="1519641757451" expanded="false" signature="3882:3893" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="3927:3933" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="4007:4607" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="4651:4662" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="4694:4700" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="4751:4928" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="4979:4990" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="5041:5047" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="5111:5290" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="5359:6001" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="6068:6664" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="6717:6728" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="6764:6770" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="6842:7179" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="7233:7623" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="7708:8070" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="8141:8574" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="8657:9000" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="9057:9068" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="9101:9107" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="9185:9460" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="9527:9538" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="9581:9587" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="9675:9960" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="10050:10439" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="10539:10938" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="11004:11093" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="11173:11269" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="11343:11451" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="11539:11654" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="11748:11818" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="11932:12760" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="12844:12904" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="13002:13702" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="13772:13876" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="13960:14060" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="14138:14261" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="14359:14428" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="14520:14639" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="14727:14842" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="14944:15629" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="15700:15859" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="15938:16116" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="16205:16622" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="16687:17014" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="17087:17934" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="18006:18116" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="18194:19166" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="19249:19362" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="19456:19950" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="20026:20780" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="20862:21577" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="21650:21982" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="22059:22168" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="22247:23187" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="23266:23378" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="23459:24112" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="24197:24819" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="24879:25188" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="25257:25899" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="25952:26161" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="26215:26436" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="26497:26826" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="26899:27222" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="27294:27566" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="27643:27863" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="27939:28260" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="28327:28338" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="28377:28383" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="28466:28889" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="28975:30009" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="30055:30066" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="30102:30108" ph=" }" />
-            <marker date="1519641757451" expanded="false" signature="30174:30185" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="30231:30237" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="30307:30374" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="30453:30521" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="30602:30680" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="30770:30849" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="30947:31024" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="31131:31209" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="31333:33353" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="33416:33427" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="33475:33481" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="33565:33626" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="33727:35065" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="35152:35218" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="35314:35381" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="35494:39952" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="40013:40024" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="40064:40070" ph=" }" />
-            <marker date="1519641757451" expanded="false" signature="40140:40151" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="40190:40196" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="40278:41545" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="41612:41623" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="41669:41675" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="41739:41835" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="41897:41991" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="42052:42145" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="42208:42303" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="42365:42459" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="42521:42615" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="42678:42773" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="42837:42933" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="43027:43677" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="43769:44349" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="44440:45020" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="45112:45692" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="45785:46365" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="46457:47037" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="47131:47711" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="47804:48384" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="48450:48536" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="48632:49366" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="49436:50214" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="50286:51136" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="51206:51292" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="51364:51450" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="51523:52181" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="52237:52756" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="52822:53011" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="53087:53287" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="53351:53556" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="53630:53846" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="53907:54001" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="54072:54176" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="54235:54641" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="54704:54715" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="54750:54756" ph=" }" />
-            <marker date="1519641757451" expanded="false" signature="54821:54832" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="54869:54875" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="54968:55035" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="55138:55215" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="55306:55462" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="55531:55542" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="55583:55589" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="55674:55795" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="55882:56005" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="56094:56162" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="56261:56339" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="56437:56513" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="56632:57913" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="58021:58096" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="58195:58275" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="58384:58541" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="58673:63044" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="63131:63212" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="63305:64288" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="64371:65069" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="65114:65685" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="65691:65709" ph="/**...*/" />
-            <marker date="1519641757451" expanded="false" signature="65786:65797" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="65830:65836" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="65880:66354" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="66412:67840" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="67916:68148" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="68203:68462" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="68519:68530" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="68562:68568" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="68640:68981" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="69054:70017" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="70073:70084" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="70115:70121" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="70192:70532" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="70604:71568" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="71615:71626" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="71662:71668" ph=" }" />
-            <marker date="1519641757451" expanded="false" signature="71723:71734" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="71764:71770" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="71840:72250" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="72321:72809" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="72857:72868" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="72914:72920" ph=" }" />
-            <marker date="1519641757451" expanded="false" signature="72983:72994" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="73046:73052" ph=" }" />
-            <marker date="1519641757451" expanded="false" signature="73100:73111" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="73157:73163" ph=" }" />
-            <marker date="1519641757451" expanded="false" signature="73226:73237" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="73289:73295" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="73345:74283" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="74335:75273" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="75321:76329" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="76402:76706" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="76770:77065" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="77118:77431" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="77489:77824" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="77884:78204" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="78269:78611" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="78673:78993" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="79048:79360" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="79420:79754" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="79803:80248" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="80306:80622" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="80682:81013" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="81073:81404" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="81461:82163" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="82215:82226" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="82256:82262" ph=" }" />
-            <marker date="1519641757451" expanded="false" signature="82333:82344" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="82382:82388" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="82471:82526" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="82609:82664" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="82721:83250" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="83297:83387" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="83463:83698" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="83762:83865" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="83941:84049" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="84134:84200" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="84297:85819" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="85902:86429" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="86493:86747" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="86825:87201" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="87264:89019" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="89078:89479" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="89485:89503" ph="/**...*/" />
-            <marker date="1519641757451" expanded="true" signature="89597:90853" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="90859:90877" ph="/**...*/" />
-            <marker date="1519641757451" expanded="true" signature="90986:93465" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="93471:93489" ph="/**...*/" />
-            <marker date="1519641757451" expanded="true" signature="93595:94280" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="94356:96443" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="96449:96467" ph="/**...*/" />
-            <marker date="1519641757451" expanded="true" signature="96577:98028" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="98105:98116" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="98154:98160" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="98248:98301" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="98400:98670" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="98766:99244" ph="{...}" />
-            <marker date="1519641757451" expanded="false" signature="99319:99330" ph=" { " />
-            <marker date="1519641757451" expanded="false" signature="99366:99372" ph=" }" />
-            <marker date="1519641757451" expanded="true" signature="99458:99509" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="99606:100026" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="100080:101175" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="101269:101745" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="101868:102452" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="102554:102623" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="102735:102803" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="102927:103515" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="103618:103688" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="103801:103870" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="103876:103894" ph="/**...*/" />
-            <marker date="1519641757451" expanded="true" signature="104015:104137" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="104211:104306" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="104365:104453" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="104514:104619" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="104687:105155" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="105225:105717" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="105781:106326" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="106387:106819" ph="{...}" />
-            <marker date="1519641757451" expanded="true" signature="106876:107387" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1399,7 +1047,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="366">
           <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1407,72 +1054,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/vo/MenuTreeVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/vo/MenuTreeVo.java" />
     <entry file="file://$PROJECT_DIR$/admin/src/main/db/nycloud-admin.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="13" column="2" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
-          <folding>
-            <marker date="1525954402610" expanded="true" signature="0:293" ph="/* Navicat M... " />
-            <marker date="1525954402610" expanded="true" signature="428:469" ph="DROP TABLE I... " />
-            <marker date="1525954402610" expanded="true" signature="471:799" ph="CREATE TABLE... oauth_access_token" />
-            <marker date="1525954402610" expanded="true" signature="1008:1051" ph="DROP TABLE I... " />
-            <marker date="1525954402610" expanded="true" signature="1053:1952" ph="CREATE TABLE... oauth_client_details" />
-            <marker date="1525954402610" expanded="true" signature="2054:2239" ph="INSERT INTO `oauth_client_details`... " />
-            <marker date="1525954402610" expanded="true" signature="2348:2389" ph="DROP TABLE I... " />
-            <marker date="1525954402610" expanded="true" signature="2391:2649" ph="CREATE TABLE... oauth_client_token" />
-            <marker date="1525954402610" expanded="true" signature="2848:2881" ph="DROP TABLE I... " />
-            <marker date="1525954402610" expanded="true" signature="2883:3007" ph="CREATE TABLE... oauth_code" />
-            <marker date="1525954402610" expanded="true" signature="3207:3249" ph="DROP TABLE I... " />
-            <marker date="1525954402610" expanded="true" signature="3251:3404" ph="CREATE TABLE... oauth_refresh_token" />
-            <marker date="1525954402610" expanded="true" signature="3602:3633" ph="DROP TABLE I... " />
-            <marker date="1525954402610" expanded="true" signature="3635:4282" ph="CREATE TABLE... sys_menu" />
-            <marker date="1525954402610" expanded="true" signature="4372:4481" ph="INSERT INTO `sys_menu`... " />
-            <marker date="1525954402610" expanded="true" signature="4483:4636" ph="INSERT INTO `sys_menu`... " />
-            <marker date="1525954402610" expanded="true" signature="4740:4776" ph="DROP TABLE I... " />
-            <marker date="1525954402610" expanded="true" signature="4778:4929" ph="CREATE TABLE... sys_privilege" />
-            <marker date="1525954402610" expanded="true" signature="5121:5152" ph="DROP TABLE I... " />
-            <marker date="1525954402610" expanded="true" signature="5154:5414" ph="CREATE TABLE... sys_role" />
-            <marker date="1525954402610" expanded="true" signature="5504:5576" ph="INSERT INTO `sys_role`... " />
-            <marker date="1525954402610" expanded="true" signature="5578:5647" ph="INSERT INTO `sys_role`... " />
-            <marker date="1525954402610" expanded="true" signature="5759:5803" ph="DROP TABLE I... " />
-            <marker date="1525954402610" expanded="true" signature="5805:5958" ph="CREATE TABLE... sys_role_privilege_pk" />
-            <marker date="1525954402610" expanded="true" signature="6158:6189" ph="DROP TABLE I... " />
-            <marker date="1525954402610" expanded="true" signature="6191:6608" ph="CREATE TABLE... sys_user" />
-            <marker date="1525954402610" expanded="true" signature="6698:6782" ph="INSERT INTO `sys_user`... " />
-            <marker date="1525954402610" expanded="true" signature="6784:6868" ph="INSERT INTO `sys_user`... " />
-            <marker date="1525954402610" expanded="true" signature="6870:6954" ph="INSERT INTO `sys_user`... " />
-            <marker date="1525954402610" expanded="true" signature="6956:7042" ph="INSERT INTO `sys_user`... " />
-            <marker date="1525954402610" expanded="true" signature="7044:7128" ph="INSERT INTO `sys_user`... " />
-            <marker date="1525954402610" expanded="true" signature="7130:7216" ph="INSERT INTO `sys_user`... " />
-            <marker date="1525954402610" expanded="true" signature="7218:7304" ph="INSERT INTO `sys_user`... " />
-            <marker date="1525954402610" expanded="true" signature="7306:7388" ph="INSERT INTO `sys_user`... " />
-            <marker date="1525954402610" expanded="true" signature="7390:7471" ph="INSERT INTO `sys_user`... " />
-            <marker date="1525954402610" expanded="true" signature="7473:7559" ph="INSERT INTO `sys_user`... " />
-            <marker date="1525954402610" expanded="true" signature="7561:7646" ph="INSERT INTO `sys_user`... " />
-            <marker date="1525954402610" expanded="true" signature="7751:7788" ph="DROP TABLE I... " />
-            <marker date="1525954402610" expanded="true" signature="7790:8101" ph="CREATE TABLE... sys_user_group" />
-            <marker date="1525954402610" expanded="true" signature="8197:8283" ph="INSERT INTO `sys_user_group`... " />
-            <marker date="1525954402610" expanded="true" signature="8391:8431" ph="DROP TABLE I... " />
-            <marker date="1525954402610" expanded="true" signature="8433:8575" ph="CREATE TABLE... sys_user_group_pk" />
-            <marker date="1525954402610" expanded="true" signature="8785:8830" ph="DROP TABLE I... " />
-            <marker date="1525954402610" expanded="true" signature="8832:8979" ph="CREATE TABLE... sys_user_group_role_pk" />
-            <marker date="1525954402610" expanded="true" signature="9188:9227" ph="DROP TABLE I... " />
-            <marker date="1525954402610" expanded="true" signature="9229:9372" ph="CREATE TABLE... sys_user_role_pk" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1488,17 +1077,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#934#935#0" expanded="true" />
-            <element signature="e#967#968#0" expanded="true" />
-            <element signature="e#1019#1020#0" expanded="true" />
-            <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#1106#1107#0" expanded="true" />
-            <element signature="e#1137#1138#0" expanded="true" />
-            <element signature="e#1193#1194#0" expanded="true" />
-            <element signature="e#1233#1234#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1506,25 +1084,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysMenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="e#1841#1842#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1536,9 +1103,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysMenuMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/mapper/SysRoleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/mapper/SysUserGroupMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/mapper/SysUserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/mapper/SysMenuMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="25" lean-forward="true" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
+          <folding>
+            <marker date="1526027726586" expanded="true" signature="1191:1377" ph="select id, t... sys_menu" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
+        <state relative-caret-position="16">
           <caret line="13" column="30" lean-forward="false" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
           <folding>
             <element signature="e#637#638#0" expanded="true" />
@@ -1591,56 +1202,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/security/HeaderEnhanceFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="98" column="61" lean-forward="true" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysMenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="e#1763#1764#0" expanded="true" />
+            <element signature="e#1850#1851#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysMenuService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="20" column="51" lean-forward="true" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+        <state relative-caret-position="-301">
+          <caret line="28" column="52" lean-forward="true" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysMenuMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/mapper/SysRoleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/mapper/SysUserGroupMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/mapper/SysUserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/mapper/SysMenuMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding>
-            <marker date="1526027726586" expanded="true" signature="1191:1377" ph="select id, t... sys_menu" />
           </folding>
         </state>
       </provider>

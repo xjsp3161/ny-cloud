@@ -47,7 +47,7 @@ public class SysMenuController {
         return new HttpResponse().success();
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public HttpResponse delete(@PathVariable Integer id) {
         sysMenuService.deleteById(id);
         return new HttpResponse().success();

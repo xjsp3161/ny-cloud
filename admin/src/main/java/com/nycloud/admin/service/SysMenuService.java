@@ -4,6 +4,8 @@ import com.nycloud.admin.mapper.SysMenuMapper;
 import com.nycloud.admin.model.SysMenu;
 import com.nycloud.admin.vo.MenuTree;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +17,7 @@ import java.util.List;
  * @version: 1.0
  **/
 @Service
+@Transactional(rollbackFor = Exception.class)
 public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
 
     public List<MenuTree> loadAllMenuTreeList() {
