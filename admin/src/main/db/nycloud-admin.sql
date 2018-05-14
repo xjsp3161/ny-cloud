@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2018-05-10 20:13:22
+Date: 2018-05-14 19:11:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -125,13 +125,16 @@ CREATE TABLE `sys_menu` (
   `description` varchar(100) DEFAULT NULL COMMENT '描述',
   `enable` int(1) DEFAULT '1' COMMENT '是否启用 1 为启用 0 为禁用',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_menu
 -- ----------------------------
-INSERT INTO `sys_menu` VALUES ('1', '系统管理', null, null, '0', null, '1', 'systemAdmin', null, null, null, '1');
-INSERT INTO `sys_menu` VALUES ('2', '用户管理', '/sys/user', null, '1', '0', '2', 'systemAdminUser', '/user', '_import(\'admin/user/index\')', '用户管理菜单', '1');
+INSERT INTO `sys_menu` VALUES ('1', '系统管理', null, 'example', '0', null, '1', 'systemAdmin', '/sys/admin', null, null, '1');
+INSERT INTO `sys_menu` VALUES ('2', '用户管理', '/sys/user', '', '1', '1', '2', 'systemAdminUser', 'user', 'admin/user/index', '用户管理菜单', '1');
+INSERT INTO `sys_menu` VALUES ('3', '菜单管理', '/admin/sys/sysMenu', null, '1', '2', '2', 'systemAdminMenu', 'menu', 'admin/menu/index', null, '1');
+INSERT INTO `sys_menu` VALUES ('4', '角色管理', '/admin/api/sysRole', null, '1', '3', '2', 'systemAdminRole', 'role', 'admin/role/index', null, '1');
+INSERT INTO `sys_menu` VALUES ('5', '用户组管理', '/admin/api/sysRole', null, '1', '4', '2', 'systemAdminUserGroup', 'group', 'admin/userGroup/index', null, '1');
 
 -- ----------------------------
 -- Table structure for sys_privilege
@@ -163,7 +166,7 @@ CREATE TABLE `sys_role` (
 -- Records of sys_role
 -- ----------------------------
 INSERT INTO `sys_role` VALUES ('1', '超级管理员', 'SuperManager', '拥有系统所有权限');
-INSERT INTO `sys_role` VALUES ('3', '普通管理员', 'OrdinaryManager', null);
+INSERT INTO `sys_role` VALUES ('2', '普通管理员', 'OrdinaryManager', null);
 
 -- ----------------------------
 -- Table structure for sys_role_privilege_pk
@@ -259,10 +262,13 @@ CREATE TABLE `sys_user_group_role_pk` (
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_user_role_pk`;
 CREATE TABLE `sys_user_role_pk` (
-  `user_id` bigint(20) DEFAULT NULL,
-  `role_id` bigint(20) DEFAULT NULL
+  `user_id` int(20) NOT NULL,
+  `role_id` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_user_role_pk
 -- ----------------------------
+INSERT INTO `sys_user_role_pk` VALUES ('3', '1');
+INSERT INTO `sys_user_role_pk` VALUES ('4', '2');
+INSERT INTO `sys_user_role_pk` VALUES ('4', '1');
