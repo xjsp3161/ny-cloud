@@ -1,5 +1,6 @@
 package com.nycloud.admin.controller;
 
+import com.nycloud.admin.dto.UserRoleDto;
 import com.nycloud.admin.model.SysUser;
 import com.nycloud.admin.service.SysUserService;
 import com.nycloud.common.dto.RequestDto;
@@ -34,6 +35,16 @@ public class SysUserController {
         SysUser sysUser = new SysUser();
         sysUser.setId(id);
         return new HttpResponse().success(sysUserService.selectOne(sysUser));
+    }
+
+    @GetMapping("/roleNoExistUsers")
+    public HttpResponse roleNoExistUsers(UserRoleDto dto) {
+        return new HttpResponse().success(sysUserService.loadRoleNoExistUsers(dto));
+    }
+
+    @GetMapping("/roleUsers")
+    public HttpResponse roletUsers(UserRoleDto dto) {
+        return new HttpResponse().success(sysUserService.loadRoleUsers(dto));
     }
 
 }

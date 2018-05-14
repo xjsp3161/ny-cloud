@@ -1,8 +1,12 @@
 package com.nycloud.admin.model;
 
 
+import javax.persistence.Id;
+
 public class SysMenu {
+
     /** 菜单Id **/
+    @Id
     protected Integer id;
     /** 菜单标题 **/
     protected String title;
