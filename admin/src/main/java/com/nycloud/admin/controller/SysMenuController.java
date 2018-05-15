@@ -1,5 +1,7 @@
 package com.nycloud.admin.controller;
 
+import com.nycloud.admin.dto.PermissionMenuDto;
+import com.nycloud.admin.dto.UserRoleDto;
 import com.nycloud.admin.model.SysMenu;
 import com.nycloud.admin.service.SysMenuService;
 import com.nycloud.common.dto.RequestDto;
@@ -56,6 +58,17 @@ public class SysMenuController {
     @GetMapping("/tree")
     public HttpResponse tree() {
         return new HttpResponse().success(sysMenuService.loadAllMenuTreeList());
+    }
+
+
+    @GetMapping("/permissionNoExistMenus")
+    public HttpResponse permissionNoExistMenus(PermissionMenuDto dto) {
+        return new HttpResponse().success(sysMenuService.loadPermissionNoExisMenus(dto));
+    }
+
+    @GetMapping("/permissionMenus")
+    public HttpResponse permissionMenus(PermissionMenuDto dto) {
+        return new HttpResponse().success(sysMenuService.loadPermissionMenus(dto));
     }
 
 }

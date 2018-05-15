@@ -17,7 +17,7 @@ public class MenuTree extends SysMenu {
      **/
     private String parentName;
     /**
-     * 扩展属性 所有子级
+     * 扩展属性 子级列表
      **/
     private List<MenuTree> children;
 
