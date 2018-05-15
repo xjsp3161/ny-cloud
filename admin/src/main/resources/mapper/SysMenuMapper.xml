@@ -21,11 +21,11 @@
     from sys_menu where enable = #{enable,jdbcType=INTEGER} order by level,sort,id asc
   </select>
   <select id="selectPermissionNoExistMenus" parameterType="java.util.Map" resultMap="BaseResultMap">
-    select A.* from sys_menu as A where A.id not in (select B.menu_id from sys_permission_menu_pk as B where B.permission_id = #{permissionId,jdbcType=INTEGER})
+    select * from sys_menu where id in (select parent_id from sys_menu where id in (select menu_id from sys_permission_menu_pk where permission_id = #{permissionId,jdbcType=INTEGER})) or id not in (select menu_id from sys_permission_menu_pk where permission_id = #{permissionId,jdbcType=INTEGER})
     <if test="name != null">
-      and A.name like '%'#{name,jdbcType=VARCHAR}'%'
+      and title like '%'#{name,jdbcType=VARCHAR}'%'
     </if>
-    order by A.level,A.sort,A.id desc
+    order by level,sort,id asc
   </select>
   <select id="selectPermissionMenus" parameterType="java.util.Map" resultMap="BaseResultMap">
     select A.* from sys_menu as A where A.id in (select B.menu_id from sys_permission_menu_pk as B where B.permission_id = #{permissionId,jdbcType=INTEGER})
