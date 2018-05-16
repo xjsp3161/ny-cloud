@@ -4,7 +4,7 @@ import com.nycloud.admin.dto.PermissionMenuDto;
 import com.nycloud.admin.mapper.SysMenuMapper;
 import com.nycloud.admin.model.SysMenu;
 import com.nycloud.admin.vo.MenuTree;
-import org.apache.commons.lang3.ArrayUtils;
+import com.nycloud.common.utils.ListUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -48,7 +48,39 @@ public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
             }
         }};
         List<SysMenu> list = this.mapper.selectPermissionMenus(map);
+        filterMenuTree1(list);
         return filterMenuTree(list);
+    }
+
+
+    private List<MenuTree> filterMenuTree1(List<SysMenu> list2) {
+        List<SysMenu> list1 = this.mapper.selectByEnableAll(1);
+        Map<Integer, MenuTree> map1 = new HashMap<>();
+        Map<Integer, MenuTree> map2 = new HashMap<>();
+        for (int i = 0; i < list1.size(); i ++) {
+            map1.put(list1.get(i).getId(), new MenuTree(list1.get(i)));
+        }
+        for (int j = 0; j < list2.size(); j ++) {
+            MenuTree menuTree = new MenuTree(list2.get(j));
+            if (menuTree.getLevel() == 1) {
+                map2.put(menuTree.getId(), menuTree);
+                continue;
+            }
+            boolean isBreak = false;
+            while(!isBreak) {
+                MenuTree sub = map2.get(menuTree.getParentId());
+                if (sub == null) {
+                    sub = map1.get(menuTree.getParentId());
+                    map2.put(sub.getId(), menuTree);
+                }
+                if (sub.getLevel() == 1) {
+                    map2.put(menuTree.getId(), menuTree);
+                    isBreak = true;
+                }
+                menuTree = sub;
+            }
+        }
+        return null;
     }
 
 
@@ -59,7 +91,7 @@ public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
      */
     private List<MenuTree> filterMenuTree(List<SysMenu> list) {
         List<MenuTree> result = new ArrayList<>();
-        if (list == null || list.size() == 0) {
+        if (ListUtils.isEmpty(list)) {
             return result;
         }
         for (SysMenu sysMenu: list) {
@@ -71,7 +103,7 @@ public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
                 for (int i = 0; i < result.size(); i ++) {
                     MenuTree child = result.get(i);
                     if (!menu.getParentId().equals(child.getId())) {
-                        this.parseMenu(result, menu);
+                        this.filterMenuChildTree(result, menu);
                     } else {
                         menu.setParentName(menu.getTitle());
                         child.getChildren().add(menu);
@@ -85,16 +117,16 @@ public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
 
 
     /**
-     * 无限遍历添加添加节点
+     * 递归遍历添加子节点
      * @param list
      * @param menu
      */
-    private void parseMenu(List<MenuTree> list, MenuTree menu) {
+    private void filterMenuChildTree(List<MenuTree> list, MenuTree menu) {
         for (int i = 0; i < list.size(); i ++) {
             MenuTree sysMenu = list.get(i);
             if (!sysMenu.getId().equals(menu.getParentId())) {
                 if (sysMenu.getChildren() != null && sysMenu.getChildren().size() > 0) {
-                    this.parseMenu(sysMenu.getChildren(), menu);
+                    this.filterMenuChildTree(sysMenu.getChildren(), menu);
                     break;
                 } else {
                     continue;

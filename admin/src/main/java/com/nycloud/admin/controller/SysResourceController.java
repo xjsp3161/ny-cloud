@@ -23,7 +23,7 @@ public class SysResourceController {
     @Autowired
     private SysResourceService sysResourceService;
 
-    @GetMapping("")
+    @GetMapping
     public HttpResponse index(RequestDto requestDto) {
         requestDto.setKey("name");
         return new HttpResponse().success(sysResourceService.findByPageList(requestDto));

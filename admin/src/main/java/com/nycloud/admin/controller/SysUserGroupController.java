@@ -24,7 +24,7 @@ public class SysUserGroupController {
     @Autowired
     private SysUserGroupService sysUserGroupService;
 
-    @GetMapping("")
+    @GetMapping
     public HttpResponse index(RequestDto requestDto) {
         requestDto.setKey("name");
         return new HttpResponse().success(sysUserGroupService.findByPageList(requestDto));

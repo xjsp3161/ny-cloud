@@ -31,7 +31,7 @@ public class SysRoleController {
     @Autowired
     private SysUserRolePkService sysUserRolePkService;
 
-    @GetMapping("")
+    @GetMapping
     public HttpResponse index(RequestDto requestDto) {
         requestDto.setKey("name");
         return new HttpResponse().success(sysRoleService.findByPageList(requestDto));

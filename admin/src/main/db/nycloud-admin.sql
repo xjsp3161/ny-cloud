@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2018-05-14 19:11:22
+Date: 2018-05-16 19:15:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -119,36 +119,76 @@ CREATE TABLE `sys_menu` (
   `parent_id` int(11) DEFAULT NULL COMMENT '父级Id',
   `sort` int(2) DEFAULT NULL COMMENT '排序',
   `level` int(2) NOT NULL COMMENT '菜单等级',
-  `name` varchar(20) NOT NULL COMMENT '菜单名称',
+  `name` varchar(50) NOT NULL COMMENT '菜单名称',
   `path` varchar(50) DEFAULT NULL COMMENT '资源路径',
   `component` varchar(50) DEFAULT NULL COMMENT '前端组件',
   `description` varchar(100) DEFAULT NULL COMMENT '描述',
   `enable` int(1) DEFAULT '1' COMMENT '是否启用 1 为启用 0 为禁用',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_menu
 -- ----------------------------
 INSERT INTO `sys_menu` VALUES ('1', '系统管理', null, 'example', '0', null, '1', 'systemAdmin', '/sys/admin', null, null, '1');
-INSERT INTO `sys_menu` VALUES ('2', '用户管理', '/sys/user', '', '1', '1', '2', 'systemAdminUser', 'user', 'admin/user/index', '用户管理菜单', '1');
+INSERT INTO `sys_menu` VALUES ('2', '用户管理', '/admin/sys/sysUser', '', '1', '1', '2', 'systemAdminUser', 'user', 'admin/user/index', '用户管理菜单', '1');
 INSERT INTO `sys_menu` VALUES ('3', '菜单管理', '/admin/sys/sysMenu', null, '1', '2', '2', 'systemAdminMenu', 'menu', 'admin/menu/index', null, '1');
 INSERT INTO `sys_menu` VALUES ('4', '角色管理', '/admin/api/sysRole', null, '1', '3', '2', 'systemAdminRole', 'role', 'admin/role/index', null, '1');
-INSERT INTO `sys_menu` VALUES ('5', '用户组管理', '/admin/api/sysRole', null, '1', '4', '2', 'systemAdminUserGroup', 'group', 'admin/userGroup/index', null, '1');
+INSERT INTO `sys_menu` VALUES ('5', '用户组管理', '/admin/api/sysUserGroup', null, '1', '4', '2', 'systemAdminUserGroup', 'group', 'admin/userGroup/index', null, '1');
+INSERT INTO `sys_menu` VALUES ('6', '资源管理', '/admin/api/sysResource', null, '1', '5', '2', 'systemAdminResource', 'resource', 'admin/resource/index', null, '1');
+INSERT INTO `sys_menu` VALUES ('7', '权限管理', '/admin/api/sysPermission', null, '1', '6', '2', 'systemAdminPermission', 'permission', 'admin/permission/index', null, '1');
+INSERT INTO `sys_menu` VALUES ('8', '测试', null, null, '1', null, '2', 'test', '/sys/admin/test', 'admin/atest/index', null, '1');
+INSERT INTO `sys_menu` VALUES ('9', '测试1', 'sys/admin/test/test1', null, '8', null, '3', 'test1', 'test1', 'admin/atest/test1/index', null, '1');
+INSERT INTO `sys_menu` VALUES ('10', '测试2', null, null, '8', null, '3', 'test2', 'test2', 'admin/atest/test2/index', null, '1');
 
 -- ----------------------------
--- Table structure for sys_privilege
+-- Table structure for sys_permission
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_privilege`;
-CREATE TABLE `sys_privilege` (
-  `id` bigint(20) NOT NULL,
-  `name` varchar(30) DEFAULT NULL,
+DROP TABLE IF EXISTS `sys_permission`;
+CREATE TABLE `sys_permission` (
+  `id` int(20) NOT NULL AUTO_INCREMENT COMMENT '权限ID',
+  `name` varchar(30) NOT NULL COMMENT '权限名称',
+  `description` varchar(30) DEFAULT NULL COMMENT '权限描述',
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_permission
+-- ----------------------------
+INSERT INTO `sys_permission` VALUES ('1', '超级管理员权限', null);
+
+-- ----------------------------
+-- Table structure for sys_permission_menu_pk
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_permission_menu_pk`;
+CREATE TABLE `sys_permission_menu_pk` (
+  `permission_id` int(11) NOT NULL COMMENT '权限ID',
+  `menu_id` int(11) NOT NULL COMMENT '菜单ID'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of sys_privilege
+-- Records of sys_permission_menu_pk
 -- ----------------------------
+INSERT INTO `sys_permission_menu_pk` VALUES ('1', '9');
+
+-- ----------------------------
+-- Table structure for sys_resource
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_resource`;
+CREATE TABLE `sys_resource` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL COMMENT '资源名称',
+  `code` varchar(255) DEFAULT NULL COMMENT '资源编码',
+  `url` varchar(255) DEFAULT NULL COMMENT '资源接口URL',
+  `url_request_type` varchar(255) DEFAULT NULL COMMENT '资源接口URL请求类型',
+  `description` varchar(255) DEFAULT NULL COMMENT '资源描述',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_resource
+-- ----------------------------
+INSERT INTO `sys_resource` VALUES ('1', '菜单列表查看', 'MenuManager', '/admin/api/sysMenu', 'Get', '菜单列表');
 
 -- ----------------------------
 -- Table structure for sys_role
@@ -160,7 +200,7 @@ CREATE TABLE `sys_role` (
   `code` varchar(30) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_role
@@ -169,16 +209,16 @@ INSERT INTO `sys_role` VALUES ('1', '超级管理员', 'SuperManager', '拥有�
 INSERT INTO `sys_role` VALUES ('2', '普通管理员', 'OrdinaryManager', null);
 
 -- ----------------------------
--- Table structure for sys_role_privilege_pk
+-- Table structure for sys_role_permission_pk
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_role_privilege_pk`;
-CREATE TABLE `sys_role_privilege_pk` (
+DROP TABLE IF EXISTS `sys_role_permission_pk`;
+CREATE TABLE `sys_role_permission_pk` (
   `role_id` bigint(20) DEFAULT NULL,
   `privilege_id` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of sys_role_privilege_pk
+-- Records of sys_role_permission_pk
 -- ----------------------------
 
 -- ----------------------------

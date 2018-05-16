@@ -25,7 +25,7 @@ public class SysMenuController {
     @Autowired
     private SysMenuService sysMenuService;
 
-    @GetMapping("")
+    @GetMapping
     public HttpResponse index(RequestDto requestDto) {
         requestDto.setKey("name");
         return new HttpResponse().success(sysMenuService.findByPageList(requestDto));

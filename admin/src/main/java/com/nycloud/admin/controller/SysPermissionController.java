@@ -32,7 +32,7 @@ public class SysPermissionController {
     @Autowired
     private SysPermissionMenuPkService sysPermissionMenuPkService;
 
-    @GetMapping("")
+    @GetMapping
     public HttpResponse index(RequestDto requestDto) {
         requestDto.setKey("name");
         return new HttpResponse().success(sysPermissionService.findByPageList(requestDto));
@@ -64,7 +64,7 @@ public class SysPermissionController {
         return new HttpResponse().success();
     }
 
-    @PostMapping("/cancelRoleUsers")
+    @PostMapping("/cancelPermissionMenus")
     public HttpResponse cancelPermissionMenus(@Validated @RequestBody CancelPermissionDto dto) {
         if (dto.getMenuIds() == null || dto.getMenuIds().length == 0) {
             return HttpResponse.errorParams();

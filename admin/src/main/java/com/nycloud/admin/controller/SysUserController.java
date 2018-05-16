@@ -24,7 +24,7 @@ public class SysUserController {
     private SysUserService sysUserService;
 
     @ApiOperation(value = "用户列表分页")
-    @GetMapping("")
+    @GetMapping()
     public HttpResponse index(RequestDto requestDto) {
         requestDto.setKey("username");
         return new HttpResponse().success(sysUserService.findByPageList(requestDto));
