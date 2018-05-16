@@ -5,13 +5,12 @@ import com.nycloud.admin.mapper.SysMenuMapper;
 import com.nycloud.admin.model.SysMenu;
 import com.nycloud.admin.vo.MenuTree;
 import com.nycloud.common.utils.ListUtils;
+import io.swagger.models.auth.In;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
 
 /**
  * @description:
@@ -26,7 +25,7 @@ public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
 
     public List<MenuTree> loadAllMenuTreeList() {
         List<SysMenu> list = this.mapper.selectByEnableAll(1);
-        return filterMenuTree(list);
+        return filterMenuTree(convertMenuTreeList(list));
     }
 
     public List<MenuTree> loadPermissionNoExisMenus(PermissionMenuDto dto){
@@ -37,7 +36,7 @@ public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
             }
         }};
         List<SysMenu> list = this.mapper.selectPermissionNoExistMenus(map);
-        return filterMenuTree(list);
+        return filterMenuTree(convertMenuTreeList(list));
     }
 
     public List<MenuTree> loadPermissionMenus(PermissionMenuDto dto){
@@ -48,12 +47,24 @@ public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
             }
         }};
         List<SysMenu> list = this.mapper.selectPermissionMenus(map);
-        filterMenuTree1(list);
-        return filterMenuTree(list);
+        return filterMenuTree1(convertMenuTreeList(list));
     }
 
+    private List<MenuTree> convertMenuTreeList(List<SysMenu> list) {
+        if (ListUtils.isEmpty(list)) {
+            return null;
+        }
+        List<MenuTree> result = new ArrayList<>();
+        for (SysMenu sysMenu : list) {
+            result.add(new MenuTree(sysMenu));
+        }
+        return result;
+    }
 
-    private List<MenuTree> filterMenuTree1(List<SysMenu> list2) {
+    private List<MenuTree> filterMenuTree1(List<MenuTree> list2) {
+        if (ListUtils.isEmpty(list2)) {
+            return null;
+        }
         List<SysMenu> list1 = this.mapper.selectByEnableAll(1);
         Map<Integer, MenuTree> map1 = new HashMap<>();
         Map<Integer, MenuTree> map2 = new HashMap<>();
@@ -71,16 +82,37 @@ public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
                 MenuTree sub = map2.get(menuTree.getParentId());
                 if (sub == null) {
                     sub = map1.get(menuTree.getParentId());
-                    map2.put(sub.getId(), menuTree);
-                }
-                if (sub.getLevel() == 1) {
+                    map2.put(sub.getId(), sub);
+                    if (sub.getLevel() == 1) {
+                        map2.put(menuTree.getId(), menuTree);
+                        isBreak = true;
+                    }
+                } else {
                     map2.put(menuTree.getId(), menuTree);
                     isBreak = true;
                 }
                 menuTree = sub;
             }
         }
-        return null;
+        List<MenuTree> sortList = new ArrayList<>();
+        Iterator<Map.Entry<Integer, MenuTree>> iterator = map2.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<Integer, MenuTree> entry = iterator.next();
+            sortList.add(map2.get(entry.getKey()));
+        }
+        Collections.sort(sortList, new Comparator<MenuTree>() {
+            @Override
+            public int compare(MenuTree o1, MenuTree o2) {
+                if (!o1.getLevel().equals(o2.getLevel())) {
+                    return o1.getLevel() - o2.getLevel();
+                } else if (o1.getLevel().equals(o2.getLevel()) && o1.getSort() != null && o2.getSort() != null) {
+                    return o1.getSort() - o2.getSort();
+                } else {
+                    return o1.getId() - o2.getId();
+                }
+            }
+        });
+        return filterMenuTree(sortList);
     }
 
 
@@ -89,13 +121,12 @@ public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
      * @param list
      * @return
      */
-    private List<MenuTree> filterMenuTree(List<SysMenu> list) {
+    private List<MenuTree> filterMenuTree(List<MenuTree> list) {
         List<MenuTree> result = new ArrayList<>();
         if (ListUtils.isEmpty(list)) {
             return result;
         }
-        for (SysMenu sysMenu: list) {
-            MenuTree menu = new MenuTree(sysMenu);
+        for (MenuTree menu: list) {
             if (menu.getLevel() == 1) {
                 menu.setChildren(new ArrayList<>());
                 result.add(menu);
