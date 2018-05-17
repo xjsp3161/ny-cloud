@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2bd8d8f-addf-44c0-9a07-9cef01e8481a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/exception/NotFoundParentNodeException.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/MenuTree.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/util/MenuTreeUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/util/comparator/MenuTreeComparator.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/api-gateway/src/main/db/nycloud-admin.sql" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysMenuController.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysMenuController.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/dto/PermissionMenuDto.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysMenuMapper.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysMenuMapper.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysMenuService.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysMenuService.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/vo/MenuTree.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/resources/mapper/SysMenuMapper.xml" afterPath="$PROJECT_DIR$/admin/src/main/resources/mapper/SysMenuMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/ApiGatewayApplication.java" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/ApiGatewayApplication.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -267,16 +257,7 @@
               <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -306,12 +287,9 @@
     <property name="SearchEverywhereHistoryKey" value="sheng&#9;PSI&#9;JAVA://org.bouncycastle.crypto.engines.BlowfishEngine" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\GitHub\ny-cloud\admin\src\main\db" />
-      <recent name="E:\GitHub\ny-cloud\admin\src\main\resources\mapper" />
-      <recent name="E:\GitHub\ny-cloud\common\src\main\java\com\nycloud\common\utils" />
-      <recent name="E:\GitHub\ny-cloud\auth-server\src\main\java\com\nycloud\auth\config" />
-      <recent name="E:\GitHub\ny-cloud\auth-server\src\main\java\com\nycloud\auth\config\custom" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\GitHub\ny-cloud\gateway" />
+      <recent name="E:\GitHub\ny-cloud\gateway\src\main" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.nycloud.admin.model" />
@@ -320,9 +298,12 @@
       <recent name="com.nycloud.admin.service" />
       <recent name="com.nycloud.admin.dao" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\GitHub\ny-cloud\gateway" />
-      <recent name="E:\GitHub\ny-cloud\gateway\src\main" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\GitHub\ny-cloud\api-gateway\src\main\db" />
+      <recent name="E:\GitHub\ny-cloud\admin\src\main\db" />
+      <recent name="E:\GitHub\ny-cloud\admin\src\main\resources\mapper" />
+      <recent name="E:\GitHub\ny-cloud\common\src\main\java\com\nycloud\common\utils" />
+      <recent name="E:\GitHub\ny-cloud\auth-server\src\main\java\com\nycloud\auth\config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -498,12 +479,12 @@
       <workItem from="1526343561065" duration="12972000" />
       <workItem from="1526365942486" duration="11095000" />
       <workItem from="1526430903297" duration="14445000" />
-      <workItem from="1526516907809" duration="24056000" />
+      <workItem from="1526516907809" duration="24353000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276042000" />
+    <option name="totallyTimeSpent" value="276339000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -593,13 +574,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysRole.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -1018,6 +992,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="3" column="68" lean-forward="false" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/db/nycloud-admin.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
