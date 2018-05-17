@@ -1,25 +1,30 @@
 package com.nycloud.admin.mapper;
 
 import com.nycloud.admin.model.SysMenu;
+import com.nycloud.admin.model.MenuTree;
 import tk.mybatis.mapper.common.Mapper;
 import java.util.List;
-import java.util.Map;
 
 public interface SysMenuMapper extends Mapper<SysMenu> {
 
-    List<SysMenu> selectByEnableAll(Integer enable);
+    /**
+     * 查询所有可用的菜单
+     * @param enable
+     * @return
+     */
+    List<MenuTree> selectByEnableAll(Integer enable);
 
     /**
      * 根据权限加载已分配的菜单列表
-     * @param map 包含permissionId和name模糊检索
+     * @param permissionId
      * @return
      */
-    List<SysMenu> selectPermissionMenus(Map<String, Object> map);
+    List<MenuTree> selectPermissionMenus(Integer permissionId);
 
     /**
      * 加载未分配给当前权限的菜单列表
-     * @param map 包含permissionId和name模糊检索
+     * @param permissionId
      * @return
      */
-    List<SysMenu> selectPermissionNoExistMenus(Map<String, Object> map);
+    List<MenuTree> selectPermissionNoExistMenus(Integer permissionId);
 }

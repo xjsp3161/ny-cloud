@@ -1,11 +1,10 @@
 package com.nycloud.admin.controller;
 
-import com.nycloud.admin.dto.PermissionMenuDto;
-import com.nycloud.admin.dto.UserRoleDto;
 import com.nycloud.admin.model.SysMenu;
 import com.nycloud.admin.service.SysMenuService;
 import com.nycloud.common.dto.RequestDto;
 import com.nycloud.common.vo.HttpResponse;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -62,13 +61,18 @@ public class SysMenuController {
 
 
     @GetMapping("/permissionNoExistMenus")
-    public HttpResponse permissionNoExistMenus(PermissionMenuDto dto) {
-        return new HttpResponse().success(sysMenuService.loadPermissionNoExisMenus(dto));
+    public HttpResponse permissionNoExistMenus(@RequestParam Integer permissionId) {
+        return new HttpResponse().success(sysMenuService.loadPermissionNoExistMenus(permissionId));
     }
 
     @GetMapping("/permissionMenus")
-    public HttpResponse permissionMenus(PermissionMenuDto dto) {
-        return new HttpResponse().success(sysMenuService.loadPermissionMenus(dto));
+    public HttpResponse permissionMenus(@RequestParam Integer permissionId) {
+        return new HttpResponse().success(sysMenuService.loadPermissionMenus(permissionId));
+    }
+
+    @GetMapping("/userMenus")
+    public HttpResponse userMenus() {
+        return new HttpResponse().success(sysMenuService.loadPermissionMenus(1));
     }
 
 }

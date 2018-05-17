@@ -15,16 +15,18 @@
     <result column="description" jdbcType="VARCHAR" property="description" />
     <result column="enable" jdbcType="INTEGER" property="enable" />
   </resultMap>
-  <select id="selectByEnableAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <resultMap id="MenuTreeMap" type="com.nycloud.admin.model.MenuTree" extends="BaseResultMap"></resultMap>
+  <select id="selectByEnableAll" parameterType="java.lang.Integer" resultMap="MenuTreeMap">
     select id, title, url, icon, parent_id, sort, level, name, path, component, description,
     enable
     from sys_menu where enable = #{enable,jdbcType=INTEGER} order by level,sort,id asc
   </select>
-  <select id="selectPermissionNoExistMenus" parameterType="java.util.Map" resultMap="BaseResultMap">
-    select * from sys_menu where id not in (select menu_id from sys_permission_menu_pk where permission_id = #{permissionId,jdbcType=INTEGER}) order by level,sort,id asc
+  <select id="selectPermissionNoExistMenus" parameterType="java.lang.Integer" resultMap="MenuTreeMap">
+    select * from sys_menu where id not in (select menu_id from sys_permission_menu_pk where permission_id = #{permissionId,jdbcType=INTEGER})
+    order by level,sort,id asc
   </select>
-  <select id="selectPermissionMenus" parameterType="java.util.Map" resultMap="BaseResultMap">
-    select * from sys_menu where id in (select parent_id from sys_menu where id in (select menu_id from sys_permission_menu_pk where permission_id = #{permissionId,jdbcType=INTEGER})) or id in (select menu_id from sys_permission_menu_pk where permission_id = #{permissionId,jdbcType=INTEGER})
+  <select id="selectPermissionMenus" parameterType="java.lang.Integer" resultMap="MenuTreeMap">
+    select * from sys_menu where id in (select menu_id from sys_permission_menu_pk where permission_id = #{permissionId,jdbcType=INTEGER})
     order by level,sort,id asc
   </select>
 </mapper>
