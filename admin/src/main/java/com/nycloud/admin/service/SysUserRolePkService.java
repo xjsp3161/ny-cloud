@@ -40,9 +40,10 @@ public class SysUserRolePkService extends BaseService<SysUserRolePkMapper, SysUs
         return new ResponsePage<>(sysRoleMapper.selectUserNoRoles(map));
     }
 
-    public List<SysRole> loadUserRoles(UserRoleDto dto){
+    public ResponsePage loadUserRoles(UserRoleDto dto){
+        PageHelper.startPage(dto.getPage(), dto.getSize());
         Map<String, Object> map = getQueryParams(dto);
-        return sysRoleMapper.selectUserRoles(map);
+        return new ResponsePage<>(sysRoleMapper.selectUserRoles(map));
     }
 
     private Map<String, Object> getQueryParams(UserRoleDto dto) {

@@ -6,4 +6,16 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="description" jdbcType="VARCHAR" property="description" />
   </resultMap>
+  <select id="selectRoleNoPermissions" parameterType="java.util.Map" resultMap="BaseResultMap">
+    select A.* from sys_permission as A where A.id not in (select B.permission_id from sys_role_permission_pk AS B where B.role_id = #{roleId,jdbcType=INTEGER})
+    <if  test="name != null">
+      and A.name like '%'#{name,jdbcType=VARCHAR}'%'
+    </if>
+  </select>
+  <select id="selectRolePermissions" parameterType="java.util.Map" resultMap="BaseResultMap">
+    select A.* from sys_permission as A where A.id in (select B.permission_id from sys_role_permission_pk as B where B.role_id = #{roleId,jdbcType=INTEGER})
+    <if test="name != null">
+      and A.name like '%'#{name,jdbcType=VARCHAR}'%'
+    </if>
+  </select>
 </mapper>
