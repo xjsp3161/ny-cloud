@@ -15,7 +15,7 @@ public class SysUser {
 
     private String authorities;
 
-    private String nickName;
+    private String name;
 
     public Integer getId() {
         return id;
@@ -73,11 +73,11 @@ public class SysUser {
         this.authorities = authorities == null ? null : authorities.trim();
     }
 
-    public String getNickName() {
-        return nickName;
+    public String getName() {
+        return name;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName == null ? null : nickName.trim();
+    public void setName(String name) {
+        this.name = name;
     }
 }

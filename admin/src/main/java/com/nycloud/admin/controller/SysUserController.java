@@ -1,7 +1,8 @@
 package com.nycloud.admin.controller;
 
-import com.nycloud.admin.dto.UserRoleDto;
 import com.nycloud.admin.model.SysUser;
+import com.nycloud.admin.service.SysMenuService;
+import com.nycloud.admin.service.SysPermissionMenuPkService;
 import com.nycloud.admin.service.SysUserService;
 import com.nycloud.common.dto.RequestDto;
 import com.nycloud.common.vo.HttpResponse;
@@ -23,28 +24,28 @@ public class SysUserController {
     @Autowired
     private SysUserService sysUserService;
 
-    @ApiOperation(value = "用户列表分页")
-    @GetMapping()
+    @Autowired
+    private SysPermissionMenuPkService sysPermissionMenuPkService;
+
+    @ApiOperation(value = "用户列表查询", notes = "可分页并可根据用户名称模糊检索")
+    @GetMapping
     public HttpResponse index(RequestDto requestDto) {
         requestDto.setKey("username");
         return new HttpResponse().success(sysUserService.findByPageList(requestDto));
     }
 
-    @GetMapping("/{id}")
-    public HttpResponse info(@PathVariable Integer id) {
+    @ApiOperation(value = "用户详情查询", notes = "根据id查询用户详细信息")
+    @GetMapping("/info")
+    public HttpResponse info(@RequestParam Integer id) {
         SysUser sysUser = new SysUser();
         sysUser.setId(id);
         return new HttpResponse().success(sysUserService.selectOne(sysUser));
     }
 
-    @GetMapping("/roleNoExistUsers")
-    public HttpResponse roleNoExistUsers(UserRoleDto dto) {
-        return new HttpResponse().success(sysUserService.loadRoleNoExistUsers(dto));
-    }
-
-    @GetMapping("/roleUsers")
-    public HttpResponse roletUsers(UserRoleDto dto) {
-        return new HttpResponse().success(sysUserService.loadRoleUsers(dto));
+    @ApiOperation(value = "用户可用菜单树查询", notes = "根据用户权限查询已分配好的菜单")
+    @GetMapping("/userMenuTree")
+    public HttpResponse userMenuTree() {
+        return new HttpResponse().success(sysPermissionMenuPkService.loadPermissionMenuTree(1));
     }
 
 }

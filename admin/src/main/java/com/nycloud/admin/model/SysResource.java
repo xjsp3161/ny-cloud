@@ -8,8 +8,6 @@ public class SysResource {
 
     private String name;
 
-    private String code;
-
     private String url;
 
     private String urlRequestType;
@@ -30,14 +28,6 @@ public class SysResource {
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code == null ? null : code.trim();
     }
 
     public String getUrl() {

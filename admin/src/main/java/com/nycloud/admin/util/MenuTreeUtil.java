@@ -6,7 +6,7 @@ import com.nycloud.common.utils.ListUtils;
 import java.util.*;
 
 /**
- * @description: 菜单树工具类，用户菜单树生成和转换
+ * @description: 菜单树工具类，菜单树生成
  * @author: super.wu
  * @date: Created in 2018/5/17 0017
  * @modified By:
@@ -15,7 +15,7 @@ import java.util.*;
 public class MenuTreeUtil {
 
     /**
-     * 在所有菜单中过滤当前菜单并返回排序好后的菜单 然后生成菜单树
+     * 在所有菜单中过滤当前菜单并排序好菜单 然后生成菜单树
      * @param allList   所有菜单集合
      * @param currentList 当前菜单集合
      * @return
@@ -43,10 +43,10 @@ public class MenuTreeUtil {
                 MenuTree nextNode = currentNode;
                 // 启动循环直至于找到自己的顶级父节点为止
                 while (!isBreakWhile) {
-                    // 判断当前节点的父节点是否已经被添加
+                    // 获取当前父节点并判断当前节点的父节点是否已经被添加
                     MenuTree parentNode = currentMap.get(nextNode.getParentId());
                     if (parentNode == null) {
-                        // 从所有节点中取出当前父亲节点
+                        // 从所有节点中取出当前父节点
                         parentNode = allMap.get(nextNode.getParentId());
                     }
                     // 当前节点的父节点已经找到 并添加到当前节点集合

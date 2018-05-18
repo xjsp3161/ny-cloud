@@ -9,7 +9,7 @@
     <result column="last_password_change" jdbcType="BIGINT" property="lastPasswordChange" />
     <result column="enable" jdbcType="INTEGER" property="enable" />
     <result column="authorities" jdbcType="VARCHAR" property="authorities" />
-    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
   </resultMap>
   <select id="selectRoleNoExistUsers" parameterType="java.util.Map" resultMap="BaseResultMap">
     select A.* from sys_user as A where A.id not in (select B.user_id from sys_user_role_pk as B where B.role_id = #{roleId,jdbcType=INTEGER})

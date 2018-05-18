@@ -2,7 +2,6 @@ package com.nycloud.admin.mapper;
 
 import com.nycloud.admin.model.SysUserRolePk;
 import tk.mybatis.mapper.common.Mapper;
-
 import java.util.List;
 import java.util.Map;
 

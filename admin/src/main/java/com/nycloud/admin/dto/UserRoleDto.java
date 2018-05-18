@@ -14,8 +14,13 @@ import lombok.Data;
 public class UserRoleDto extends RequestDto {
 
     /**
-     * 角色Id
+     * 用户Id
      */
-    private Integer roleId;
+    private Integer userId;
+
+    /**
+     * 多个角色Id
+     */
+    private Integer [] roleIds;
 
 }

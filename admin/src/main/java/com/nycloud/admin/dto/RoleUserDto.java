@@ -5,14 +5,13 @@ import lombok.Data;
 /**
  * @description:
  * @author: super.wu
- * @date: Created in 2018/5/15 0015
+ * @date: Created in 2018/5/14 0014
  * @modified By:
  * @version: 1.0
  **/
 @Data
-public class CancelPermissionDto {
+public class RoleUserDto {
 
-    private Integer permissionId;
-    private Integer [] menuIds;
-
+    private Integer roleId;
+    private Integer [] userIds;
 }

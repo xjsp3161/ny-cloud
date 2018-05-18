@@ -1,19 +1,13 @@
 package com.nycloud.admin.controller;
 
-import com.nycloud.admin.dto.CancelPermissionDto;
-import com.nycloud.admin.dto.CancelRoleUsersDto;
 import com.nycloud.admin.model.SysPermission;
-import com.nycloud.admin.model.SysPermissionMenuPk;
-import com.nycloud.admin.service.SysPermissionMenuPkService;
 import com.nycloud.admin.service.SysPermissionService;
 import com.nycloud.common.dto.RequestDto;
 import com.nycloud.common.vo.HttpResponse;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * @description:
@@ -29,48 +23,30 @@ public class SysPermissionController {
     @Autowired
     private SysPermissionService sysPermissionService;
 
-    @Autowired
-    private SysPermissionMenuPkService sysPermissionMenuPkService;
-
+    @ApiOperation(value = "权限列表查询", notes = "可分页并可根据权限名称模糊检索")
     @GetMapping
     public HttpResponse index(RequestDto requestDto) {
         requestDto.setKey("name");
         return new HttpResponse().success(sysPermissionService.findByPageList(requestDto));
     }
 
+    @ApiOperation(value = "权限保存", notes = "根据SysPermission对象创建权限")
     @PostMapping
     public HttpResponse save(@RequestBody SysPermission sysPermission, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return HttpResponse.errorParams();
         }
         sysPermissionService.insert(sysPermission);
-        return new HttpResponse().success();
+        return HttpResponse.resultSuccess();
     }
 
+    @ApiOperation(value = "权限是否已存在", notes = "根据SysPermission对象设定的字段值来查询判断")
     @GetMapping("/exist")
     public HttpResponse exist(SysPermission sysPermission) {
         if (sysPermission == null) {
             return HttpResponse.errorParams();
         }
-        return new HttpResponse().success(sysPermissionService.selectOne(sysPermission) != null);
-    }
-
-    @PostMapping("/batchPermissionMenus")
-    public HttpResponse batchPermissionMenus(@RequestBody List<SysPermissionMenuPk> list) {
-        if (list == null || list.size() == 0) {
-            return HttpResponse.errorParams();
-        }
-        sysPermissionMenuPkService.batchInsert(list);
-        return new HttpResponse().success();
-    }
-
-    @PostMapping("/cancelPermissionMenus")
-    public HttpResponse cancelPermissionMenus(@Validated @RequestBody CancelPermissionDto dto) {
-        if (dto.getMenuIds() == null || dto.getMenuIds().length == 0) {
-            return HttpResponse.errorParams();
-        }
-        sysPermissionMenuPkService.batchDelete(dto.getPermissionId(), dto.getMenuIds());
-        return new HttpResponse().success();
+        return HttpResponse.resultSuccess(sysPermissionService.selectOne(sysPermission) != null);
     }
 
 }
