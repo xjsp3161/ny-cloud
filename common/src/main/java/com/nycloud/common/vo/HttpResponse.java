@@ -50,5 +50,14 @@ public class HttpResponse <T> {
         return new HttpResponse().error(HttpConstant.PARAM_ERROR, HttpConstant.PARAM_ERROR_TEXT);
     }
 
+    public static HttpResponse resultSuccess() {
+        return new HttpResponse().success();
+    }
+
+    public static HttpResponse resultSuccess(Object data) {
+        return new HttpResponse().success(data);
+    }
+
+
 }
 
