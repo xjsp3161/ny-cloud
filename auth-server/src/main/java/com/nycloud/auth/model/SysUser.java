@@ -1,8 +1,7 @@
 package com.nycloud.auth.model;
 
 import lombok.Data;
-
-import java.util.HashSet;
+import java.util.List;
 
 @Data
 public class SysUser {
@@ -22,5 +21,7 @@ public class SysUser {
     private Boolean enable;
 
     private String authorities;
+
+    private List<SysResource> resourceList;
 
 }

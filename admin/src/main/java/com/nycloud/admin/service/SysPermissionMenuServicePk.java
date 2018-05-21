@@ -21,7 +21,7 @@ import java.util.Map;
  **/
 @Service
 @Transactional(rollbackFor = Exception.class)
-public class SysPermissionMenuPkService extends BaseService<SysPermissionMenuPkMapper, SysPermissionMenuPk> {
+public class SysPermissionMenuServicePk extends BaseService<SysPermissionMenuPkMapper, SysPermissionMenuPk> {
 
     @Autowired
     private SysMenuMapper sysMenuMapper;

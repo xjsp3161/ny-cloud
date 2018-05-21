@@ -2,7 +2,7 @@ package com.nycloud.admin.controller;
 
 import com.nycloud.admin.dto.PermissionMenuDto;
 import com.nycloud.admin.model.SysPermissionMenuPk;
-import com.nycloud.admin.service.SysPermissionMenuPkService;
+import com.nycloud.admin.service.SysPermissionMenuServicePk;
 import com.nycloud.common.vo.HttpResponse;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ import java.util.List;
 public class SysPermissionMenuController {
 
     @Autowired
-    private SysPermissionMenuPkService sysPermissionMenuPkService;
+    private SysPermissionMenuServicePk sysPermissionMenuPkService;
 
     @ApiOperation(value = "权限未关联菜单树查询", notes = "根据权限id查询该权限未关联的菜单并返回菜单树")
     @GetMapping("/permissionNoRelationMenuTree")

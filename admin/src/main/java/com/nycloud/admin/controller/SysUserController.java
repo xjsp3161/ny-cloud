@@ -1,8 +1,7 @@
 package com.nycloud.admin.controller;
 
 import com.nycloud.admin.model.SysUser;
-import com.nycloud.admin.service.SysMenuService;
-import com.nycloud.admin.service.SysPermissionMenuPkService;
+import com.nycloud.admin.service.SysPermissionMenuServicePk;
 import com.nycloud.admin.service.SysUserService;
 import com.nycloud.common.dto.RequestDto;
 import com.nycloud.common.vo.HttpResponse;
@@ -25,7 +24,7 @@ public class SysUserController {
     private SysUserService sysUserService;
 
     @Autowired
-    private SysPermissionMenuPkService sysPermissionMenuPkService;
+    private SysPermissionMenuServicePk sysPermissionMenuPkService;
 
     @ApiOperation(value = "用户列表查询", notes = "可分页并可根据用户名称模糊检索")
     @GetMapping

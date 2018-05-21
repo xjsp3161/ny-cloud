@@ -2,7 +2,7 @@ spring:
   application:
     name: nycloud-api-gateway
 server:
-  port: 1000
+  port: 7000
 eureka:
   client:
     serviceUrl:

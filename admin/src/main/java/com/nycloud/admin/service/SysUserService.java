@@ -4,7 +4,6 @@ import com.nycloud.admin.mapper.SysUserMapper;
 import com.nycloud.admin.model.SysUser;
 import org.springframework.stereotype.Service;
 
-
 /**
  * @description:
  * @author: super.wu

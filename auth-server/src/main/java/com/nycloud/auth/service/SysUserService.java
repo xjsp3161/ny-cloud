@@ -13,4 +13,5 @@ public interface SysUserService {
 
     SysUser findByUserName(String username);
 
+    SysUser selectUserResources(Integer userId);
 }

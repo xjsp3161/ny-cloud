@@ -16,8 +16,8 @@ import java.util.Map;
  **/
 public interface SysPermissionMapper extends Mapper<SysPermission>{
 
-    List<SysRole> selectRoleNoPermissions(Map<String, Object> map);
+    List<SysPermission> selectRoleNoPermissions(Map<String, Object> map);
 
-    List<SysRole> selectRolePermissions(Map<String, Object> map);
+    List<SysPermission> selectRolePermissions(Map<String, Object> map);
 
 }

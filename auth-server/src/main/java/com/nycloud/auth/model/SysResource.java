@@ -1,12 +1,10 @@
-package com.nycloud.admin.model;
+package com.nycloud.auth.model;
 
 import lombok.Data;
-import javax.persistence.Id;
 
 @Data
 public class SysResource {
 
-    @Id
     private Integer id;
 
     private String name;

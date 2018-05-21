@@ -1,18 +1,13 @@
 package com.nycloud.admin.controller;
 
-
 import com.nycloud.admin.dto.UserRoleDto;
-import com.nycloud.admin.model.SysUser;
 import com.nycloud.admin.model.SysUserRolePk;
-import com.nycloud.admin.service.SysRoleService;
 import com.nycloud.admin.service.SysUserRolePkService;
-import com.nycloud.admin.service.SysUserService;
 import com.nycloud.common.vo.HttpResponse;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 /**

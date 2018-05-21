@@ -1,9 +1,8 @@
 package com.nycloud.admin.controller;
 
 import com.nycloud.admin.dto.RolePermissionDto;
-import com.nycloud.admin.dto.UserRoleDto;
 import com.nycloud.admin.model.SysRolePermissionPk;
-import com.nycloud.admin.service.SysRolePermissionPkService;
+import com.nycloud.admin.service.SysRolePermissionServicePk;
 import com.nycloud.common.vo.HttpResponse;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@ import java.util.List;
 public class SysRolePermissionController {
 
     @Autowired
-    private SysRolePermissionPkService sysRolePermissionPkService;
+    private SysRolePermissionServicePk sysRolePermissionPkService;
 
     @ApiOperation(value = "角色未关联权限查询", notes = "根据角色id查询该角色未关联的权限并返回权限列表")
     @GetMapping("/roleNoRelationPermissionList")
