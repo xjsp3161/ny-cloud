@@ -2,35 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2bd8d8f-addf-44c0-9a07-9cef01e8481a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysPermissionResourceController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysPermissionResourcePkMapper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysPermissionResourceServicePk.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/admin/src/main/resources/mapper/SysPermissionResourcePkMapper.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/dao/SysResourceMapper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/model/SysResource.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/annotation/PreAuth.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/client/FeignAuthClient.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/constants/AccessType.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/constants/SecurityConstants.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysPermissionMenuController.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysPermissionMenuController.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysRolePermissionController.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysRolePermissionController.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserController.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserController.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserRoleController.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserRoleController.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysPermissionMapper.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysPermissionMapper.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysResourceMapper.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysResourceMapper.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysPermission.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysPermission.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysResource.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysResource.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysRole.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysRole.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysUser.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysUser.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysPermissionMenuPkService.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysPermissionMenuServicePk.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysRolePermissionPkService.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysRolePermissionServicePk.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysUserService.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysUserService.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/resources/mapper/SysResourceMapper.xml" afterPath="$PROJECT_DIR$/admin/src/main/resources/mapper/SysResourceMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" />
-      <change beforePath="$PROJECT_DIR$/auth-server/pom.xml" afterPath="$PROJECT_DIR$/auth-server/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/controller/UserController.java" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/controller/UserController.java" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/model/SysUser.java" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/model/SysUser.java" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/service/SysUserService.java" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/service/SysUserService.java" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/service/impl/SysUserServiceImpl.java" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/service/impl/SysUserServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/util/Constants.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/util/HttpResponse.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/admin/pom.xml" afterPath="$PROJECT_DIR$/admin/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/AdminApplication.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/AdminApplication.java" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/security/CustomCheckPermission.java" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -89,31 +68,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="application.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api-gateway/src/main/resources/application.yml">
+      <file leaf-file-name="CustomJwtAccessTokenConverter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/custom/CustomJwtAccessTokenConverter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="35" column="22" lean-forward="true" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+            <state relative-caret-position="193">
+              <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/controller/UserController.java">
+      <file leaf-file-name="CustomUserDetails.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/custom/CustomUserDetails.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="31" />
+            <state relative-caret-position="-640">
+              <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomAuthenticationProvider.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CustomAuthorizationTokenServices.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/custom/CustomAuthorizationTokenServices.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="35" column="34" lean-forward="true" selection-start-line="35" selection-start-column="34" selection-end-line="36" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomAuthenticationToken.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/custom/CustomAuthenticationToken.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomAuthenticationProvider.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/custom/CustomAuthenticationProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="46" column="16" lean-forward="true" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+            <state relative-caret-position="290">
+              <caret line="90" column="19" lean-forward="true" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -130,8 +129,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>CustomAuthenticationToken</find>
-      <find>getResourceIds</find>
       <find>getAuthorities</find>
       <find>ClientDetails</find>
       <find>clientDetailsService</find>
@@ -160,6 +157,8 @@
       <find>insertPermissionResources</find>
       <find>selectPermissionResources</find>
       <find>selectPermissionNoResources</find>
+      <find>feign</find>
+      <find>permitAllUrlProperties</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -189,19 +188,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/dto/PermissionMenuDto.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/dto/UserRoleDto.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysUserMapper.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysUserRolePkMapper.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/resources/mapper/SysRoleMapper.xml" />
-        <option value="$PROJECT_DIR$/admin/src/main/resources/mapper/SysUserRolePkMapper.xml" />
-        <option value="$PROJECT_DIR$/admin/src/main/resources/mapper/SysUserMapper.xml" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/vo/HttpResponse.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysPermissionController.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserGroupController.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysRoleController.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/vo/ResponsePage.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysRoleService.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysPermissionMenuPkService.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysPermissionMenuController.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysMenuService.java" />
@@ -234,12 +220,25 @@
         <option value="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/model/SysUser.java" />
         <option value="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/dao/SysResourceMapper.java" />
         <option value="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/service/impl/SysUserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/auth-server/pom.xml" />
         <option value="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/service/SysUserService.java" />
         <option value="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/controller/UserController.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserController.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysUserService.java" />
         <option value="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/CustomAuthentication.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/constants/AccessType.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/config/FilterConfig.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/annotation/PreAuth.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/filter/AuthAspect.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/constants/AccessType.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/filter/UserContext.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/filter/CustomAuthorizationFilter.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/client/FeignAuthClient.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/AdminApplication.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/filter/AuthorizationFilter.java" />
+        <option value="$PROJECT_DIR$/admin/pom.xml" />
+        <option value="$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/AuthServerApplication.java" />
+        <option value="$PROJECT_DIR$/auth-server/pom.xml" />
       </list>
     </option>
   </component>
@@ -258,11 +257,21 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="admin" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="admin" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="-8" />
     <option name="width" value="1943" />
     <option name="height" value="1047" />
@@ -314,6 +323,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -325,36 +337,63 @@
             <path>
               <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="custom" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -376,9 +415,15 @@
     <property name="SearchEverywhereHistoryKey" value="sheng&#9;PSI&#9;JAVA://org.bouncycastle.crypto.engines.BlowfishEngine" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\GitHub\ny-cloud\gateway" />
-      <recent name="E:\GitHub\ny-cloud\gateway\src\main" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.nycloud.admin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\GitHub\ny-cloud\admin\src\main\java\com\nycloud\admin\constants" />
+      <recent name="E:\GitHub\ny-cloud\admin\src\main\java\com\nycloud\admin\annotation" />
+      <recent name="E:\GitHub\ny-cloud\admin\src\main\java" />
+      <recent name="E:\GitHub\ny-cloud\admin\src\main\java\com\nycloud\admin" />
+      <recent name="E:\GitHub\ny-cloud\admin\src\main\java\com\nycloud\admin\config" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.nycloud.auth.dao" />
@@ -387,12 +432,9 @@
       <recent name="com.nycloud.admin.model" />
       <recent name="com.nycloud.admin.mapper" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\GitHub\ny-cloud\auth-server\src\main\java\com\nycloud\auth\model" />
-      <recent name="E:\GitHub\ny-cloud\admin\src\main\resources\mapper" />
-      <recent name="E:\GitHub\ny-cloud\admin\src\main\db" />
-      <recent name="E:\GitHub\ny-cloud\api-gateway\src\main\db" />
-      <recent name="E:\GitHub\ny-cloud\common\src\main\java\com\nycloud\common\utils" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\GitHub\ny-cloud\gateway" />
+      <recent name="E:\GitHub\ny-cloud\gateway\src\main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -411,7 +453,7 @@
         </RuleState>
       </list>
     </option>
-    <option name="contentProportion" value="0.17920953" />
+    <option name="contentProportion" value="0.18932039" />
   </component>
   <component name="RunManager" selected="Spring Boot.EurekaServerApplication">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -596,11 +638,13 @@
       <workItem from="1526516907809" duration="24453000" />
       <workItem from="1526602176111" duration="28615000" />
       <workItem from="1526863678844" duration="19568000" />
+      <workItem from="1526950754869" duration="18728000" />
+      <workItem from="1526978245071" duration="4693000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="324622000" />
+    <option name="totallyTimeSpent" value="348043000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -612,7 +656,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1943" height="1047" extended-state="0" />
+    <frame x="-8" y="0" width="1943" height="1047" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -631,12 +675,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30769232" sideWeight="0.4978678" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3813187" sideWeight="0.4978678" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33076924" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25650558" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26181626" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -679,7 +723,7 @@
           <option name="timeStamp" value="100" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="150" />
+      <option name="time" value="154" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -694,414 +738,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/dto/UserRoleDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/exception/NotFoundParentNodeException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysMenuMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="28" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysPermissionResourcePkMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/MenuTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysPermissionResourceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/dto/UserDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/model/SysRolePermission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/model/SysRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysMenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="51" column="5" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="51" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysRolePermissionPk.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysPermissionResourcePk.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysUserRolePk.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/BaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-476">
-          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysRoleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysPermissionMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/security/Permission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="64" column="22" lean-forward="false" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysRoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysPermission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="28" lean-forward="false" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="45" lean-forward="false" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserRoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/mapper/SysUserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-          <folding>
-            <marker date="1526633915037" expanded="true" signature="1021:1109" ph="select B.use... sys_user_role_pk" />
-            <marker date="1526633915037" expanded="true" signature="1355:1443" ph="select B.use... sys_user_role_pk" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/dao/SysRoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/dao/SysPermissionMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/model/SysPermission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/model/SysUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/mapper/SysPermissionResourcePkMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysResourceMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/model/SysResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/dao/SysUserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-220">
-          <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="36" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/mapper/SysResourceMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="23" column="312" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="312" />
-          <folding>
-            <marker date="1526896159542" expanded="true" signature="805:919" ph="select B.res... sys_permission_resource_pk" />
-            <marker date="1526896159542" expanded="true" signature="1177:1291" ph="select B.res... sys_permission_resource_pk" />
-            <marker date="1526896159542" expanded="true" signature="1497:1805" ph="select * fro... sys_resource" />
-            <marker date="1526896159542" expanded="true" signature="1537:1804" ph="select resou... sys_permission_resource_pk" />
-            <marker date="1526896159542" expanded="true" signature="1612:1803" ph="select id fr... sys_permission" />
-            <marker date="1526896159542" expanded="true" signature="1655:1802" ph="select permi... sys_role_permission_pk" />
-            <marker date="1526896159542" expanded="true" signature="1722:1801" ph="select role_... sys_user_role_pk" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/dao/SysResourceMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/util/HttpResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="32" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/service/impl/SysUserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/service/SysUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="33" lean-forward="true" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/ApiGatewayApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/config/FilterConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/config/ResourceServerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/config/ServiceConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-144">
@@ -1110,26 +746,383 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="34" column="19" lean-forward="true" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/config/ResourceServerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-48">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/WebSecurityConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/AuthorizationServerConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-384">
+          <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/handler/MyPasswordEncoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/handler/CustomLogoutHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="42" column="47" lean-forward="true" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security.java" />
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/SimpleGrantedAuthority.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/CustomAuthentication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/CustomerSecurityExpressionRoot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/annotation/PreAuth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysMenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/constants/AccessType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="39" lean-forward="false" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/constants/SecurityConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/filter/CustomAuthorizationFilter.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/sun/jersey/jersey-server/1.19.1/jersey-server-1.19.1.jar!/com/sun/jersey/spi/container/ContainerRequestFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/security/CustomCheckPermission.java" />
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/security/UserDetailsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/security/filter/SecureResourceFilterInvocationDefinitionSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/security/filter/SecurityAccessDecisionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-192">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/security/filter/CustomLogoutHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/security/filter/CustomSecurityFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/AuthenticationManagerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/ResourceServerConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/custom/CustomRedisTokenStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-334">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/config/FilterConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="26" column="25" lean-forward="false" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/ResourceGeneration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/filter/UserContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="39" column="18" lean-forward="false" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/config/FilterConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="19" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/properties/PermitAllUrlProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/filter/AuthAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/client/FeignAuthClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="114" column="60" lean-forward="true" selection-start-line="114" selection-start-column="60" selection-end-line="114" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/AdminApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#593#594#0" expanded="false" />
+            <element signature="e#651#652#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="30" column="37" lean-forward="false" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/nycloud/common/dto/RequestDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/filter/AuthorizationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/constants/SecurityConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/security/HeaderEnhanceFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/nycloud/gateway/security/CustomRemoteTokenServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding>
+            <element signature="e#3436#3452#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="63" column="36" lean-forward="true" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/AuthServerApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="72" lean-forward="false" selection-start-line="4" selection-start-column="72" selection-end-line="4" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/custom/CustomJwtAccessTokenConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/custom/CustomUserDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-640">
+          <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/custom/CustomAuthorizationTokenServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="35" column="34" lean-forward="true" selection-start-line="35" selection-start-column="34" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/custom/CustomAuthenticationToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/nycloud/auth/config/custom/CustomAuthenticationProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="46" column="16" lean-forward="true" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="35" column="22" lean-forward="true" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        <state relative-caret-position="290">
+          <caret line="90" column="19" lean-forward="true" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
           <folding />
         </state>
       </provider>
