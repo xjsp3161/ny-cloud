@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2018-05-21 19:43:58
+Date: 2018-05-23 19:02:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -198,6 +198,13 @@ CREATE TABLE `sys_permission_resource_pk` (
 -- ----------------------------
 -- Records of sys_permission_resource_pk
 -- ----------------------------
+INSERT INTO `sys_permission_resource_pk` VALUES ('1', '49');
+INSERT INTO `sys_permission_resource_pk` VALUES ('1', '50');
+INSERT INTO `sys_permission_resource_pk` VALUES ('1', '51');
+INSERT INTO `sys_permission_resource_pk` VALUES ('1', '52');
+INSERT INTO `sys_permission_resource_pk` VALUES ('1', '53');
+INSERT INTO `sys_permission_resource_pk` VALUES ('1', '54');
+INSERT INTO `sys_permission_resource_pk` VALUES ('1', '55');
 INSERT INTO `sys_permission_resource_pk` VALUES ('1', '29');
 INSERT INTO `sys_permission_resource_pk` VALUES ('1', '30');
 INSERT INTO `sys_permission_resource_pk` VALUES ('1', '31');
@@ -218,13 +225,6 @@ INSERT INTO `sys_permission_resource_pk` VALUES ('1', '45');
 INSERT INTO `sys_permission_resource_pk` VALUES ('1', '46');
 INSERT INTO `sys_permission_resource_pk` VALUES ('1', '47');
 INSERT INTO `sys_permission_resource_pk` VALUES ('1', '48');
-INSERT INTO `sys_permission_resource_pk` VALUES ('1', '49');
-INSERT INTO `sys_permission_resource_pk` VALUES ('1', '50');
-INSERT INTO `sys_permission_resource_pk` VALUES ('1', '51');
-INSERT INTO `sys_permission_resource_pk` VALUES ('1', '52');
-INSERT INTO `sys_permission_resource_pk` VALUES ('1', '53');
-INSERT INTO `sys_permission_resource_pk` VALUES ('1', '54');
-INSERT INTO `sys_permission_resource_pk` VALUES ('1', '55');
 
 -- ----------------------------
 -- Table structure for sys_privilege
@@ -249,6 +249,7 @@ CREATE TABLE `sys_resource` (
   `name` varchar(255) DEFAULT NULL COMMENT '资源名称',
   `url` varchar(255) DEFAULT NULL COMMENT '资源接口URL',
   `url_request_type` varchar(255) DEFAULT NULL COMMENT '资源接口URL请求类型',
+  `authority` varchar(255) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL COMMENT '资源描述',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
@@ -256,33 +257,33 @@ CREATE TABLE `sys_resource` (
 -- ----------------------------
 -- Records of sys_resource
 -- ----------------------------
-INSERT INTO `sys_resource` VALUES ('29', '菜单列表查询', 'api/sysMenu', 'GET', '可分页并可根据菜单名称模糊检索');
-INSERT INTO `sys_resource` VALUES ('30', '菜单更新', 'api/sysMenu', 'PUT', '根据传递的SysMenu对象来更新, SysMenu对象必须包含id');
-INSERT INTO `sys_resource` VALUES ('31', '菜单详情查询', 'api/sysMenu/info', 'DELETE', '根据id查询菜单详细信息');
-INSERT INTO `sys_resource` VALUES ('32', '菜单保存', 'api/sysMenu', 'POST', '根据SysMenu对象创建用户');
-INSERT INTO `sys_resource` VALUES ('33', '菜单树查询', 'api/sysMenu/tree', 'GET', '查询所有可用菜单并返回树状结构');
-INSERT INTO `sys_resource` VALUES ('34', '权限列表查询', 'api/sysPermission', 'GET', '可分页并可根据权限名称模糊检索');
-INSERT INTO `sys_resource` VALUES ('35', '权限保存', 'api/sysPermission', 'POST', '根据SysPermission对象创建权限');
-INSERT INTO `sys_resource` VALUES ('36', '权限是否已存在', 'api/sysPermission/exist', 'GET', '根据SysPermission对象设定的字段值来查询判断');
-INSERT INTO `sys_resource` VALUES ('37', '权限关联菜单批量删除', 'api/sysPermissionMenu/batchDelete', 'POST', '根据权限id和多个菜单id删除关联');
-INSERT INTO `sys_resource` VALUES ('38', '权限关联菜单批量保存', 'api/sysPermissionMenu/batchSave', 'POST', '保存多个SysPermissionMenuPk对象');
-INSERT INTO `sys_resource` VALUES ('39', '权限已关联菜单树查询', 'api/sysPermissionMenu/permissionMenuTree', 'GET', '根据权限id查询该权限已关联的菜单并返回菜单树');
-INSERT INTO `sys_resource` VALUES ('40', '权限未关联菜单树查询', 'api/sysPermissionMenu/permissionNoRelationMenuTree', 'GET', '根据权限id查询该权限未关联的菜单并返回菜单树');
-INSERT INTO `sys_resource` VALUES ('41', '资源列表查询', 'api/sysResource', 'GET', '可分页并可根据权限名称模糊检索');
-INSERT INTO `sys_resource` VALUES ('42', '资源保存', 'api/sysResource', 'POST', '根据SysResource对象创建资源');
-INSERT INTO `sys_resource` VALUES ('43', '资源详情查询', 'api/sysResource/info', 'GET', '根据id查询资源详细信息');
-INSERT INTO `sys_resource` VALUES ('44', '资源是否已存在', 'api/sysResource/exist', 'GET', '根据SysResource对象设定的字段值来查询判断');
-INSERT INTO `sys_resource` VALUES ('45', '角色列表查询', 'api/sysRole', 'GET', '可分页并可根据角色名称模糊检索');
-INSERT INTO `sys_resource` VALUES ('46', '角色保存', 'api/sysRole', 'POST', '根据SysRole对象创建角色');
-INSERT INTO `sys_resource` VALUES ('47', '用户列表查询', 'api/sysUser', 'GET', '可分页并可根据用户名称模糊检索');
-INSERT INTO `sys_resource` VALUES ('48', '用户详情查询', 'api/sysUser/info', 'GET', '根据id查询用户详细信息');
-INSERT INTO `sys_resource` VALUES ('49', '用户可用菜单树查询', 'api/sysUser/userMenuTree', 'GET', '根据用户权限查询已分配好的菜单');
-INSERT INTO `sys_resource` VALUES ('50', '用户组列表查询', 'api/sysUserGroup', 'GET', '可分页并可根据用户组名称模糊检索');
-INSERT INTO `sys_resource` VALUES ('51', '用户组保存', 'api/sysUserGroup', 'POST', '根据SysUserGroup对象创建用户组');
-INSERT INTO `sys_resource` VALUES ('52', '用户关联角色批量删除', 'api/sysUserRole/batchDelete', 'POST', '根据用户id和多个角色id删除关联');
-INSERT INTO `sys_resource` VALUES ('53', '用户关联角色批量保存', 'api/sysUserRole/batchSave', 'POST', '保存多个SysUserRolePk对象');
-INSERT INTO `sys_resource` VALUES ('54', '用户已关联角色查询', 'api/sysUserRole/userRoleList', 'GET', '根据用户id查询该用户已关联的角色并返回角色列表');
-INSERT INTO `sys_resource` VALUES ('55', '用户未关联角色查询', 'api/sysUserRole/userNoRelationRoleList', 'GET', '根据用户id查询该用户未关联的角色并返回角色列表');
+INSERT INTO `sys_resource` VALUES ('29', '菜单列表查询', 'api/sysMenu', 'GET', null, '可分页并可根据菜单名称模糊检索');
+INSERT INTO `sys_resource` VALUES ('30', '菜单更新', 'api/sysMenu', 'PUT', null, '根据传递的SysMenu对象来更新, SysMenu对象必须包含id');
+INSERT INTO `sys_resource` VALUES ('31', '菜单详情查询', 'api/sysMenu/info', 'DELETE', null, '根据id查询菜单详细信息');
+INSERT INTO `sys_resource` VALUES ('32', '菜单保存', 'api/sysMenu', 'POST', null, '根据SysMenu对象创建用户');
+INSERT INTO `sys_resource` VALUES ('33', '菜单树查询', 'api/sysMenu/tree', 'GET', null, '查询所有可用菜单并返回树状结构');
+INSERT INTO `sys_resource` VALUES ('34', '权限列表查询', 'api/sysPermission', 'GET', null, '可分页并可根据权限名称模糊检索');
+INSERT INTO `sys_resource` VALUES ('35', '权限保存', 'api/sysPermission', 'POST', null, '根据SysPermission对象创建权限');
+INSERT INTO `sys_resource` VALUES ('36', '权限是否已存在', 'api/sysPermission/exist', 'GET', null, '根据SysPermission对象设定的字段值来查询判断');
+INSERT INTO `sys_resource` VALUES ('37', '权限关联菜单批量删除', 'api/sysPermissionMenu/batchDelete', 'POST', null, '根据权限id和多个菜单id删除关联');
+INSERT INTO `sys_resource` VALUES ('38', '权限关联菜单批量保存', 'api/sysPermissionMenu/batchSave', 'POST', null, '保存多个SysPermissionMenuPk对象');
+INSERT INTO `sys_resource` VALUES ('39', '权限已关联菜单树查询', 'api/sysPermissionMenu/permissionMenuTree', 'GET', null, '根据权限id查询该权限已关联的菜单并返回菜单树');
+INSERT INTO `sys_resource` VALUES ('40', '权限未关联菜单树查询', 'api/sysPermissionMenu/permissionNoRelationMenuTree', 'GET', null, '根据权限id查询该权限未关联的菜单并返回菜单树');
+INSERT INTO `sys_resource` VALUES ('41', '资源列表查询', 'api/sysResource', 'GET', null, '可分页并可根据权限名称模糊检索');
+INSERT INTO `sys_resource` VALUES ('42', '资源保存', 'api/sysResource', 'POST', null, '根据SysResource对象创建资源');
+INSERT INTO `sys_resource` VALUES ('43', '资源详情查询', 'api/sysResource/info', 'GET', null, '根据id查询资源详细信息');
+INSERT INTO `sys_resource` VALUES ('44', '资源是否已存在', 'api/sysResource/exist', 'GET', null, '根据SysResource对象设定的字段值来查询判断');
+INSERT INTO `sys_resource` VALUES ('45', '角色列表查询', 'api/sysRole', 'GET', null, '可分页并可根据角色名称模糊检索');
+INSERT INTO `sys_resource` VALUES ('46', '角色保存', 'api/sysRole', 'POST', null, '根据SysRole对象创建角色');
+INSERT INTO `sys_resource` VALUES ('47', '用户列表查询', 'api/sysUser', 'GET', null, '可分页并可根据用户名称模糊检索');
+INSERT INTO `sys_resource` VALUES ('48', '用户详情查询', 'api/sysUser/info', 'GET', null, '根据id查询用户详细信息');
+INSERT INTO `sys_resource` VALUES ('49', '用户可用菜单树查询', 'api/sysUser/userMenuTree', 'GET', null, '根据用户权限查询已分配好的菜单');
+INSERT INTO `sys_resource` VALUES ('50', '用户组列表查询', 'api/sysUserGroup', 'GET', null, '可分页并可根据用户组名称模糊检索');
+INSERT INTO `sys_resource` VALUES ('51', '用户组保存', 'api/sysUserGroup', 'POST', null, '根据SysUserGroup对象创建用户组');
+INSERT INTO `sys_resource` VALUES ('52', '用户关联角色批量删除', 'api/sysUserRole/batchDelete', 'POST', null, '根据用户id和多个角色id删除关联');
+INSERT INTO `sys_resource` VALUES ('53', '用户关联角色批量保存', 'api/sysUserRole/batchSave', 'POST', null, '保存多个SysUserRolePk对象');
+INSERT INTO `sys_resource` VALUES ('54', '用户已关联角色查询', 'api/sysUserRole/userRoleList', 'GET', null, '根据用户id查询该用户已关联的角色并返回角色列表');
+INSERT INTO `sys_resource` VALUES ('55', '用户未关联角色查询', 'api/sysUserRole/userNoRelationRoleList', 'GET', null, '根据用户id查询该用户未关联的角色并返回角色列表');
 
 -- ----------------------------
 -- Table structure for sys_role
@@ -334,7 +335,7 @@ CREATE TABLE `sys_role_privilege_pk` (
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_user`;
 CREATE TABLE `sys_user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(32) NOT NULL,
   `create_time` bigint(20) DEFAULT NULL,
@@ -343,22 +344,22 @@ CREATE TABLE `sys_user` (
   `authorities` varchar(100) DEFAULT NULL,
   `name` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('1', 'admin', '123456', null, null, null, null, '管理员');
-INSERT INTO `sys_user` VALUES ('2', 'super', '123456', null, null, null, null, '超人');
-INSERT INTO `sys_user` VALUES ('3', 'leson', '123456', null, null, null, null, '王大锤');
-INSERT INTO `sys_user` VALUES ('4', 'student', '123456', null, null, null, null, '烟花易冷');
-INSERT INTO `sys_user` VALUES ('5', 'baidu', '123456', null, null, null, null, '百度科技');
-INSERT INTO `sys_user` VALUES ('6', 'tencent', '123456', null, null, null, null, '腾讯控股');
-INSERT INTO `sys_user` VALUES ('7', 'alibaba', '123456', null, null, null, null, '阿里巴巴');
-INSERT INTO `sys_user` VALUES ('8', '360', '123456', null, null, null, null, '360安全卫士');
-INSERT INTO `sys_user` VALUES ('9', 'jd', '123456', null, null, null, null, '京东商城');
-INSERT INTO `sys_user` VALUES ('10', 'xiaomi', '123456', null, null, null, null, '小米科技');
-INSERT INTO `sys_user` VALUES ('11', 'leshi', '123456', null, null, null, null, '乐视网');
+INSERT INTO `sys_user` VALUES ('196618686130565120', 'admin', '123456', null, null, null, null, '管理员');
+INSERT INTO `sys_user` VALUES ('196618686130565121', 'super', '123456', null, null, null, null, '超人');
+INSERT INTO `sys_user` VALUES ('196618686130565122', 'leson', '123456', null, null, null, null, '王大锤');
+INSERT INTO `sys_user` VALUES ('196618686130565123', 'student', '123456', null, null, null, null, '烟花易冷');
+INSERT INTO `sys_user` VALUES ('196618686130565124', 'baidu', '123456', null, null, null, null, '百度科技');
+INSERT INTO `sys_user` VALUES ('196618686130565125', 'tencent', '123456', null, null, null, null, '腾讯控股');
+INSERT INTO `sys_user` VALUES ('196618686130565126', 'alibaba', '123456', null, null, null, null, '阿里巴巴');
+INSERT INTO `sys_user` VALUES ('196618686130565127', '360', '123456', null, null, null, null, '360安全卫士');
+INSERT INTO `sys_user` VALUES ('196618686130565128', 'jd', '123456', null, null, null, null, '京东商城');
+INSERT INTO `sys_user` VALUES ('196618686130565129', 'xiaomi', '123456', null, null, null, null, '小米科技');
+INSERT INTO `sys_user` VALUES ('196618686130565130', 'leshi', '123456', null, null, null, null, '乐视网');
 
 -- ----------------------------
 -- Table structure for sys_user_group
@@ -410,13 +411,13 @@ CREATE TABLE `sys_user_group_role_pk` (
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_user_role_pk`;
 CREATE TABLE `sys_user_role_pk` (
-  `user_id` int(20) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
   `role_id` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_user_role_pk
 -- ----------------------------
-INSERT INTO `sys_user_role_pk` VALUES ('3', '1');
+INSERT INTO `sys_user_role_pk` VALUES ('196618686130565120', '1');
 INSERT INTO `sys_user_role_pk` VALUES ('4', '2');
 INSERT INTO `sys_user_role_pk` VALUES ('4', '1');
