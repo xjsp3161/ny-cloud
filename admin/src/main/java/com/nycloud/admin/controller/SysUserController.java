@@ -1,5 +1,6 @@
 package com.nycloud.admin.controller;
 
+import com.nycloud.admin.annotation.PreAuth;
 import com.nycloud.admin.model.SysUser;
 import com.nycloud.admin.service.SysPermissionMenuServicePk;
 import com.nycloud.admin.service.SysUserService;
@@ -20,6 +21,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "api/sysUser")
 public class SysUserController {
 
+    private final String URL = "api/sysUser";
+
     @Autowired
     private SysUserService sysUserService;
 
@@ -28,6 +31,7 @@ public class SysUserController {
 
     @ApiOperation(value = "用户列表查询", notes = "可分页并可根据用户名称模糊检索")
     @GetMapping
+    @PreAuth("hasAuthority('GET_SYS_USER_PAGE_LIST')")
     public HttpResponse index(RequestDto requestDto) {
         requestDto.setKey("username");
         return new HttpResponse().success(sysUserService.findByPageList(requestDto));
@@ -35,7 +39,8 @@ public class SysUserController {
 
     @ApiOperation(value = "用户详情查询", notes = "根据id查询用户详细信息")
     @GetMapping("/info")
-    public HttpResponse info(@RequestParam Integer id) {
+    @PreAuth("hasAuthority('GET_SYS_USER_PAGE_LIST')")
+    public HttpResponse info(@RequestParam Long id) {
         SysUser sysUser = new SysUser();
         sysUser.setId(id);
         return new HttpResponse().success(sysUserService.selectOne(sysUser));

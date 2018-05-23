@@ -16,7 +16,7 @@ public class UserRoleDto extends RequestDto {
     /**
      * 用户Id
      */
-    private Integer userId;
+    private Long userId;
 
     /**
      * 多个角色Id

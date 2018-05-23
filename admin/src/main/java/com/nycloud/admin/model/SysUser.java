@@ -8,7 +8,7 @@ import java.util.List;
 public class SysUser {
 
     @Id
-    private Integer id;
+    private Long id;
 
     private String username;
 

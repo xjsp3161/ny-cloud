@@ -4,7 +4,7 @@ import com.nycloud.admin.model.MenuTree;
 import java.util.Comparator;
 
 /**
- * @description: 所有的排序都是按照字段的升序处理 优先级别同 菜单查询SQL {Order By level, sore, id Asc} 一致
+ * @description: 所有的排序都是按照字段的升序处理 优先级别同 菜单查询SQL {Order By level, sort, id Asc} 一致
  * @author: super.wu
  * @date: Created in 2018/5/17 0017
  * @modified By:

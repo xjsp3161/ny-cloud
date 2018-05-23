@@ -78,7 +78,7 @@ public class MenuTreeUtil {
 
 
     /**
-     * 生成菜单树,
+     * 生成菜单树
      * @param sortList 已经按照规则排好序的菜单集合
      * @return
      */
@@ -112,7 +112,7 @@ public class MenuTreeUtil {
 
 
     /**
-     * 无限遍历菜单
+     * 无限遍历菜单添加子节点
      * @param nodeList
      * @param currentNode
      */

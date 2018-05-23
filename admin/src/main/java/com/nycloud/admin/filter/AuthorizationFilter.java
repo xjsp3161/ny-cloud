@@ -4,8 +4,10 @@ import com.nycloud.admin.client.FeignAuthClient;
 import com.nycloud.admin.constants.AccessType;
 import com.nycloud.admin.constants.SecurityConstants;
 import com.nycloud.admin.model.SysResource;
+import com.nycloud.admin.model.SysUser;
 import com.nycloud.admin.security.CustomAuthentication;
 import com.nycloud.admin.security.SimpleGrantedAuthority;
+import com.nycloud.common.vo.HttpResponse;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -41,10 +43,11 @@ public class AuthorizationFilter implements Filter {
         String userId = ((HttpServletRequest) servletRequest).getHeader(SecurityConstants.USER_ID_IN_HEADER);
 
         if (StringUtils.isNotEmpty(userId)) {
-            UserContext userContext = new UserContext(UUID.fromString(userId));
+            UserContext userContext = new UserContext(userId);
             userContext.setAccessType(AccessType.ACCESS_TYPE_NORMAL);
 
-            List<SysResource> permissionList = feignAuthClient.getUserResources(Integer.valueOf(userId));
+            HttpResponse<SysUser> response = feignAuthClient.getUserResources(Long.valueOf(userId));
+            List<SysResource> permissionList = response.getData().getResourceList();
             List<SimpleGrantedAuthority> authorityList = new ArrayList();
             for (SysResource sysResource : permissionList) {
                 SimpleGrantedAuthority authority = new SimpleGrantedAuthority();

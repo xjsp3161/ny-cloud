@@ -10,19 +10,6 @@ import java.util.List;
  */
 @Mapper
 public interface SysUserMapper {
-    @Delete({
-        "delete from sys_user",
-        "where id = #{id,jdbcType=INTEGER}"
-    })
-    int deleteByPrimaryKey(Integer id);
-
-    @Insert({
-        "insert into sys_user (id, username, ",
-        "password)",
-        "values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, ",
-        "#{password,jdbcType=VARCHAR})"
-    })
-    int insert(SysUser record);
 
     @Select({
         "select",
@@ -31,23 +18,11 @@ public interface SysUserMapper {
         "where id = #{id,jdbcType=INTEGER}"
     })
     @Results({
-        @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+        @Result(column="id", property="id", jdbcType=JdbcType.BIGINT, id=true),
         @Result(column="username", property="username", jdbcType=JdbcType.VARCHAR),
         @Result(column="password", property="password", jdbcType=JdbcType.VARCHAR)
     })
-    SysUser selectByPrimaryKey(Integer id);
-
-    @Select({
-        "select",
-        "id, username, password",
-        "from sys_user"
-    })
-    @Results({
-        @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
-        @Result(column="username", property="username", jdbcType=JdbcType.VARCHAR),
-        @Result(column="password", property="password", jdbcType=JdbcType.VARCHAR)
-    })
-    List<SysUser> selectAll();
+    SysUser selectByPrimaryKey(Long id);
 
     @Select({
             "select",
@@ -61,11 +36,5 @@ public interface SysUserMapper {
     })
     SysUser findSysUserByUserName(@Param("username") String username);
 
-    @Update({
-        "update sys_user",
-        "set username = #{username,jdbcType=VARCHAR},",
-          "password = #{password,jdbcType=VARCHAR}",
-        "where id = #{id,jdbcType=INTEGER}"
-    })
-    int updateByPrimaryKey(SysUser record);
+
 }

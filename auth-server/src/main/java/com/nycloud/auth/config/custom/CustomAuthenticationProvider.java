@@ -29,11 +29,6 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String username = authentication.getName();
 
-        SysUser sysUser = sysUserService.findByUserName(authentication.getName());
-        System.out.println(authentication.getName() + "+++++++++++++++++" + authentication.getCredentials());
-        if (sysUser == null || !sysUser.getPassword().equals(authentication.getCredentials())) {
-            throw new BadCredentialsException("用户名或密码错误。");
-        }
         String password;
         Map data;
         if(authentication.getDetails() instanceof Map) {
@@ -52,7 +47,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         map = checkUsernameAndPassword(getUserServicePostObject(username, password, type));
 
 
-        String userId = (String) map.get("userId");
+        String userId = map.get("userId").toString();
         if (StringUtils.isBlank(userId)) {
             String errorCode = (String) map.get("code");
             throw new BadCredentialsException(errorCode);
@@ -73,7 +68,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     private Map<String, String> getUserServicePostObject(String username, String password, String type) {
         Map<String, String> requestParam = new HashMap<String, String>();
-        requestParam.put("userName", username);
+        requestParam.put("username", username);
         requestParam.put("password", password);
         if (type != null && StringUtils.isNotBlank(type)) {
             requestParam.put("type", type);
@@ -83,12 +78,15 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     //模拟调用user服务的方法
     private Map checkUsernameAndPassword(Map map) {
-
-        //checkUsernameAndPassword
-        Map ret = new HashMap();
-        ret.put("userId", UUID.randomUUID().toString());
-
-        return ret;
+        String username = map.get("username").toString();
+        String password = map.get("password").toString();
+        SysUser sysUser = sysUserService.findByUserName(username);
+        if (sysUser == null || !sysUser.getPassword().equals(password)) {
+            map.put("code", -1);
+        } else {
+            map.put("userId", sysUser.getId());
+        }
+        return map;
     }
 
     @Override

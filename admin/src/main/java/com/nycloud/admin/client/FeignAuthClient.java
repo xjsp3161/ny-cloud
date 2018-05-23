@@ -1,6 +1,8 @@
 package com.nycloud.admin.client;
 
 import com.nycloud.admin.model.SysResource;
+import com.nycloud.admin.model.SysUser;
+import com.nycloud.common.vo.HttpResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +27,7 @@ public interface FeignAuthClient {
      * @return
      */
     @GetMapping(value = "/userResources?userId={userId}")
-    List<SysResource> getUserResources(@RequestParam(value = "userId") Integer userId);
+    HttpResponse<SysUser> getUserResources(@RequestParam(value = "userId") Long userId);
 
 }
 

@@ -15,7 +15,7 @@ public class UserContext implements UserDetails, SecurityContext {
 
     private static final long serialVersionUID = -5710100626512497575L;
 
-    private UUID userId;
+    private String userId;
 
     private String password;
 
@@ -39,7 +39,7 @@ public class UserContext implements UserDetails, SecurityContext {
 
     private AccessType accessType;
 
-    public UserContext(UUID userId) {
+    public UserContext(String userId) {
         this.userId = userId;
     }
 

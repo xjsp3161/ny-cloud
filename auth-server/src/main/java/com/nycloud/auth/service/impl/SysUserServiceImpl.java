@@ -28,7 +28,8 @@ public class SysUserServiceImpl implements SysUserService {
         return sysUserMapper.findSysUserByUserName(username);
     }
 
-    public SysUser selectUserResources(Integer userId) {
+    @Override
+    public SysUser selectUserResources(Long userId) {
         SysUser sysUser = sysUserMapper.selectByPrimaryKey(userId);
         if (sysUser != null) {
             sysUser.setResourceList(resourceMapper.selectUserResources(sysUser.getId()));
