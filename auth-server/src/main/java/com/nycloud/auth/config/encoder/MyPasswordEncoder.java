@@ -1,14 +1,14 @@
-package com.nycloud.auth.config.handler;
+package com.nycloud.auth.config.encoder;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * @description:
  * @author: super.wu
- * @date: Created in 2018/5/4 0004
+ * @date: Created in 2018/5/25 0025
  * @modified By:
  * @version: 1.0
  **/
-import org.springframework.security.crypto.password.PasswordEncoder;
-
 public class MyPasswordEncoder implements PasswordEncoder {
 
     @Override
@@ -20,5 +20,4 @@ public class MyPasswordEncoder implements PasswordEncoder {
     public boolean matches(CharSequence arg0, String arg1) {
         return arg1.equals(arg0.toString());
     }
-
 }

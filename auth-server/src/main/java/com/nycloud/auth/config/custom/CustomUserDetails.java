@@ -4,19 +4,18 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 
-/**
- * @author keets
- * @date 2017/8/5
- */
+
 public class CustomUserDetails implements UserDetails {
+
     static final long serialVersionUID = -7588980448693010399L;
+
+    private String userId;
+
     private String username;
 
     private String password;
 
     private boolean enabled = true;
-
-    private String userId;
 
     private String clientId;
 
