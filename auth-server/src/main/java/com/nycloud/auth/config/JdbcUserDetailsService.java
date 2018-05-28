@@ -46,6 +46,7 @@ public class JdbcUserDetailsService {
             customUserDetails.setAuthorities(new HashSet<>());
             return customUserDetails;
         }
+
     }
 
 }
