@@ -52,4 +52,10 @@ public class SysUserController {
         return new HttpResponse().success(sysPermissionMenuPkService.loadPermissionMenuTree(1));
     }
 
+    @ApiOperation(value = "用户所有可用资源查询", notes = "根据用户Id查询分配的角色权限下面的资源列表")
+    @GetMapping("/userResources")
+    public HttpResponse userResources(Long userId) {
+        return new HttpResponse().success(sysUserService.selectUserResources(userId));
+    }
+
 }

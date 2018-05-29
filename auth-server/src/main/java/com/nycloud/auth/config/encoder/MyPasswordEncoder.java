@@ -3,7 +3,7 @@ package com.nycloud.auth.config.encoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
- * @description:
+ * @description: Client Password Encoder
  * @author: super.wu
  * @date: Created in 2018/5/25 0025
  * @modified By:

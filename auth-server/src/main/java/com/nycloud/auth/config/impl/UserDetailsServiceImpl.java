@@ -1,14 +1,11 @@
 package com.nycloud.auth.config.impl;
 
-import com.nycloud.auth.config.JdbcUserDetailsService;
+import com.nycloud.auth.config.service.JdbcUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import java.util.HashSet;
 
 
 /**
@@ -37,6 +34,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if(userDetails == null){
             throw new UsernameNotFoundException("用户名："+ username + "不存在！");
         }
-        return new User(userDetails.getUsername(), userDetails.getPassword(), new HashSet<>());
+        return userDetails;
     }
 }

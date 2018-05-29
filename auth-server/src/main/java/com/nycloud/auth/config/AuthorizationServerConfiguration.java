@@ -1,15 +1,14 @@
 package com.nycloud.auth.config;
 
+import com.nycloud.auth.config.custom.CustomJwtAccessTokenConverter;
 import com.nycloud.auth.config.custom.CustomRedisTokenStore;
 import com.nycloud.auth.config.impl.ClientDetailsServiceImpl;
-import com.nycloud.auth.config.impl.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -18,6 +17,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+
 
 /**
  * @description:
@@ -69,8 +69,11 @@ public class AuthorizationServerConfiguration  extends AuthorizationServerConfig
      */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        endpoints.authenticationManager(authenticationManager).accessTokenConverter(accessTokenConverter()).tokenStore(tokenStore());
+        endpoints.authenticationManager(authenticationManager)
+                .tokenStore(tokenStore())
+                .accessTokenConverter(accessTokenConverter());
     }
+
 
     /**
      * 使用Jwt的方式生成token
@@ -78,10 +81,11 @@ public class AuthorizationServerConfiguration  extends AuthorizationServerConfig
      */
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
-        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+        CustomJwtAccessTokenConverter converter = new CustomJwtAccessTokenConverter();
         converter.setSigningKey("secret");
         return converter;
     }
+
 
     @Bean
     public TokenStore tokenStore() {
@@ -93,8 +97,4 @@ public class AuthorizationServerConfiguration  extends AuthorizationServerConfig
         return new ClientDetailsServiceImpl();
     }
 
-    @Bean
-    public UserDetailsService userDetailsService() {
-        return new UserDetailsServiceImpl();
-    }
 }
