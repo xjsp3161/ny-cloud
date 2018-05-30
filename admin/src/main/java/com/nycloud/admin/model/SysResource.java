@@ -11,6 +11,10 @@ public class SysResource {
 
     private String name;
 
+    private String code;
+
+    private String pageElements;
+
     private String url;
 
     private String urlRequestType;

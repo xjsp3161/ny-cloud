@@ -1,5 +1,6 @@
 package com.nycloud.admin;
 
+import com.nycloud.admin.annotation.ResourcesMapping;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 import java.io.File;
@@ -57,6 +58,7 @@ public class ResourceGeneration {
                     PostMapping postMapping = method.getDeclaredAnnotation(PostMapping.class);
                     PutMapping putMapping = method.getDeclaredAnnotation(PutMapping.class);
                     DeleteMapping deleteMapping = method.getDeclaredAnnotation(DeleteMapping.class);
+                    ResourcesMapping resourcesMapping = method.getDeclaredAnnotation(ResourcesMapping.class);
                     if (apiOperation != null) {
                         StringBuffer sb = new StringBuffer("url = ");
                         sb.append(classUrl);
@@ -95,15 +97,33 @@ public class ResourceGeneration {
                         sb.append(apiOperation.value());
                         System.out.println(sb.toString());
                         String name = apiOperation.value();
-                        String url = classUrl + methodUrl;
+                        String url = classUrl  != null ? classUrl + methodUrl : methodUrl;
                         String urlRequestType = methodType;
                         String description = apiOperation.notes();
-                        StringBuffer sqlBuffer = new StringBuffer("insert into sys_resource (name, url, url_request_type, description) values('");
-                        sqlBuffer.append(name).append("','");
-                        sqlBuffer.append(url).append("','");
-                        sqlBuffer.append(urlRequestType).append("','");
-                        sqlBuffer.append(description).append("')");
-                        stmt.executeUpdate(sqlBuffer.toString());
+                        if (resourcesMapping != null) {
+                            String code = resourcesMapping.code();
+                            String pageElements = resourcesMapping.elements();
+                            StringBuffer sqlBuffer = new StringBuffer("insert into sys_resource (name, url, url_request_type, description, code, page_elements) values('");
+                            sqlBuffer.append(name).append("','");
+                            sqlBuffer.append(url).append("','");
+                            sqlBuffer.append(urlRequestType).append("','");
+                            sqlBuffer.append(description).append("','");
+                            sqlBuffer.append(code).append("','");
+                            sqlBuffer.append(pageElements);
+                            sqlBuffer.append("')");
+                            stmt.executeUpdate(sqlBuffer.toString());
+                        } else {
+                            StringBuffer sqlBuffer = new StringBuffer("insert into sys_resource (name, code, page_elements, url, url_request_type, description) values('");
+                            sqlBuffer.append(name).append("','','','");
+                            sqlBuffer.append(url).append("','");
+                            sqlBuffer.append(urlRequestType).append("','");
+                            sqlBuffer.append(description).append("')");
+                            try {
+                                stmt.executeUpdate(sqlBuffer.toString());
+                            } catch (Exception e) {
+                                System.out.println(sqlBuffer.toString());
+                            }
+                        }
                     }
                 }
             }

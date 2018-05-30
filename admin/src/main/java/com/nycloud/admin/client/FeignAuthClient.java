@@ -21,7 +21,7 @@ public interface FeignAuthClient {
      * @param userId
      * @return
      */
-    @GetMapping(value = "/api/sysUser/userResources?userId={userId}")
+    @GetMapping(value = "public/api/sysUser/userResources?userId={userId}")
     HttpResponse<SysUser> getUserResources(@RequestParam(value = "userId") Long userId);
 
 }

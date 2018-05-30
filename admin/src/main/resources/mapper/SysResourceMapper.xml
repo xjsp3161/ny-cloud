@@ -4,6 +4,8 @@
   <resultMap id="BaseResultMap" type="com.nycloud.admin.model.SysResource">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="page_elements" jdbcType="VARCHAR" property="pageElements" />
     <result column="url" jdbcType="VARCHAR" property="url" />
     <result column="url_request_type" jdbcType="VARCHAR" property="urlRequestType" />
     <result column="description" jdbcType="VARCHAR" property="description" />

@@ -50,7 +50,7 @@ public class AuthorizationFilter implements Filter {
             List<SimpleGrantedAuthority> authorityList = new ArrayList();
             for (SysResource sysResource : permissionList) {
                 SimpleGrantedAuthority authority = new SimpleGrantedAuthority();
-                authority.setAuthority(sysResource.getUrl());
+                authority.setAuthority(sysResource.getCode());
                 authorityList.add(authority);
             }
 
