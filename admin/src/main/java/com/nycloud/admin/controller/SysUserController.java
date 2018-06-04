@@ -1,12 +1,12 @@
 package com.nycloud.admin.controller;
 
-import com.nycloud.admin.annotation.PreAuth;
-import com.nycloud.admin.annotation.ResourcesMapping;
 import com.nycloud.admin.model.SysUser;
 import com.nycloud.admin.service.SysPermissionMenuServicePk;
 import com.nycloud.admin.service.SysUserService;
 import com.nycloud.common.dto.RequestDto;
 import com.nycloud.common.vo.HttpResponse;
+import com.nycloud.security.annotation.PreAuth;
+import com.nycloud.security.annotation.ResourcesMapping;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

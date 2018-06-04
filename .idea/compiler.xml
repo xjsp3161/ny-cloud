@@ -12,6 +12,7 @@
         <module name="common" />
         <module name="eureka-server" />
         <module name="ny-cloud" />
+        <module name="service-security" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -27,6 +28,7 @@
       <module name="gateway" target="1.8" />
       <module name="ny-cloud" target="1.8" />
       <module name="security" target="1.8" />
+      <module name="service-security" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -35,7 +35,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .anyRequest().authenticated();
     }
 
-
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
         CustomRemoteTokenServices resourceServerTokenServices = new CustomRemoteTokenServices();

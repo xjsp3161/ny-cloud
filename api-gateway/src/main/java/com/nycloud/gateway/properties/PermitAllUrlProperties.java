@@ -1,8 +1,6 @@
 package com.nycloud.gateway.properties;
 
-
 import lombok.Data;
-
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Iterator;

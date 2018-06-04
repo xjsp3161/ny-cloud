@@ -1,6 +1,6 @@
 package com.nycloud.admin;
 
-import com.nycloud.admin.annotation.ResourcesMapping;
+import com.nycloud.security.annotation.ResourcesMapping;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 import java.io.File;
