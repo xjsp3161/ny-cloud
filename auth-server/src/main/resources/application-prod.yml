@@ -1,10 +1,8 @@
 spring:
   application:
     name: nycloud-auth-server
-  profiles:
-    active: nycloud-auth-server
   datasource:
-    url: jdbc:mysql://172.21.0.10:3306/nycloud-admin?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://172.16.164.20:3306/nycloud-admin?useUnicode=true&characterEncoding=utf-8
     username: root
     password: 123456
     driverClassName: com.mysql.jdbc.Driver
@@ -19,7 +17,7 @@ spring:
       jdbc-interceptors: ConnectionState;SlowQueryReport(threshold=50)
   redis:
     database: 0
-    host: 172.21.0.10
+    host: 172.16.164.20
     password:
     timeout: 3000
     jedis:
@@ -34,6 +32,6 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://172.21.0.10:8760/eureka/ #服务注册中心地址
+      defaultZone: http://172.16.164.20:8760/eureka/ #服务注册中心地址
   instance:
-    hostname: 172.21.0.10
+    hostname: 172.16.164.20

@@ -1,8 +1,6 @@
 spring:
   application:
     name: nycloud-auth-server
-  profiles:
-    active: nycloud-auth-server
   datasource:
     url: jdbc:mysql://localhost:3306/nycloud-admin?useUnicode=true&characterEncoding=utf-8
     username: root
