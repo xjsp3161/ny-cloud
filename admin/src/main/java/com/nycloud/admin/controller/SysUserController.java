@@ -9,6 +9,7 @@ import com.nycloud.security.annotation.PreAuth;
 import com.nycloud.security.annotation.ResourcesMapping;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -33,7 +34,7 @@ public class SysUserController {
     @GetMapping(URL_MAPPING)
     @PreAuth("hasAuthority('sys_user_get')")
     @ResourcesMapping(elements = "查询", code = "sys_user_get")
-    public HttpResponse index(RequestDto requestDto) {
+    public HttpResponse index(Authentication authentication, RequestDto requestDto) {
         requestDto.setKey("username");
         return new HttpResponse().success(sysUserService.findByPageList(requestDto));
     }

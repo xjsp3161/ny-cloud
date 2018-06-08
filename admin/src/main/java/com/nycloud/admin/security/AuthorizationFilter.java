@@ -10,10 +10,12 @@ import com.nycloud.security.security.CustomAuthentication;
 import com.nycloud.security.security.SimpleGrantedAuthority;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import javax.servlet.*;
 import javax.servlet.FilterConfig;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequestWrapper;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,25 +39,9 @@ public class AuthorizationFilter implements Filter {
         // pass the request along the filter chain
         String userId = ((HttpServletRequest) servletRequest).getHeader(SecurityConstants.USER_ID_IN_HEADER);
 
-        if (StringUtils.isNotEmpty(userId)) {
-            UserContext userContext = new UserContext(userId);
-            userContext.setAccessType(AccessType.ACCESS_TYPE_NORMAL);
+        HttpServletRequestWrapper wrapper = new HttpServletRequestWrapper((HttpServletRequest) servletRequest);
 
-            HttpResponse<SysUser> response = feignAuthClient.getUserResources(Long.valueOf(userId));
-            List<SysResource> permissionList = response.getData().getResourceList();
-            List<SimpleGrantedAuthority> authorityList = new ArrayList();
-            for (SysResource sysResource : permissionList) {
-                SimpleGrantedAuthority authority = new SimpleGrantedAuthority();
-                authority.setAuthority(sysResource.getCode());
-                authorityList.add(authority);
-            }
-
-            CustomAuthentication userAuth  = new CustomAuthentication();
-            userAuth.setAuthorities(authorityList);
-            userContext.setAuthorities(authorityList);
-            userContext.setAuthentication(userAuth);
-            SecurityContextHolder.setContext(userContext);
-        }
+        wrapper.setAttribute("authentication", Long.valueOf(userId));
         filterChain.doFilter(servletRequest, servletResponse);
     }
 

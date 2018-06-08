@@ -15,7 +15,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.crypto.codec.Base64;
+import java.util.Base64;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.common.exceptions.InvalidTokenException;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
@@ -124,7 +124,7 @@ public class CustomRemoteTokenServices implements ResourceServerTokenServices {
     private String getAuthorizationHeader(String clientId, String clientSecret) {
         String creds = String.format("%s:%s", clientId, clientSecret);
         try {
-            return "Basic " + new String(Base64.encode(creds.getBytes("UTF-8")));
+            return new StringBuilder("Basic ").append(Base64.getEncoder().encodeToString(creds.getBytes("utf-8"))).toString();
         } catch (UnsupportedEncodingException e) {
             throw new IllegalStateException("Could not convert String");
         }

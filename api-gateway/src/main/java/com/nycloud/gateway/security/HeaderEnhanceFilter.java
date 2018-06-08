@@ -9,6 +9,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -54,9 +56,8 @@ public class HeaderEnhanceFilter implements Filter {
                     try {
                         authorization = StringUtils.substringBetween(authorization, ".");
                         String decoded = new String(Base64.decodeBase64(authorization));
-
                         Map properties = new ObjectMapper().readValue(decoded, Map.class);
-
+                        
                         String userId = (String) properties.get(SecurityConstants.USER_ID_IN_HEADER);
                         RequestContext.getCurrentContext().addZuulRequestHeader(SecurityConstants.USER_ID_IN_HEADER, userId);
                     } catch (Exception e) {
