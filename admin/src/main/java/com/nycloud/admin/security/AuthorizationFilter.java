@@ -10,6 +10,7 @@ import com.nycloud.security.security.CustomAuthentication;
 import com.nycloud.security.security.SimpleGrantedAuthority;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import javax.servlet.*;
@@ -36,12 +37,10 @@ public class AuthorizationFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         System.out.println("过滤器正在执行...");
-        // pass the request along the filter chain
         String userId = ((HttpServletRequest) servletRequest).getHeader(SecurityConstants.USER_ID_IN_HEADER);
+        if (StringUtils.isBlank(userId)) {
 
-        HttpServletRequestWrapper wrapper = new HttpServletRequestWrapper((HttpServletRequest) servletRequest);
-
-        wrapper.setAttribute("authentication", Long.valueOf(userId));
+        }
         filterChain.doFilter(servletRequest, servletResponse);
     }
 

@@ -1,7 +1,9 @@
 package com.nycloud.gateway.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.netflix.zuul.context.RequestContext;
+import com.netflix.zuul.http.ServletInputStreamWrapper;
 import com.nycloud.gateway.constants.SecurityConstants;
 import com.nycloud.gateway.properties.PermitAllUrlProperties;
 import org.apache.commons.codec.binary.Base64;
@@ -9,17 +11,14 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.User;
 
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
-import java.io.IOException;
+import java.io.*;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashSet;
@@ -37,6 +36,17 @@ public class HeaderEnhanceFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
+    }
+
+    class User {
+
+        public User(String userId, String username) {
+            this.userId = userId;
+            this.username = username;
+        }
+
+        public String userId;
+        public String username;
     }
 
     @Override
@@ -60,6 +70,38 @@ public class HeaderEnhanceFilter implements Filter {
                         
                         String userId = (String) properties.get(SecurityConstants.USER_ID_IN_HEADER);
                         RequestContext.getCurrentContext().addZuulRequestHeader(SecurityConstants.USER_ID_IN_HEADER, userId);
+
+                        RequestContext ctx = RequestContext.getCurrentContext();
+                        HttpServletRequest request = ctx.getRequest();
+                        InputStream in = (InputStream) ctx.get("requestEntity");
+                        String body = getInputString(in);
+
+                        ObjectMapper objectMapper = new ObjectMapper();
+                        Map<String, Object> map = objectMapper.readValue(body, Map.class);
+
+                        String username = (String) properties.get("username");
+                        Authentication authentication = new UsernamePasswordAuthenticationToken(new User(userId, username), null);
+                        map.put("authentication", authentication);
+
+                        StringWriter sw = new StringWriter();
+                        objectMapper.writeValue(sw, map);
+                        final byte[] reqBodyBytes = sw.toString().getBytes();
+                        RequestContext.getCurrentContext().setRequest(new HttpServletRequestWrapper(request) {
+                            @Override
+                            public ServletInputStream getInputStream() throws IOException {
+                                return new ServletInputStreamWrapper(reqBodyBytes);
+                            }
+
+                            @Override
+                            public int getContentLength() {
+                                return reqBodyBytes.length;
+                            }
+
+                            @Override
+                            public long getContentLengthLong() {
+                                return reqBodyBytes.length;
+                            }
+                        });
                     } catch (Exception e) {
                         LOGGER.error("Failed to customize header for the request, but still release it as the it would be regarded without any user details.", e);
                     }
@@ -71,6 +113,23 @@ public class HeaderEnhanceFilter implements Filter {
 
         }
         filterChain.doFilter(servletRequest, servletResponse);
+    }
+
+    public String getInputString(InputStream in) {
+        try {
+            BufferedReader bf=new BufferedReader(new InputStreamReader(in,"UTF-8"));
+            //最好在将字节流转换为字符流的时候 进行转码
+            StringBuffer buffer=new StringBuffer();
+            String line="";
+            while((line=bf.readLine())!=null){
+                buffer.append(line);
+            }
+
+            return buffer.toString();
+        } catch (Exception e) {
+
+        }
+       return null;
     }
 
     @Override
