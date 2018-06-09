@@ -27,6 +27,7 @@ import org.springframework.expression.ExpressionParser;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
 import org.springframework.security.access.expression.SecurityExpressionOperations;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
@@ -57,13 +58,11 @@ public class AuthAspect {
      */
     @Around("cut()&&@annotation(preAuth)")
     public Object record(ProceedingJoinPoint joinPoint, PreAuth preAuth) throws Throwable {
-    	
-    	 String userId = "196618686130565120";
-    	 UserContext userContext = new UserContext(userId);
-         userContext.setAccessType(AccessType.ACCESS_TYPE_NORMAL);
 
-//         HttpResponse<SysUser> response = feignAuthClient.getUserResources(Long.valueOf(userId));
-         List<SysResource> permissionList = sysUserService.selectUserResources(Long.valueOf(userId)).getResourceList();
+         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+         SysUser sysUser =  (SysUser) authentication.getPrincipal();
+
+         List<SysResource> permissionList = sysUserService.selectUserResources(sysUser.getId()).getResourceList();
          List<SimpleGrantedAuthority> authorityList = new ArrayList();
          for (SysResource sysResource : permissionList) {
              SimpleGrantedAuthority authority = new SimpleGrantedAuthority();
@@ -71,19 +70,18 @@ public class AuthAspect {
              authorityList.add(authority);
          }
 
+         UserContext userContext = new UserContext(sysUser.getId().toString());
+         userContext.setAccessType(AccessType.ACCESS_TYPE_NORMAL);
          CustomAuthentication userAuth  = new CustomAuthentication();
          userAuth.setAuthorities(authorityList);
          userContext.setAuthorities(authorityList);
          userContext.setAuthentication(userAuth);
          SecurityContextHolder.setContext(userContext);
-         
-    	
 
         String value = preAuth.value();
 
-        SecurityContextHolder.getContext();
         //Spring EL 对value进行解析
-        SecurityExpressionOperations operations = new CustomerSecurityExpressionRoot(SecurityContextHolder.getContext().getAuthentication());
+        SecurityExpressionOperations operations = new CustomerSecurityExpressionRoot(userContext.getAuthentication());
         StandardEvaluationContext operationContext = new StandardEvaluationContext(operations);
         ExpressionParser parser = new SpelExpressionParser();
         Expression expression = parser.parseExpression(value);

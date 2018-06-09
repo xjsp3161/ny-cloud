@@ -38,10 +38,18 @@ public class AuthorizationFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         System.out.println("过滤器正在执行...");
         String userId = ((HttpServletRequest) servletRequest).getHeader(SecurityConstants.USER_ID_IN_HEADER);
-        if (StringUtils.isBlank(userId)) {
-
+        if (!StringUtils.isBlank(userId)) {
+            SysUser sysUser = new SysUser();
+            sysUser.setId(Long.valueOf(userId));
+            sysUser.setUsername("super");
+            Authentication authentication = new UsernamePasswordAuthenticationToken(sysUser, null);
+            ParameterRequestWrapper requestWrapper = new ParameterRequestWrapper((HttpServletRequest) servletRequest);
+            requestWrapper.addParameter("authentication", authentication);
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            filterChain.doFilter(requestWrapper, servletResponse);
+        } else {
+            filterChain.doFilter(servletRequest, servletResponse);
         }
-        filterChain.doFilter(servletRequest, servletResponse);
     }
 
     @Override

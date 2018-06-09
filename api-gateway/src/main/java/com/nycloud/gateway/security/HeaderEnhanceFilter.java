@@ -1,9 +1,7 @@
 package com.nycloud.gateway.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.netflix.zuul.context.RequestContext;
-import com.netflix.zuul.http.ServletInputStreamWrapper;
 import com.nycloud.gateway.constants.SecurityConstants;
 import com.nycloud.gateway.properties.PermitAllUrlProperties;
 import org.apache.commons.codec.binary.Base64;
@@ -11,10 +9,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.User;
-
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
@@ -66,43 +60,13 @@ public class HeaderEnhanceFilter implements Filter {
                     try {
                         authorization = StringUtils.substringBetween(authorization, ".");
                         String decoded = new String(Base64.decodeBase64(authorization));
+
                         Map properties = new ObjectMapper().readValue(decoded, Map.class);
-                        
+
                         String userId = (String) properties.get(SecurityConstants.USER_ID_IN_HEADER);
                         RequestContext.getCurrentContext().addZuulRequestHeader(SecurityConstants.USER_ID_IN_HEADER, userId);
-
-                        RequestContext ctx = RequestContext.getCurrentContext();
-                        HttpServletRequest request = ctx.getRequest();
-                        InputStream in = (InputStream) ctx.get("requestEntity");
-                        String body = getInputString(in);
-
-                        ObjectMapper objectMapper = new ObjectMapper();
-                        Map<String, Object> map = objectMapper.readValue(body, Map.class);
-
-                        String username = (String) properties.get("username");
-                        Authentication authentication = new UsernamePasswordAuthenticationToken(new User(userId, username), null);
-                        map.put("authentication", authentication);
-
-                        StringWriter sw = new StringWriter();
-                        objectMapper.writeValue(sw, map);
-                        final byte[] reqBodyBytes = sw.toString().getBytes();
-                        RequestContext.getCurrentContext().setRequest(new HttpServletRequestWrapper(request) {
-                            @Override
-                            public ServletInputStream getInputStream() throws IOException {
-                                return new ServletInputStreamWrapper(reqBodyBytes);
-                            }
-
-                            @Override
-                            public int getContentLength() {
-                                return reqBodyBytes.length;
-                            }
-
-                            @Override
-                            public long getContentLengthLong() {
-                                return reqBodyBytes.length;
-                            }
-                        });
                     } catch (Exception e) {
+                        e.printStackTrace();
                         LOGGER.error("Failed to customize header for the request, but still release it as the it would be regarded without any user details.", e);
                     }
                 }
