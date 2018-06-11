@@ -2,7 +2,6 @@ package com.nycloud.admin.exception;
 
 import com.google.api.client.repackaged.com.google.common.base.Throwables;
 import com.nycloud.common.vo.HttpResponse;
-import com.spotify.docker.client.shaded.org.apache.http.protocol.HTTP;
 import com.sun.jersey.api.MessageException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,8 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -50,10 +47,8 @@ public class GlobalExceptionHandler {
         return HttpResponse.resultError(500, error);
     }
 
-
     public Logger getLogger() {
         return LoggerFactory.getLogger(GlobalExceptionHandler.class);
     }
-
 
 }

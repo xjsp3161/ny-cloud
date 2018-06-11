@@ -1,6 +1,7 @@
 package com.nycloud.admin.controller;
 
 import com.nycloud.admin.model.SysUser;
+import com.nycloud.admin.security.UserEntity;
 import com.nycloud.admin.service.SysPermissionMenuServicePk;
 import com.nycloud.admin.service.SysUserService;
 import com.nycloud.common.dto.RequestDto;
@@ -34,7 +35,7 @@ public class SysUserController {
     @GetMapping(URL_MAPPING)
     @PreAuth("hasAuthority('sys_user_get')")
     @ResourcesMapping(elements = "查询", code = "sys_user_get")
-    public HttpResponse index(Authentication authentication, RequestDto requestDto) {
+    public HttpResponse index(RequestDto requestDto) {
         requestDto.setKey("username");
         return new HttpResponse().success(sysUserService.findByPageList(requestDto));
     }
@@ -46,6 +47,16 @@ public class SysUserController {
     public HttpResponse info(@RequestParam Long id) {
         SysUser sysUser = new SysUser();
         sysUser.setId(id);
+        return new HttpResponse().success(sysUserService.selectOne(sysUser));
+    }
+
+    @ApiOperation(value = "获取登陆授权后的用户信息", notes = "根据授权Authentication中UserEntity中的userId获取")
+    @GetMapping(URL_MAPPING + "/userInfo")
+    @ResourcesMapping(elements = "查询详情", code = "sys_user_get_user_info")
+    public HttpResponse userInfo(Authentication authentication) {
+        UserEntity userEntity = (UserEntity) authentication.getPrincipal();
+        SysUser sysUser = new SysUser();
+        sysUser.setId(userEntity.getUserId());
         return new HttpResponse().success(sysUserService.selectOne(sysUser));
     }
 

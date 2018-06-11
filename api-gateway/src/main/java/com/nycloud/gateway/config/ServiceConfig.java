@@ -18,7 +18,6 @@ public class ServiceConfig {
     private int securePort;
 
 
-
     @Bean
     @ConfigurationProperties(prefix = "auth")
     public PermitAllUrlProperties getPermitAllUrlProperties() {

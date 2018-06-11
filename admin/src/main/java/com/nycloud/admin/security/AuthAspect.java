@@ -60,9 +60,9 @@ public class AuthAspect {
     public Object record(ProceedingJoinPoint joinPoint, PreAuth preAuth) throws Throwable {
 
          Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-         SysUser sysUser =  (SysUser) authentication.getPrincipal();
+         UserEntity userEntity =  (UserEntity) authentication.getPrincipal();
 
-         List<SysResource> permissionList = sysUserService.selectUserResources(sysUser.getId()).getResourceList();
+         List<SysResource> permissionList = sysUserService.selectUserResources(userEntity.getUserId()).getResourceList();
          List<SimpleGrantedAuthority> authorityList = new ArrayList();
          for (SysResource sysResource : permissionList) {
              SimpleGrantedAuthority authority = new SimpleGrantedAuthority();
@@ -70,20 +70,19 @@ public class AuthAspect {
              authorityList.add(authority);
          }
 
-         UserContext userContext = new UserContext(sysUser.getId().toString());
+         UserContext userContext = new UserContext(String.valueOf(userEntity.getUserId()));
          userContext.setAccessType(AccessType.ACCESS_TYPE_NORMAL);
          CustomAuthentication userAuth  = new CustomAuthentication();
          userAuth.setAuthorities(authorityList);
          userContext.setAuthorities(authorityList);
          userContext.setAuthentication(userAuth);
-         SecurityContextHolder.setContext(userContext);
 
-        String value = preAuth.value();
 
         //Spring EL 对value进行解析
         SecurityExpressionOperations operations = new CustomerSecurityExpressionRoot(userContext.getAuthentication());
         StandardEvaluationContext operationContext = new StandardEvaluationContext(operations);
         ExpressionParser parser = new SpelExpressionParser();
+        String value = preAuth.value();
         Expression expression = parser.parseExpression(value);
         boolean result = expression.getValue(operationContext, boolean.class);
         if (result) {

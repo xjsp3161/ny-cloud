@@ -19,11 +19,15 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * @author super.wu
+ */
 public class HeaderEnhanceFilter implements Filter {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(HeaderEnhanceFilter.class);
 
     private static final String ANONYMOUS_USER_ID = "d4a65d04-a5a3-465c-8408-405971ac3346";
+    private static final String AuthorizationKey = "Authorization";
 
     @Autowired
     private PermitAllUrlProperties permitAllUrlProperties;
@@ -32,20 +36,9 @@ public class HeaderEnhanceFilter implements Filter {
     public void init(FilterConfig filterConfig) throws ServletException {
     }
 
-    class User {
-
-        public User(String userId, String username) {
-            this.userId = userId;
-            this.username = username;
-        }
-
-        public String userId;
-        public String username;
-    }
-
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        String authorization = ((HttpServletRequest) servletRequest).getHeader("Authorization");
+        String authorization = ((HttpServletRequest) servletRequest).getHeader(AuthorizationKey);
         String requestURI = ((HttpServletRequest) servletRequest).getRequestURI();
         // test if request url is permit all , then remove authorization from header
         LOGGER.info(String.format("Enhance request URI : %s.", requestURI));
@@ -65,6 +58,9 @@ public class HeaderEnhanceFilter implements Filter {
 
                         String userId = (String) properties.get(SecurityConstants.USER_ID_IN_HEADER);
                         RequestContext.getCurrentContext().addZuulRequestHeader(SecurityConstants.USER_ID_IN_HEADER, userId);
+                        RequestContext.getCurrentContext().addZuulRequestHeader("userId", userId);
+                        RequestContext.getCurrentContext().addZuulRequestHeader("username", (String)properties.get("user_name"));
+
                     } catch (Exception e) {
                         e.printStackTrace();
                         LOGGER.error("Failed to customize header for the request, but still release it as the it would be regarded without any user details.", e);
@@ -74,26 +70,8 @@ public class HeaderEnhanceFilter implements Filter {
                 LOGGER.info("Regard this request as anonymous request, so set anonymous user_id in the header.");
                 RequestContext.getCurrentContext().addZuulRequestHeader(SecurityConstants.USER_ID_IN_HEADER, ANONYMOUS_USER_ID);
             }
-
         }
         filterChain.doFilter(servletRequest, servletResponse);
-    }
-
-    public String getInputString(InputStream in) {
-        try {
-            BufferedReader bf=new BufferedReader(new InputStreamReader(in,"UTF-8"));
-            //最好在将字节流转换为字符流的时候 进行转码
-            StringBuffer buffer=new StringBuffer();
-            String line="";
-            while((line=bf.readLine())!=null){
-                buffer.append(line);
-            }
-
-            return buffer.toString();
-        } catch (Exception e) {
-
-        }
-       return null;
     }
 
     @Override
@@ -122,7 +100,7 @@ public class HeaderEnhanceFilter implements Filter {
                     Enumeration<String> wrappedHeaderNames = super.getHeaderNames();
                     while (wrappedHeaderNames.hasMoreElements()) {
                         String headerName = wrappedHeaderNames.nextElement();
-                        if (!"Authorization".equalsIgnoreCase(headerName)) {
+                        if (!AuthorizationKey.equalsIgnoreCase(headerName)) {
                             headerNameSet.add(headerName);
                         }
                     }
@@ -136,7 +114,7 @@ public class HeaderEnhanceFilter implements Filter {
             @Override
             public Enumeration<String> getHeaders(String name) {
 
-                if ("Authorization".equalsIgnoreCase(name)) {
+                if (AuthorizationKey.equalsIgnoreCase(name)) {
                     return Collections.emptyEnumeration();
                 }
                 if (SecurityConstants.USER_ID_IN_HEADER.equalsIgnoreCase(name)) {
@@ -149,7 +127,7 @@ public class HeaderEnhanceFilter implements Filter {
 
             @Override
             public String getHeader(String name) {
-                if ("Authorization".equalsIgnoreCase(name)) {
+                if (AuthorizationKey.equalsIgnoreCase(name)) {
                     return null;
                 }
                 if (SecurityConstants.USER_ID_IN_HEADER.equalsIgnoreCase(name)) {

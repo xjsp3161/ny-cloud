@@ -91,7 +91,7 @@ public class CustomRemoteTokenServices implements ResourceServerTokenServices {
     @Override
     public OAuth2Authentication loadAuthentication(String accessToken) throws AuthenticationException, InvalidTokenException {
 
-        MultiValueMap<String, String> formData = new LinkedMultiValueMap<String, String>();
+        MultiValueMap<String, String> formData = new LinkedMultiValueMap<>(1);
         formData.add(tokenName, accessToken);
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", getAuthorizationHeader(clientId, clientSecret));
