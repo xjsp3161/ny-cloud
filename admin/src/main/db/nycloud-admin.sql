@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2018-06-01 14:48:18
+Date: 2018-06-12 19:48:41
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -227,7 +227,6 @@ INSERT INTO `sys_permission_resource_pk` VALUES ('1', '427');
 INSERT INTO `sys_permission_resource_pk` VALUES ('1', '428');
 INSERT INTO `sys_permission_resource_pk` VALUES ('1', '429');
 INSERT INTO `sys_permission_resource_pk` VALUES ('1', '430');
-INSERT INTO `sys_permission_resource_pk` VALUES ('1', '431');
 INSERT INTO `sys_permission_resource_pk` VALUES ('1', '432');
 INSERT INTO `sys_permission_resource_pk` VALUES ('1', '433');
 INSERT INTO `sys_permission_resource_pk` VALUES ('1', '434');
@@ -237,20 +236,7 @@ INSERT INTO `sys_permission_resource_pk` VALUES ('1', '437');
 INSERT INTO `sys_permission_resource_pk` VALUES ('1', '438');
 INSERT INTO `sys_permission_resource_pk` VALUES ('1', '439');
 INSERT INTO `sys_permission_resource_pk` VALUES ('1', '440');
-
--- ----------------------------
--- Table structure for sys_privilege
--- ----------------------------
-DROP TABLE IF EXISTS `sys_privilege`;
-CREATE TABLE `sys_privilege` (
-  `id` bigint(20) NOT NULL,
-  `name` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of sys_privilege
--- ----------------------------
+INSERT INTO `sys_permission_resource_pk` VALUES ('1', '431');
 
 -- ----------------------------
 -- Table structure for sys_resource
@@ -330,27 +316,14 @@ INSERT INTO `sys_role` VALUES ('2', '普通管理员', 'OrdinaryManager', null);
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_role_permission_pk`;
 CREATE TABLE `sys_role_permission_pk` (
-  `role_id` bigint(20) DEFAULT NULL,
-  `permission_id` bigint(20) DEFAULT NULL
+  `role_id` int(20) DEFAULT NULL,
+  `permission_id` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_role_permission_pk
 -- ----------------------------
 INSERT INTO `sys_role_permission_pk` VALUES ('1', '1');
-
--- ----------------------------
--- Table structure for sys_role_privilege_pk
--- ----------------------------
-DROP TABLE IF EXISTS `sys_role_privilege_pk`;
-CREATE TABLE `sys_role_privilege_pk` (
-  `role_id` bigint(20) DEFAULT NULL,
-  `privilege_id` bigint(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of sys_role_privilege_pk
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for sys_user
@@ -362,40 +335,43 @@ CREATE TABLE `sys_user` (
   `password` varchar(32) NOT NULL,
   `create_time` bigint(20) DEFAULT NULL,
   `last_password_change` bigint(20) DEFAULT NULL,
-  `enable` int(1) DEFAULT NULL,
+  `state` int(1) DEFAULT NULL,
   `authorities` varchar(100) DEFAULT NULL,
   `name` varchar(20) DEFAULT NULL,
+  `face_url` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('196618686130565120', 'admin', '123456', null, null, null, null, '管理员');
-INSERT INTO `sys_user` VALUES ('196618686130565121', 'super', '123456', null, null, null, null, '超人');
-INSERT INTO `sys_user` VALUES ('196618686130565122', 'leson', '123456', null, null, null, null, '王大锤');
-INSERT INTO `sys_user` VALUES ('196618686130565123', 'student', '123456', null, null, null, null, '烟花易冷');
-INSERT INTO `sys_user` VALUES ('196618686130565124', 'baidu', '123456', null, null, null, null, '百度科技');
-INSERT INTO `sys_user` VALUES ('196618686130565125', 'tencent', '123456', null, null, null, null, '腾讯控股');
-INSERT INTO `sys_user` VALUES ('196618686130565126', 'alibaba', '123456', null, null, null, null, '阿里巴巴');
-INSERT INTO `sys_user` VALUES ('196618686130565127', '360', '123456', null, null, null, null, '360安全卫士');
-INSERT INTO `sys_user` VALUES ('196618686130565128', 'jd', '123456', null, null, null, null, '京东商城');
-INSERT INTO `sys_user` VALUES ('196618686130565129', 'xiaomi', '123456', null, null, null, null, '小米科技');
-INSERT INTO `sys_user` VALUES ('196618686130565130', 'leshi', '123456', null, null, null, null, '乐视网');
+INSERT INTO `sys_user` VALUES ('196618686130565120', 'admin', '123456', '1528790890539', '1528790890539', '1', null, '管理员', null);
+INSERT INTO `sys_user` VALUES ('196618686130565121', 'super', '123456', '1528790890539', '1528790890539', '1', null, '超人', null);
+INSERT INTO `sys_user` VALUES ('196618686130565122', 'leson', '123456', '1528790890539', '1528790890539', '1', null, '王大锤', null);
+INSERT INTO `sys_user` VALUES ('196618686130565123', 'student', '123456', '1528790890539', '1528790890539', '1', null, '烟花易冷', null);
+INSERT INTO `sys_user` VALUES ('196618686130565124', 'baidu', '123456', '1528790890539', '1528790890539', '1', null, '百度科技', null);
+INSERT INTO `sys_user` VALUES ('196618686130565125', 'tencent', '123456', '1528790890539', '1528790890539', '1', null, '腾讯控股', null);
+INSERT INTO `sys_user` VALUES ('196618686130565126', 'alibaba', '123456', '1528790890539', '1528790890539', '1', null, '阿里巴巴', null);
+INSERT INTO `sys_user` VALUES ('196618686130565127', '360', '123456', '1528790890539', '1528790890539', '1', null, '360安全卫士', null);
+INSERT INTO `sys_user` VALUES ('196618686130565128', 'jd', '123456', '1528790890539', '1528790890539', '1', null, '京东商城', null);
+INSERT INTO `sys_user` VALUES ('196618686130565129', 'xiaomi', '123456', '1528790890539', '1528790890539', '1', null, '小米科技', null);
+INSERT INTO `sys_user` VALUES ('196618686130565130', 'leshi', '123456', '1528790890539', '1528790890539', '1', null, '乐视网', null);
+INSERT INTO `sys_user` VALUES ('203952574137905152', 'sadasd', '123456', '1528792549470', '1528792549470', '1', null, '1231', null);
+INSERT INTO `sys_user` VALUES ('203952893215387648', 'sadasd1', '123456', '1528792624635', '1528792624635', '1', null, '1231', null);
 
 -- ----------------------------
 -- Table structure for sys_user_group
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_user_group`;
 CREATE TABLE `sys_user_group` (
-  `id` bigint(20) NOT NULL,
+  `id` int(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) DEFAULT NULL,
   `code` varchar(30) DEFAULT NULL,
-  `parent_id` bigint(20) DEFAULT NULL,
+  `parent_id` int(20) DEFAULT NULL,
   `parent_name` varchar(30) DEFAULT NULL,
   `description` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_user_group
@@ -407,21 +383,23 @@ INSERT INTO `sys_user_group` VALUES ('1', '管理员组', 'ManagerCode', null, n
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_user_group_pk`;
 CREATE TABLE `sys_user_group_pk` (
-  `user_group_id` bigint(20) NOT NULL,
+  `group_id` int(20) NOT NULL,
   `user_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_user_group_pk
 -- ----------------------------
+INSERT INTO `sys_user_group_pk` VALUES ('1', '203952574137905152');
+INSERT INTO `sys_user_group_pk` VALUES ('1', '203952893215387648');
 
 -- ----------------------------
 -- Table structure for sys_user_group_role_pk
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_user_group_role_pk`;
 CREATE TABLE `sys_user_group_role_pk` (
-  `user_group_id` bigint(20) NOT NULL,
-  `role_id` bigint(20) NOT NULL
+  `group_id` int(20) NOT NULL,
+  `role_id` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
