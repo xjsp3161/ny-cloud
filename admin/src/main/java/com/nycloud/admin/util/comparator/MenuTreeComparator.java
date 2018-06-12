@@ -1,6 +1,6 @@
 package com.nycloud.admin.util.comparator;
 
-import com.nycloud.admin.model.MenuTree;
+import com.nycloud.admin.vo.MenuTree;
 import java.util.Comparator;
 
 /**

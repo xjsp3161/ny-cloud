@@ -1,6 +1,6 @@
 package com.nycloud.admin.exception;
 
-import com.nycloud.admin.model.MenuTree;
+import com.nycloud.admin.vo.MenuTree;
 
 /**
  * @description:

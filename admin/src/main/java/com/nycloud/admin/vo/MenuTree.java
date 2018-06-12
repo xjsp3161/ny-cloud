@@ -1,5 +1,6 @@
-package com.nycloud.admin.model;
+package com.nycloud.admin.vo;
 
+import com.nycloud.admin.model.SysMenu;
 import lombok.Data;
 import java.util.List;
 

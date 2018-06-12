@@ -1,16 +1,20 @@
 package com.nycloud.admin.controller;
 
+import com.nycloud.admin.dto.SysUserDto;
 import com.nycloud.admin.model.SysUser;
 import com.nycloud.admin.security.UserEntity;
 import com.nycloud.admin.service.SysPermissionMenuServicePk;
 import com.nycloud.admin.service.SysUserService;
 import com.nycloud.common.dto.RequestDto;
+import com.nycloud.common.utils.SnowFlake;
 import com.nycloud.common.vo.HttpResponse;
 import com.nycloud.security.annotation.PreAuth;
 import com.nycloud.security.annotation.ResourcesMapping;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -31,6 +35,19 @@ public class SysUserController {
     @Autowired
     private SysPermissionMenuServicePk sysPermissionMenuPkService;
 
+
+    @ApiOperation(value = "用户新增", notes = "根据UserDto保存用户对象")
+    @PostMapping(URL_MAPPING)
+//    @PreAuth("hasAuthority('sys_user_add')")
+    @ResourcesMapping(elements = "新增", code = "sys_user_add")
+    public HttpResponse add(@Validated @RequestBody SysUserDto dto, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return HttpResponse.errorParams();
+        }
+        sysUserService.save(dto);
+        return HttpResponse.resultSuccess();
+    }
+
     @ApiOperation(value = "用户列表查询", notes = "可分页并可根据用户名称模糊检索")
     @GetMapping(URL_MAPPING)
     @PreAuth("hasAuthority('sys_user_get')")
@@ -41,13 +58,21 @@ public class SysUserController {
     }
 
     @ApiOperation(value = "用户详情查询", notes = "根据id查询用户详细信息")
-    @GetMapping(URL_MAPPING + "/info")
-    @PreAuth("hasAuthority('"+ URL_MAPPING +"/info')")
+    @GetMapping(URL_MAPPING + "/{id}")
+//    @PreAuth("hasAuthority('"+ URL_MAPPING +"/info')")
     @ResourcesMapping(elements = "查询详情", code = "sys_user_get_info")
-    public HttpResponse info(@RequestParam Long id) {
+    public HttpResponse info(@PathVariable String id) {
         SysUser sysUser = new SysUser();
-        sysUser.setId(id);
+        sysUser.setId(Long.valueOf(id));
         return new HttpResponse().success(sysUserService.selectOne(sysUser));
+    }
+
+    @ApiOperation(value = "用户修改信息查询", notes = "根据id查询用户修改信息")
+    @GetMapping(URL_MAPPING + "/edit/{id}")
+//    @PreAuth("hasAuthority('"+ URL_MAPPING +"/info')")
+    @ResourcesMapping(elements = "查询详情", code = "sys_user_get_edit_info")
+    public HttpResponse editInfo(@PathVariable String id) {
+        return new HttpResponse().success(sysUserService.selectUserGroupInfo(Long.valueOf(id)));
     }
 
     @ApiOperation(value = "获取登陆授权后的用户信息", notes = "根据授权Authentication中UserEntity中的userId获取")
@@ -60,6 +85,7 @@ public class SysUserController {
         return new HttpResponse().success(sysUserService.selectOne(sysUser));
     }
 
+
     @ApiOperation(value = "用户可用菜单树查询", notes = "根据用户权限查询已分配好的菜单")
     @GetMapping(URL_MAPPING + "/userMenuTree")
     public HttpResponse userMenuTree() {
@@ -71,5 +97,15 @@ public class SysUserController {
     public HttpResponse userResources(Long userId) {
         return new HttpResponse().success(sysUserService.selectUserResources(userId));
     }
+
+    @ApiOperation(value = "用户所有可用资源查询", notes = "根据用户Id查询分配的角色权限下面的资源列表")
+    @GetMapping(URL_MAPPING + "/checkUserNameIsExist")
+    public HttpResponse checkUserNameIsExist(@RequestParam String username) {
+        SysUser sysUser = new SysUser();
+        sysUser.setUsername(username);
+        return new HttpResponse().success(sysUserService.selectOne(sysUser) != null ? true : false);
+    }
+
+
 
 }

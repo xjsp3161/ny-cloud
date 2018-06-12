@@ -1,7 +1,7 @@
 package com.nycloud.admin.mapper;
 
 import com.nycloud.admin.model.SysMenu;
-import com.nycloud.admin.model.MenuTree;
+import com.nycloud.admin.vo.MenuTree;
 import tk.mybatis.mapper.common.Mapper;
 import java.util.List;
 

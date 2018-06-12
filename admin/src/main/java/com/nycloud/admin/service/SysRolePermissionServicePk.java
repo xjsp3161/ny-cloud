@@ -2,13 +2,8 @@ package com.nycloud.admin.service;
 
 import com.github.pagehelper.PageHelper;
 import com.nycloud.admin.dto.RolePermissionDto;
-import com.nycloud.admin.dto.UserRoleDto;
 import com.nycloud.admin.mapper.*;
-import com.nycloud.admin.model.MenuTree;
-import com.nycloud.admin.model.SysPermissionMenuPk;
-import com.nycloud.admin.model.SysRole;
 import com.nycloud.admin.model.SysRolePermissionPk;
-import com.nycloud.admin.util.MenuTreeUtil;
 import com.nycloud.common.vo.ResponsePage;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

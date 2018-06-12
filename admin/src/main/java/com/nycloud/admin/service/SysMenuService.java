@@ -3,7 +3,7 @@ package com.nycloud.admin.service;
 import com.nycloud.admin.mapper.SysMenuMapper;
 import com.nycloud.admin.model.SysMenu;
 import com.nycloud.admin.util.MenuTreeUtil;
-import com.nycloud.admin.model.MenuTree;
+import com.nycloud.admin.vo.MenuTree;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.*;

@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.nycloud.admin.mapper.SysUserGroupMapper">
   <resultMap id="BaseResultMap" type="com.nycloud.admin.model.SysUserGroup">
-    <id column="id" jdbcType="BIGINT" property="id" />
+    <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="code" jdbcType="VARCHAR" property="code" />
-    <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
     <result column="parent_name" jdbcType="VARCHAR" property="parentName" />
     <result column="description" jdbcType="VARCHAR" property="description" />
   </resultMap>

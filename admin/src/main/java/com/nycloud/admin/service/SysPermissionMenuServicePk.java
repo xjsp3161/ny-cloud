@@ -2,7 +2,7 @@ package com.nycloud.admin.service;
 
 import com.nycloud.admin.mapper.SysMenuMapper;
 import com.nycloud.admin.mapper.SysPermissionMenuPkMapper;
-import com.nycloud.admin.model.MenuTree;
+import com.nycloud.admin.vo.MenuTree;
 import com.nycloud.admin.model.SysPermissionMenuPk;
 import com.nycloud.admin.util.MenuTreeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
