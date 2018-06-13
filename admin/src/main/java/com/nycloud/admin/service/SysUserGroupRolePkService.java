@@ -1,10 +1,10 @@
 package com.nycloud.admin.service;
 
 import com.github.pagehelper.PageHelper;
-import com.nycloud.admin.dto.UserGroupDto;
-import com.nycloud.admin.mapper.SysUserGroupPkMapper;
-import com.nycloud.admin.mapper.SysUserMapper;
-import com.nycloud.admin.model.SysUserGroupPk;
+import com.nycloud.admin.dto.UserGroupRoleDto;
+import com.nycloud.admin.mapper.SysRoleMapper;
+import com.nycloud.admin.mapper.SysUserGroupRolePkMapper;
+import com.nycloud.admin.model.SysUserGroupRolePk;
 import com.nycloud.common.vo.ResponsePage;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,28 +23,28 @@ import java.util.Map;
  **/
 @Service
 @Transactional(rollbackFor = Exception.class)
-public class SysUserGroupPkService extends BaseService<SysUserGroupPkMapper, SysUserGroupPk> {
+public class SysUserGroupRolePkService extends BaseService<SysUserGroupRolePkMapper, SysUserGroupRolePk> {
 
     @Autowired
-    private SysUserMapper sysUserMapper;
+    private SysRoleMapper sysRoleMapper;
 
-    public void setSysUserMapper(SysUserMapper sysUserMapper) {
-        this.sysUserMapper = sysUserMapper;
+    public void setSysRoleMapper(SysRoleMapper sysRoleMapper) {
+        this.sysRoleMapper = sysRoleMapper;
     }
 
-    public ResponsePage loadGroupNoRelationUsers(UserGroupDto dto){
+    public ResponsePage loadGroupNoRelationRoles(UserGroupRoleDto dto){
         PageHelper.startPage(dto.getPage(), dto.getSize());
         Map<String, Object> map = getQueryParams(dto);
-        return new ResponsePage<>(sysUserMapper.selectGroupNoUsers(map));
+        return new ResponsePage<>(sysRoleMapper.selectUserGroupNoRoles(map));
     }
 
-    public ResponsePage loadGroupUsers(UserGroupDto dto){
+    public ResponsePage loadGroupRoles(UserGroupRoleDto dto){
         PageHelper.startPage(dto.getPage(), dto.getSize());
         Map<String, Object> map = getQueryParams(dto);
-        return new ResponsePage<>(sysUserMapper.selectGroupUsers(map));
+        return new ResponsePage<>(sysRoleMapper.selectUserGroupRoles(map));
     }
 
-    private Map<String, Object> getQueryParams(UserGroupDto dto) {
+    private Map<String, Object> getQueryParams(UserGroupRoleDto dto) {
         return new HashMap<String, Object>(1){{
             put("groupId", dto.getGroupId());
             if (StringUtils.isNotBlank(dto.getName())) {
@@ -53,16 +53,16 @@ public class SysUserGroupPkService extends BaseService<SysUserGroupPkMapper, Sys
         }};
     }
 
-    public Integer batchInsert(List<SysUserGroupPk> list) {
-        return this.mapper.insertGroupUsers(list);
+    public Integer batchInsert(List<SysUserGroupRolePk> list) {
+        return this.mapper.insertGroupRoles(list);
     }
 
-    public Integer batchDelete(int groupId, Long [] userIds) {
+    public Integer batchDelete(int groupId, int [] roleIds) {
         Map<String, Object> map = new HashMap(2){{
             put("groupId", groupId);
-            put("userIds", userIds);
+            put("roleIds", roleIds);
         }};
-        return this.mapper.deleteGroupUsers(map);
+        return this.mapper.deleteGroupRoles(map);
     }
 
 }

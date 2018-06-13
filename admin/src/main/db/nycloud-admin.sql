@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2018-06-12 19:48:41
+Date: 2018-06-13 17:47:11
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -300,15 +300,17 @@ DROP TABLE IF EXISTS `sys_role`;
 CREATE TABLE `sys_role` (
   `id` int(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL COMMENT '角色名称',
-  `code` varchar(30) NOT NULL,
+  `code` varchar(30) NOT NULL COMMENT '角色编码',
   `description` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name_unique` (`name`) USING HASH,
+  UNIQUE KEY `code_unique` (`code`) USING HASH
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_role
 -- ----------------------------
-INSERT INTO `sys_role` VALUES ('1', '超级管理员', 'SuperManager', '拥有系统所有权限');
+INSERT INTO `sys_role` VALUES ('1', '超级管理员', 'SUPER_ADMIN', '拥有系统所有权限');
 INSERT INTO `sys_role` VALUES ('2', '普通管理员', 'OrdinaryManager', null);
 
 -- ----------------------------
@@ -390,8 +392,8 @@ CREATE TABLE `sys_user_group_pk` (
 -- ----------------------------
 -- Records of sys_user_group_pk
 -- ----------------------------
-INSERT INTO `sys_user_group_pk` VALUES ('1', '203952574137905152');
-INSERT INTO `sys_user_group_pk` VALUES ('1', '203952893215387648');
+INSERT INTO `sys_user_group_pk` VALUES ('1', '196618686130565120');
+INSERT INTO `sys_user_group_pk` VALUES ('1', '196618686130565121');
 
 -- ----------------------------
 -- Table structure for sys_user_group_role_pk
@@ -405,6 +407,8 @@ CREATE TABLE `sys_user_group_role_pk` (
 -- ----------------------------
 -- Records of sys_user_group_role_pk
 -- ----------------------------
+INSERT INTO `sys_user_group_role_pk` VALUES ('1', '1');
+INSERT INTO `sys_user_group_role_pk` VALUES ('1', '2');
 
 -- ----------------------------
 -- Table structure for sys_user_role_pk

@@ -14,12 +14,14 @@ public interface SysRoleMapper extends Mapper<SysRole> {
      */
     List<SysRole> selectUserNoRoles(Map<String, Object> map);
 
-    /**
-     * 根据用户加载角色列表
-     * @param map 包含roleId和name模糊检索
-     * @return
-     */
+
     List<SysRole> selectUserRoles(Map<String, Object> map);
+
+
+    List<SysRole> selectUserGroupNoRoles(Map<String, Object> map);
+
+
+    List<SysRole> selectUserGroupRoles(Map<String, Object> map);
 
 
 }

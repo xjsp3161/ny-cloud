@@ -5,4 +5,17 @@
     <result column="user_id" jdbcType="BIGINT" property="userId" />
     <result column="group_id" jdbcType="INTEGER" property="groupId" />
   </resultMap>
+  <insert id="insertGroupUsers" parameterType="java.util.List">
+    insert into sys_user_group_pk (group_id, user_id)
+    values
+    <foreach collection="list" item="item" index="index" separator=",">
+      ( #{item.groupId}, #{item.userId} )
+    </foreach>
+  </insert>
+  <delete id="deleteGroupUsers" parameterType="java.util.Map">
+    delete from sys_user_group_pk where group_id = #{groupId,jdbcType=INTEGER} and user_id in
+    <foreach item="item" collection="userIds" open="(" separator="," close=")">
+      #{item}
+    </foreach>
+  </delete>
 </mapper>

@@ -98,6 +98,7 @@ public class SysUserController {
         return new HttpResponse().success(sysUserService.selectUserResources(userId));
     }
 
+
     @ApiOperation(value = "用户所有可用资源查询", notes = "根据用户Id查询分配的角色权限下面的资源列表")
     @GetMapping(URL_MAPPING + "/checkUserNameIsExist")
     public HttpResponse checkUserNameIsExist(@RequestParam String username) {

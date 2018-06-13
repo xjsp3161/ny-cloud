@@ -28,7 +28,7 @@ public class SysMenuController {
     @GetMapping
     public HttpResponse index(RequestDto requestDto) {
         requestDto.setKey("name");
-        return new HttpResponse().success(sysMenuService.findByPageList(requestDto));
+        return HttpResponse.resultSuccess(sysMenuService.findByPageList(requestDto));
     }
 
     @ApiOperation(value = "菜单保存", notes = "根据SysMenu对象创建用户")
@@ -38,7 +38,7 @@ public class SysMenuController {
             return HttpResponse.errorParams();
         }
         sysMenuService.insert(sysMenu);
-        return new HttpResponse().success();
+        return HttpResponse.resultSuccess();
     }
 
     @ApiOperation(value = "菜单更新", notes = "根据传递的SysMenu对象来更新, SysMenu对象必须包含id")
@@ -48,20 +48,20 @@ public class SysMenuController {
             return HttpResponse.errorParams();
         }
         sysMenuService.updateById(sysMenu);
-        return new HttpResponse().success();
+        return HttpResponse.resultSuccess();
     }
 
     @ApiOperation(value = "菜单详情查询", notes = "根据id查询菜单详细信息")
     @DeleteMapping("/info")
     public HttpResponse delete(@RequestParam Integer id) {
         sysMenuService.deleteById(id);
-        return new HttpResponse().success();
+        return HttpResponse.resultSuccess();
     }
 
     @ApiOperation(value = "菜单树查询",  notes = "查询所有可用菜单并返回树状结构")
     @GetMapping("/tree")
     public HttpResponse tree() {
-        return new HttpResponse().success(sysMenuService.loadAllMenuTree());
+        return HttpResponse.resultSuccess(sysMenuService.loadAllMenuTree());
     }
 
 }
