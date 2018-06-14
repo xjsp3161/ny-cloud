@@ -59,7 +59,7 @@ public class SysPermissionResourceServicePk extends BaseService<SysPermissionRes
     }
 
     public Integer batchDelete(Integer permissionId, Integer [] resourceIds) {
-        Map<String, Object> map = new HashMap(){{
+        Map<String, Object> map = new HashMap<String, Object>(2){{
             put("permissionId", permissionId);
             put("resourceIds", resourceIds);
         }};

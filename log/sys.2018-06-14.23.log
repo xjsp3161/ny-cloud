@@ -1,0 +1,11 @@
+2018-06-14 19:09:01,336 DEBUG (SecurityInterceptor.java:49)- current request url: /api/sysPermissionMenu/permissionMenuTree
+2018-06-14 19:09:01,337 DEBUG (SecurityInterceptor.java:49)- current request url: /api/sysPermissionMenu/permissionNoRelationMenuTree
+2018-06-14 19:09:01,343 DEBUG (SecurityInterceptor.java:60)- Receive a request from ,authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@407a647a: Principal: UserEntity(userId=196618686130565120, username=admin); Credentials: [PROTECTED]; Authenticated: false; Details: null; Not granted any authorities
+2018-06-14 19:09:01,343 DEBUG (SecurityInterceptor.java:60)- Receive a request from ,authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@407a647a: Principal: UserEntity(userId=196618686130565120, username=admin); Credentials: [PROTECTED]; Authenticated: false; Details: null; Not granted any authorities
+2018-06-14 19:09:01,343 DEBUG (SecurityInterceptor.java:61)- SecurityInterceptor principal = UserEntity(userId=196618686130565120, username=admin)
+2018-06-14 19:09:01,343 DEBUG (SecurityInterceptor.java:61)- SecurityInterceptor principal = UserEntity(userId=196618686130565120, username=admin)
+2018-06-14 19:09:01,348 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select A.* from sys_role as A where A.id in (select B.role_id from sys_user_role_pk as B where B.user_id = ?) 
+2018-06-14 19:09:01,348 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select A.* from sys_role as A where A.id in (select B.role_id from sys_user_role_pk as B where B.user_id = ?) 
+2018-06-14 19:09:01,350 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 196618686130565120(Long)
+2018-06-14 19:09:01,350 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 196618686130565120(Long)
+2018-06-14 19:09:01,358 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1

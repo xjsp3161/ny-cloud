@@ -28,7 +28,7 @@ public class JdbcUserDetailsService {
     private JdbcTemplate jdbcTemplate;
 
     public JdbcUserDetailsService() {
-        this.selectUserDetailsSql = "select id, username, `password`, `enable`, authorities, `name` from sys_user where username = ?";
+        this.selectUserDetailsSql = "select id, username, `password`, `state`, authorities, `name` from sys_user where username = ?";
     }
 
     public CustomUserDetails loadClientByUserName(String username) throws InvalidClientException {

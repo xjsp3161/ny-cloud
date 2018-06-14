@@ -15,7 +15,7 @@ import java.util.List;
 @Data
 public class SysUserDetail extends SysUserInfo {
 
-    private String[] roleCodes;
+    private List<String> roleCodes;
 
     private List<SysRole> roleList;
 
@@ -36,7 +36,7 @@ public class SysUserDetail extends SysUserInfo {
 
         private SysUserDetail userDetail = new SysUserDetail();
 
-        public SysUserDetailBuilder setRoleCodes(String[] roleCodes) {
+        public SysUserDetailBuilder setRoleCodes(List<String> roleCodes) {
             userDetail.setRoleCodes(roleCodes);
             return this;
         }

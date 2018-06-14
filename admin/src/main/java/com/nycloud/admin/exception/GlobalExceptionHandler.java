@@ -1,15 +1,12 @@
 package com.nycloud.admin.exception;
 
-import com.google.api.client.repackaged.com.google.common.base.Throwables;
 import com.nycloud.common.vo.HttpResponse;
-import com.sun.jersey.api.MessageException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.core.annotation.AnnotationUtils;
-import org.springframework.http.HttpStatus;
+import org.springframework.dao.DuplicateKeyException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -23,32 +20,25 @@ import javax.servlet.http.HttpServletResponse;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    protected static final String DEFAULT_ERROR_MESSAGE = "系统忙，请稍后再试";
+    private static Logger LOGGER = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
-    @ExceptionHandler(NotFoundParentNodeException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public HttpResponse handle404Error(HttpServletRequest request, HttpServletResponse response) {
-        return HttpResponse.resultError(404, "找不到您要访问的api");
-    }
+    @ExceptionHandler
+    public HttpResponse processException(Exception ex, HttpServletRequest request, HttpServletResponse response) {
 
-    @ExceptionHandler(Exception.class)
-    public HttpResponse handle500Error(HttpServletRequest request, HttpServletResponse response, Exception e) throws Exception {
-        return this.handleError(request, response, e, HttpStatus.INTERNAL_SERVER_ERROR);
-    }
+        if (ex instanceof MissingServletRequestParameterException) {
+            return HttpResponse.resultError(500, ex.getMessage());
+        }
 
-    protected HttpResponse handleError(HttpServletRequest req, HttpServletResponse rsp, Exception e, HttpStatus status) throws Exception {
-        if (AnnotationUtils.findAnnotation(e.getClass(), ResponseStatus.class) != null)
-            throw e;
-        String errorMsg = e instanceof MessageException ? e.getMessage() : DEFAULT_ERROR_MESSAGE;
-        String errorStack = Throwables.getStackTraceAsString(e);
+        if (ex instanceof DuplicateKeyException) {
+            LOGGER.error("=======违反主键约束：主键重复插入=======");
+            return HttpResponse.resultError(400, "主键重复插入！");
+        }
 
-        getLogger().error("Request: {} raised {}", req.getRequestURI(), errorStack);
-        String error = new StringBuffer().append(req.getRequestURL().toString()).append(errorStack).append(errorMsg).toString();
-        return HttpResponse.resultError(500, error);
-    }
-
-    public Logger getLogger() {
-        return LoggerFactory.getLogger(GlobalExceptionHandler.class);
+        /**
+         * 未知异常
+         */
+        LOGGER.error(ex.toString());
+        return HttpResponse.resultError(500, ex.getMessage());
     }
 
 }

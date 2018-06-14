@@ -1,0 +1,8 @@
+2018-06-14 16:37:42,928 DEBUG (SecurityInterceptor.java:61)- SecurityInterceptor principal = UserEntity(userId=196618686130565120, username=admin)
+2018-06-14 16:37:42,923 DEBUG (SecurityInterceptor.java:49)- current request url: /api/sysPermissionResource/permissionResourceList
+2018-06-14 16:37:42,934 DEBUG (SecurityInterceptor.java:60)- Receive a request from ,authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@407a647a: Principal: UserEntity(userId=196618686130565120, username=admin); Credentials: [PROTECTED]; Authenticated: false; Details: null; Not granted any authorities
+2018-06-14 16:37:42,934 DEBUG (SecurityInterceptor.java:61)- SecurityInterceptor principal = UserEntity(userId=196618686130565120, username=admin)
+2018-06-14 16:37:42,978 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM sys_resource AS A WHERE A.id NOT IN (SELECT B.resource_id FROM sys_permission_resource_pk AS B WHERE B.permission_id = ?) 
+2018-06-14 16:37:42,977 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM sys_resource AS A WHERE A.id IN (SELECT B.resource_id FROM sys_permission_resource_pk AS B WHERE B.permission_id = ?) 
+2018-06-14 16:37:42,979 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2018-06-14 16:37:42,979 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)

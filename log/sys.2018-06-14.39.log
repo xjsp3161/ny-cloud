@@ -1,0 +1,23 @@
+2018-06-14 19:09:13,771 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2018-06-14 19:09:13,779 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-14 19:09:13,782 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select A.* from sys_resource as A where A.id not in (select B.resource_id from sys_permission_resource_pk AS B where B.permission_id = ?) LIMIT ? 
+2018-06-14 19:09:13,784 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 20(Integer)
+2018-06-14 19:09:13,787 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 20
+2018-06-14 19:09:14,017 DEBUG (SecurityInterceptor.java:49)- current request url: /api/sysPermissionResource/permissionResourceList
+2018-06-14 19:09:14,018 DEBUG (SecurityInterceptor.java:60)- Receive a request from ,authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@407a647a: Principal: UserEntity(userId=196618686130565120, username=admin); Credentials: [PROTECTED]; Authenticated: false; Details: null; Not granted any authorities
+2018-06-14 19:09:14,024 DEBUG (SecurityInterceptor.java:61)- SecurityInterceptor principal = UserEntity(userId=196618686130565120, username=admin)
+2018-06-14 19:09:14,029 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select A.* from sys_role as A where A.id in (select B.role_id from sys_user_role_pk as B where B.user_id = ?) 
+2018-06-14 19:09:14,029 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 196618686130565120(Long)
+2018-06-14 19:09:14,030 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-14 19:09:14,031 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select A.*, B.group_id, C.name as group_name from sys_user A LEFT JOIN sys_user_group_pk B ON A.id = B.user_id LEFT JOIN sys_user_group C ON B.group_id = C.id WHERE A.id = ? 
+2018-06-14 19:09:14,032 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 196618686130565120(Long)
+2018-06-14 19:09:14,033 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-14 19:09:14,034 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select A.* from sys_role as A where A.id in (select B.role_id from sys_user_group_role_pk as B where B.group_id = ?) 
+2018-06-14 19:09:14,034 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2018-06-14 19:09:14,035 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2018-06-14 19:09:14,035 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from sys_resource where id in (select resource_id from sys_permission_resource_pk where permission_id in (select id from sys_permission where id in (select permission_id from sys_role_permission_pk where role_id in (select role_id from sys_user_role_pk where user_id = ?)))) 
+2018-06-14 19:09:14,036 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 196618686130565120(Long)
+2018-06-14 19:09:14,037 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2018-06-14 19:09:14,039 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM sys_resource AS A WHERE A.id IN (SELECT B.resource_id FROM sys_permission_resource_pk AS B WHERE B.permission_id = ?) 
+2018-06-14 19:09:14,040 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2018-06-14 19:09:14,041 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1

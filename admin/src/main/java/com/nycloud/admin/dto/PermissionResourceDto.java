@@ -14,6 +14,7 @@ import lombok.Data;
 public class PermissionResourceDto extends RequestDto{
 
     private Integer permissionId;
+
     private Integer [] resourceIds;
 
 }

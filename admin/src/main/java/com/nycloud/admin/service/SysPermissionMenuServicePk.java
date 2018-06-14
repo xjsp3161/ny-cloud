@@ -43,7 +43,7 @@ public class SysPermissionMenuServicePk extends BaseService<SysPermissionMenuPkM
     }
 
     public Integer batchDelete(Integer permissionId, Integer [] menuIds) {
-        Map<String, Object> map = new HashMap(){{
+        Map<String, Object> map = new HashMap<String, Object>(2){{
             put("permissionId", permissionId);
             put("menuIds", menuIds);
         }};

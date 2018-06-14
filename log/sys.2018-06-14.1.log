@@ -1,0 +1,17 @@
+2018-06-14 11:09:50,313 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 196618686130565120(Long)
+2018-06-14 11:09:50,338 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-14 11:09:50,342 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select A.*, B.group_id, C.name as group_name from sys_user A LEFT JOIN sys_user_group_pk B ON A.id = B.user_id LEFT JOIN sys_user_group C ON B.group_id = C.id WHERE A.id = ? 
+2018-06-14 11:09:50,343 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 196618686130565120(Long)
+2018-06-14 11:09:50,356 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-14 11:09:50,365 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select A.* from sys_role as A where A.id in (select B.role_id from sys_user_group_role_pk as B where B.group_id = ?) 
+2018-06-14 11:09:50,366 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2018-06-14 11:09:50,371 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2018-06-14 11:09:50,374 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from sys_resource where id in (select resource_id from sys_permission_resource_pk where permission_id in (select id from sys_permission where id in (select permission_id from sys_role_permission_pk where role_id in (select role_id from sys_user_role_pk where user_id = ?)))) 
+2018-06-14 11:09:50,375 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 196618686130565120(Long)
+2018-06-14 11:09:50,391 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2018-06-14 11:09:50,434 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM sys_user 
+2018-06-14 11:09:50,435 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2018-06-14 11:09:50,436 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-14 11:09:50,440 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id,username,password,create_time,last_password_change,state,authorities,name FROM sys_user LIMIT ? 
+2018-06-14 11:09:50,440 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 10(Integer)
+2018-06-14 11:09:50,443 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10

@@ -1,0 +1,7 @@
+2018-06-14 11:10:19,149 DEBUG (SecurityInterceptor.java:49)- current request url: /api/sysUser
+2018-06-14 11:10:19,152 DEBUG (SecurityInterceptor.java:60)- Receive a request from ,authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@407a647a: Principal: UserEntity(userId=196618686130565120, username=admin); Credentials: [PROTECTED]; Authenticated: false; Details: null; Not granted any authorities
+2018-06-14 11:10:19,153 DEBUG (SecurityInterceptor.java:61)- SecurityInterceptor principal = UserEntity(userId=196618686130565120, username=admin)
+2018-06-14 11:10:19,155 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select A.* from sys_role as A where A.id in (select B.role_id from sys_user_role_pk as B where B.user_id = ?) 
+2018-06-14 11:10:19,163 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 196618686130565120(Long)
+2018-06-14 11:10:19,164 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-14 11:10:19,166 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select A.*, B.group_id, C.name as group_name from sys_user A LEFT JOIN sys_user_group_pk B ON A.id = B.user_id LEFT JOIN sys_user_group C ON B.group_id = C.id WHERE A.id = ? 

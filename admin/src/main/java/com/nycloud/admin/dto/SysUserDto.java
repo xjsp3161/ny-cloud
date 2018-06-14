@@ -23,4 +23,6 @@ public class SysUserDto {
     private String groupId;
     @NotBlank
     private String state;
+
+    private String userId;
 }

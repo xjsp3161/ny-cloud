@@ -1,0 +1,13 @@
+2018-06-14 19:07:56,242 INFO (StartupInfoLogger.java:59)- Started AdminApplication in 17.278 seconds (JVM running for 20.087)
+2018-06-14 19:08:54,278 DEBUG (SecurityInterceptor.java:49)- current request url: /api/sysUser/userInfo
+2018-06-14 19:08:54,280 DEBUG (SecurityInterceptor.java:60)- Receive a request from ,authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@407a647a: Principal: UserEntity(userId=196618686130565120, username=admin); Credentials: [PROTECTED]; Authenticated: false; Details: null; Not granted any authorities
+2018-06-14 19:08:54,280 DEBUG (SecurityInterceptor.java:61)- SecurityInterceptor principal = UserEntity(userId=196618686130565120, username=admin)
+2018-06-14 19:08:54,330 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT id,username,password,create_time,last_password_change,state,authorities,name FROM sys_user WHERE id = ? 
+2018-06-14 19:08:54,352 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 196618686130565120(Long)
+2018-06-14 19:08:54,362 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-14 19:08:54,526 DEBUG (SecurityInterceptor.java:49)- current request url: /api/sysUser/userMenuTree
+2018-06-14 19:08:54,527 DEBUG (SecurityInterceptor.java:60)- Receive a request from ,authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@407a647a: Principal: UserEntity(userId=196618686130565120, username=admin); Credentials: [PROTECTED]; Authenticated: false; Details: null; Not granted any authorities
+2018-06-14 19:08:54,527 DEBUG (SecurityInterceptor.java:61)- SecurityInterceptor principal = UserEntity(userId=196618686130565120, username=admin)
+2018-06-14 19:08:54,539 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, title, url, icon, parent_id, sort, level, name, path, component, description, enable from sys_menu where enable = ? order by level,sort,id asc 
+2018-06-14 19:08:54,540 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2018-06-14 19:08:54,548 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 13

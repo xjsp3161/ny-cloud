@@ -60,7 +60,7 @@ public class SysUserRolePkService extends BaseService<SysUserRolePkMapper, SysUs
     }
 
     public Integer batchDelete(Long userId, Integer [] roleIds) {
-        Map<String, Object> map = new HashMap(2){{
+        Map<String, Object> map = new HashMap<String, Object>(2){{
            put("userId", userId);
            put("roleIds", roleIds);
         }};

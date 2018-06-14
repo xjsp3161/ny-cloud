@@ -58,7 +58,7 @@ public class SysRolePermissionServicePk extends BaseService<SysRolePermissionPkM
     }
 
     public Integer batchDelete(Integer roleId, Integer [] permissionIds) {
-        Map<String, Object> map = new HashMap(){{
+        Map<String, Object> map = new HashMap<String, Object>(2){{
             put("roleId", roleId);
             put("permissionIds", permissionIds);
         }};

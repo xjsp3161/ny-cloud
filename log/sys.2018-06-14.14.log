@@ -1,0 +1,8 @@
+2018-06-14 16:37:44,726 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, title, url, icon, parent_id, sort, level, name, path, component, description, enable from sys_menu where enable = ? order by level,sort,id asc 
+2018-06-14 16:37:44,734 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2018-06-14 16:37:44,739 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 13
+2018-06-14 16:37:44,742 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from sys_menu where id not in (select menu_id from sys_permission_menu_pk where permission_id = ?) order by level,sort,id asc 
+2018-06-14 16:37:44,746 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2018-06-14 16:37:44,747 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2018-06-14 16:37:45,013 DEBUG (SecurityInterceptor.java:49)- current request url: /api/sysPermissionMenu/permissionMenuTree
+2018-06-14 16:37:45,014 DEBUG (SecurityInterceptor.java:60)- Receive a request from ,authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@407a647a: Principal: UserEntity(userId=196618686130565120, username=admin); Credentials: [PROTECTED]; Authenticated: false; Details: null; Not granted any authorities

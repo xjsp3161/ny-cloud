@@ -1,0 +1,16 @@
+2018-06-14 19:09:03,642 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 196618686130565120(Long)
+2018-06-14 19:09:03,642 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 196618686130565120(Long)
+2018-06-14 19:09:03,646 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-14 19:09:03,646 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-14 19:09:03,647 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select A.*, B.group_id, C.name as group_name from sys_user A LEFT JOIN sys_user_group_pk B ON A.id = B.user_id LEFT JOIN sys_user_group C ON B.group_id = C.id WHERE A.id = ? 
+2018-06-14 19:09:03,647 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select A.*, B.group_id, C.name as group_name from sys_user A LEFT JOIN sys_user_group_pk B ON A.id = B.user_id LEFT JOIN sys_user_group C ON B.group_id = C.id WHERE A.id = ? 
+2018-06-14 19:09:03,647 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 196618686130565120(Long)
+2018-06-14 19:09:03,653 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 196618686130565120(Long)
+2018-06-14 19:09:03,655 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-14 19:09:03,655 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2018-06-14 19:09:03,656 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select A.* from sys_role as A where A.id in (select B.role_id from sys_user_group_role_pk as B where B.group_id = ?) 
+2018-06-14 19:09:03,656 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select A.* from sys_role as A where A.id in (select B.role_id from sys_user_group_role_pk as B where B.group_id = ?) 
+2018-06-14 19:09:03,657 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2018-06-14 19:09:03,657 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2018-06-14 19:09:03,658 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2018-06-14 19:09:03,659 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2

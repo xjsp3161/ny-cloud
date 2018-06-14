@@ -59,9 +59,32 @@ public class SysUserService extends BaseService<SysUserMapper, SysUser> {
         sysUserGroupPkMapper.insert(pk);
     }
 
+    @Transactional(rollbackFor = Exception.class)
+    public void update(SysUserDto dto) {
+        long userId = Long.valueOf(dto.getUserId());
+        SysUserInfo userInfo = this.selectUserGroupInfo(userId);
+        if (userInfo.getGroupName() != null) {
+            SysUserGroupPk pk = new SysUserGroupPk();
+            pk.setGroupId(userInfo.getGroupId());
+            sysUserGroupPkMapper.delete(pk);
+        }
+
+        SysUserGroupPk pk = new SysUserGroupPk();
+        pk.setUserId(userId);
+        pk.setGroupId(Integer.valueOf(dto.getGroupId()));
+        sysUserGroupPkMapper.insert(pk);
+
+        SysUser sysUser = new SysUser();
+        sysUser.setId(userId);
+        sysUser.setUsername(dto.getUsername());
+        sysUser.setName(dto.getName());
+        sysUser.setState(Integer.valueOf(dto.getState()));
+        this.mapper.updateByPrimaryKey(sysUser);
+    }
+
+
     public SysUserInfo selectUserGroupInfo(Long userId) {
-        SysUserInfo sysUserInfo = this.mapper.selectUserGroup(userId);
-        return sysUserInfo;
+        return this.mapper.selectUserGroup(userId);
     }
 
     public SysUserDetail selectUserDetail(Long userId) {
@@ -86,12 +109,12 @@ public class SysUserService extends BaseService<SysUserMapper, SysUser> {
         SysUserDetail userDetail = new SysUserDetail();
         userDetail.setUserGroupInfo(userInfo);
         // 用户角色和用户组角色 合并后角色去重
-        if (!ListUtils.isEmpty(userRoles)) {
+        if (!ListUtils.isEmpty(roleList)) {
             List<String> roleCodes = new ArrayList<>();
-            userRoles = userRoles.stream().collect(collectingAndThen(toCollection(() -> new TreeSet<>(comparingLong(SysRole::getId))), ArrayList::new));
-            userRoles.stream().forEach(item -> roleCodes.add(item.getCode()));
-            userDetail.setRoleCodes(roleCodes.stream().toArray(String[]::new));
-            userDetail.setRoleList(userRoles);
+            roleList = roleList.stream().collect(collectingAndThen(toCollection(() -> new TreeSet<>(comparingLong(SysRole::getId))), ArrayList::new));
+            roleList.forEach(item -> roleCodes.add(item.getCode()));
+            userDetail.setRoleCodes(roleCodes);
+            userDetail.setRoleList(roleList);
         }
         userDetail.setResourceList(sysResourceMapper.selectUserResources(userId));
         return userDetail;

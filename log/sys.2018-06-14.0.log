@@ -1,0 +1,7 @@
+2018-06-14 11:09:24,227 INFO (SpringApplication.java:663)- The following profiles are active: dev
+2018-06-14 11:09:32,600 DEBUG (WebConfiguration.java:45)- Add interceptor securityInterceptor
+2018-06-14 11:09:36,507 INFO (StartupInfoLogger.java:59)- Started AdminApplication in 15.936 seconds (JVM running for 18.472)
+2018-06-14 11:09:50,222 DEBUG (SecurityInterceptor.java:49)- current request url: /api/sysUser
+2018-06-14 11:09:50,224 DEBUG (SecurityInterceptor.java:60)- Receive a request from ,authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@407a647a: Principal: UserEntity(userId=196618686130565120, username=admin); Credentials: [PROTECTED]; Authenticated: false; Details: null; Not granted any authorities
+2018-06-14 11:09:50,230 DEBUG (SecurityInterceptor.java:61)- SecurityInterceptor principal = UserEntity(userId=196618686130565120, username=admin)
+2018-06-14 11:09:50,294 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select A.* from sys_role as A where A.id in (select B.role_id from sys_user_role_pk as B where B.user_id = ?) 

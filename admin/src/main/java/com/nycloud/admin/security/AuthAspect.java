@@ -5,6 +5,7 @@ import com.nycloud.admin.service.SysUserService;
 import com.nycloud.admin.vo.SysUserDetail;
 import com.nycloud.common.constants.HttpConstant;
 import com.nycloud.common.constants.SysConstant;
+import com.nycloud.common.utils.ListUtils;
 import com.nycloud.common.vo.HttpResponse;
 import com.nycloud.security.annotation.PreAuth;
 import com.nycloud.security.constants.AccessType;
@@ -62,11 +63,11 @@ public class AuthAspect {
         // 获取用户的详细信息包括（用户所在组，角色，权限，资源）
         SysUserDetail userDetail = sysUserService.selectUserDetail(userEntity.getUserId());
         // 判断用户是否分配角色，没有分配直接返回无权限访问
-        if (ArrayUtils.isEmpty(userDetail.getRoleCodes())) {
+        if (ListUtils.isEmpty(userDetail.getRoleCodes())) {
             return HttpResponse.resultError(HttpConstant.ERROR_403, HttpConstant.ERROR_403_TEXT);
         }
         // 判断用户角色是否是超级管理员，是的话直接跳过资源判断，执行Controller方法
-        if (userDetail.getRoleList().contains(SysConstant.SUPER_ADMIN_ROLE_CODE)) {
+        if (userDetail.getRoleCodes().contains(SysConstant.SUPER_ADMIN_ROLE_CODE)) {
             return joinPoint.proceed();
         }
         // 将资源添加到到SimpleGrantedAuthority中

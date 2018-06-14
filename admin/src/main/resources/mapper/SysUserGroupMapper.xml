@@ -5,8 +5,6 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="code" jdbcType="VARCHAR" property="code" />
-    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
-    <result column="parent_name" jdbcType="VARCHAR" property="parentName" />
     <result column="description" jdbcType="VARCHAR" property="description" />
   </resultMap>
 </mapper>

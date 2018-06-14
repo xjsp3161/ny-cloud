@@ -6,7 +6,6 @@ import com.nycloud.admin.security.UserEntity;
 import com.nycloud.admin.service.SysPermissionMenuServicePk;
 import com.nycloud.admin.service.SysUserService;
 import com.nycloud.common.dto.RequestDto;
-import com.nycloud.common.utils.SnowFlake;
 import com.nycloud.common.vo.HttpResponse;
 import com.nycloud.security.annotation.PreAuth;
 import com.nycloud.security.annotation.ResourcesMapping;
@@ -35,11 +34,10 @@ public class SysUserController {
     @Autowired
     private SysPermissionMenuServicePk sysPermissionMenuPkService;
 
-
-    @ApiOperation(value = "用户新增", notes = "根据UserDto保存用户对象")
+    @ApiOperation(value = "用户添加", notes = "根据UserDto保存用户对象")
+    @ResourcesMapping(elements = "添加", code = "sys_user_add")
+    @PreAuth("hasAuthority('sys_user_add')")
     @PostMapping(URL_MAPPING)
-//    @PreAuth("hasAuthority('sys_user_add')")
-    @ResourcesMapping(elements = "新增", code = "sys_user_add")
     public HttpResponse add(@Validated @RequestBody SysUserDto dto, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return HttpResponse.errorParams();
@@ -48,65 +46,89 @@ public class SysUserController {
         return HttpResponse.resultSuccess();
     }
 
-    @ApiOperation(value = "用户列表查询", notes = "可分页并可根据用户名称模糊检索")
+    @ApiOperation(value = "角色删除", notes = "根据角色id删除角色信息")
+    @ResourcesMapping(elements = "删除", code = "sys_user_delete")
+    @PreAuth("hasAuthority('sys_user_delete')")
+    @DeleteMapping("/{id}")
+    public HttpResponse delete(@PathVariable Long id) {
+        sysUserService.deleteById(Long.valueOf(id));
+        return HttpResponse.resultSuccess();
+    }
+
+    @ApiOperation(value = "用户查询", notes = "可分页并可根据用户名称模糊检索")
+    @ResourcesMapping(elements = "查询", code = "sys_user_query")
+    @PreAuth("hasAuthority('sys_user_query')")
     @GetMapping(URL_MAPPING)
-    @PreAuth("hasAuthority('sys_user_get')")
-    @ResourcesMapping(elements = "查询", code = "sys_user_get")
-    public HttpResponse index(RequestDto requestDto) {
+    public HttpResponse query(RequestDto requestDto) {
         requestDto.setKey("username");
-        return new HttpResponse().success(sysUserService.findByPageList(requestDto));
+        return HttpResponse.resultSuccess(sysUserService.findByPageList(requestDto));
+    }
+
+    @ApiOperation(value = "用户修改", notes = "根据传递的SysUser对象来更新, SysUser对象必须包含id")
+    @ResourcesMapping(elements = "修改", code = "sys_role_update")
+    @PreAuth("hasAuthority('sys_role_update')")
+    @PutMapping
+    public HttpResponse update(@Validated @RequestBody SysUserDto dto, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return HttpResponse.errorParams();
+        }
+        sysUserService.update(dto);
+        return HttpResponse.resultSuccess();
     }
 
     @ApiOperation(value = "用户详情查询", notes = "根据id查询用户详细信息")
-    @GetMapping(URL_MAPPING + "/{id}")
-//    @PreAuth("hasAuthority('"+ URL_MAPPING +"/info')")
     @ResourcesMapping(elements = "查询详情", code = "sys_user_get_info")
+    @PreAuth("hasAuthority('sys_user_get_info')")
+    @GetMapping(URL_MAPPING + "/{id}")
     public HttpResponse info(@PathVariable String id) {
         SysUser sysUser = new SysUser();
         sysUser.setId(Long.valueOf(id));
-        return new HttpResponse().success(sysUserService.selectOne(sysUser));
+        return HttpResponse.resultSuccess(sysUserService.selectOne(sysUser));
     }
 
-    @ApiOperation(value = "用户修改信息查询", notes = "根据id查询用户修改信息")
-    @GetMapping(URL_MAPPING + "/edit/{id}")
-//    @PreAuth("hasAuthority('"+ URL_MAPPING +"/info')")
+    @ApiOperation(value = "用户编辑信息查询", notes = "根据id查询用户修改信息")
+    @PreAuth("hasAuthority('sys_user_get_edit_info')")
     @ResourcesMapping(elements = "查询详情", code = "sys_user_get_edit_info")
+    @GetMapping(URL_MAPPING + "/edit/{id}")
     public HttpResponse editInfo(@PathVariable String id) {
-        return new HttpResponse().success(sysUserService.selectUserGroupInfo(Long.valueOf(id)));
+        return HttpResponse.resultSuccess(sysUserService.selectUserGroupInfo(Long.valueOf(id)));
     }
 
     @ApiOperation(value = "获取登陆授权后的用户信息", notes = "根据授权Authentication中UserEntity中的userId获取")
+    @ResourcesMapping(elements = "查询", code = "sys_user_info")
+    @PreAuth("hasAuthority('sys_user_info')")
     @GetMapping(URL_MAPPING + "/userInfo")
-    @ResourcesMapping(elements = "查询详情", code = "sys_user_get_user_info")
     public HttpResponse userInfo(Authentication authentication) {
         UserEntity userEntity = (UserEntity) authentication.getPrincipal();
         SysUser sysUser = new SysUser();
         sysUser.setId(userEntity.getUserId());
-        return new HttpResponse().success(sysUserService.selectOne(sysUser));
+        return HttpResponse.resultSuccess(sysUserService.selectOne(sysUser));
     }
-
 
     @ApiOperation(value = "用户可用菜单树查询", notes = "根据用户权限查询已分配好的菜单")
+    @ResourcesMapping(elements = "查询", code = "sys_user_menu_tree")
+    @PreAuth("hasAuthority('sys_user_menu_tree')")
     @GetMapping(URL_MAPPING + "/userMenuTree")
     public HttpResponse userMenuTree() {
-        return new HttpResponse().success(sysPermissionMenuPkService.loadPermissionMenuTree(1));
+        return HttpResponse.resultSuccess(sysPermissionMenuPkService.loadPermissionMenuTree(1));
     }
 
     @ApiOperation(value = "用户所有可用资源查询", notes = "根据用户Id查询分配的角色权限下面的资源列表")
+    @ResourcesMapping(elements = "查询", code = "sys_user_resources")
+    @PreAuth("hasAuthority('sys_user_resources')")
     @GetMapping("public/" + URL_MAPPING + "/userResources")
     public HttpResponse userResources(Long userId) {
-        return new HttpResponse().success(sysUserService.selectUserResources(userId));
+        return HttpResponse.resultSuccess(sysUserService.selectUserResources(userId));
     }
 
-
     @ApiOperation(value = "用户所有可用资源查询", notes = "根据用户Id查询分配的角色权限下面的资源列表")
+    @ResourcesMapping(elements = "查询", code = "sys_user_name_exist")
+    @PreAuth("hasAuthority('sys_user_name_exist')")
     @GetMapping(URL_MAPPING + "/checkUserNameIsExist")
     public HttpResponse checkUserNameIsExist(@RequestParam String username) {
         SysUser sysUser = new SysUser();
         sysUser.setUsername(username);
-        return new HttpResponse().success(sysUserService.selectOne(sysUser) != null ? true : false);
+        return HttpResponse.resultSuccess(sysUserService.selectOne(sysUser) != null ? true : false);
     }
-
-
 
 }
