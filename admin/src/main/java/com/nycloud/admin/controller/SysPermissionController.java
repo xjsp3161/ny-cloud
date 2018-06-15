@@ -28,6 +28,8 @@ public class SysPermissionController {
     private SysPermissionService sysPermissionService;
 
     @ApiOperation(value = "权限添加", notes = "根据SysPermission对象创建权限")
+    @ResourcesMapping(elements = "添加", code = "sys_permission_add")
+    @PreAuth("hasAuthority('sys_permission_add')")
     @PostMapping
     public HttpResponse add(@RequestBody SysPermission sysPermission, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
@@ -42,7 +44,7 @@ public class SysPermissionController {
     @PreAuth("hasAuthority('sys_permission_delete')")
     @DeleteMapping("/{id}")
     public HttpResponse delete(@PathVariable int id) {
-        sysPermissionService.deleteById(id);
+        sysPermissionService.delete(id);
         return HttpResponse.resultSuccess();
     }
 
@@ -65,6 +67,14 @@ public class SysPermissionController {
         }
         sysPermissionService.updateById(sysPermission);
         return HttpResponse.resultSuccess();
+    }
+
+    @ApiOperation(value = "权限详情查询", notes = "根据id查询权限详细信息")
+    @ResourcesMapping(elements = "详情", code = "sys_permission_info")
+    @PreAuth("hasAuthority('sys_permission_info')")
+    @GetMapping("/{id}")
+    public HttpResponse info(@PathVariable int id) {
+        return HttpResponse.resultSuccess(sysPermissionService.selectById(id));
     }
 
     @ApiOperation(value = "权限是否已存在", notes = "根据SysPermission对象设定的字段值来查询判断")

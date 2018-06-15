@@ -73,7 +73,7 @@ public class SysMenuController {
     @PreAuth("hasAuthority('sys_menu_info')")
     @GetMapping("/{id}")
     public HttpResponse info(@PathVariable int id) {
-        sysMenuService.deleteById(id);
+        sysMenuService.selectById(id);
         return HttpResponse.resultSuccess();
     }
 

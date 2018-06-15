@@ -1,8 +1,0 @@
-2018-06-14 16:37:42,995 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
-2018-06-14 16:37:42,993 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
-2018-06-14 16:37:43,002 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select A.* from sys_resource as A where A.id not in (select B.resource_id from sys_permission_resource_pk AS B where B.permission_id = ?) LIMIT ? 
-2018-06-14 16:37:43,005 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 20(Integer)
-2018-06-14 16:37:43,013 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 20
-2018-06-14 16:37:44,706 DEBUG (SecurityInterceptor.java:49)- current request url: /api/sysPermissionMenu/permissionNoRelationMenuTree
-2018-06-14 16:37:44,707 DEBUG (SecurityInterceptor.java:60)- Receive a request from ,authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@407a647a: Principal: UserEntity(userId=196618686130565120, username=admin); Credentials: [PROTECTED]; Authenticated: false; Details: null; Not granted any authorities
-2018-06-14 16:37:44,714 DEBUG (SecurityInterceptor.java:61)- SecurityInterceptor principal = UserEntity(userId=196618686130565120, username=admin)

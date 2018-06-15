@@ -1,5 +1,0 @@
-2018-06-14 11:11:01,811 DEBUG (SecurityInterceptor.java:49)- current request url: /api/sysUserRole/userRoleList
-2018-06-14 11:11:01,813 DEBUG (SecurityInterceptor.java:49)- current request url: /api/sysUserRole/userNoRelationRoleList
-2018-06-14 11:11:01,821 DEBUG (SecurityInterceptor.java:60)- Receive a request from ,authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@407a647a: Principal: UserEntity(userId=196618686130565120, username=admin); Credentials: [PROTECTED]; Authenticated: false; Details: null; Not granted any authorities
-2018-06-14 11:11:01,821 DEBUG (SecurityInterceptor.java:60)- Receive a request from ,authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@407a647a: Principal: UserEntity(userId=196618686130565120, username=admin); Credentials: [PROTECTED]; Authenticated: false; Details: null; Not granted any authorities
-2018-06-14 11:11:01,821 DEBUG (SecurityInterceptor.java:61)- SecurityInterceptor principal = UserEntity(userId=196618686130565120, username=admin)

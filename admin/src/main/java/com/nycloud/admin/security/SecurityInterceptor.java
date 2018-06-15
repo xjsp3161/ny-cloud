@@ -42,8 +42,7 @@ public class SecurityInterceptor extends HandlerInterceptorAdapter {
     private Logger logger = LoggerFactory.getLogger(SecurityInterceptor.class);
 
     @Override
-    public boolean preHandle(HttpServletRequest request,
-                             HttpServletResponse response, Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String requestURI = request.getRequestURI();
         if (logger.isDebugEnabled()) {
             logger.debug("current request url: {}" , requestURI);
@@ -65,7 +64,6 @@ public class SecurityInterceptor extends HandlerInterceptorAdapter {
             logger.debug(e.getLocalizedMessage());
             response.setStatus(HttpStatus.UNPROCESSABLE_ENTITY.value());
             return false;
-
         }
     }
 

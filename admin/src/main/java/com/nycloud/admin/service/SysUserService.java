@@ -1,13 +1,11 @@
 package com.nycloud.admin.service;
 
 import com.nycloud.admin.dto.SysUserDto;
-import com.nycloud.admin.mapper.SysResourceMapper;
-import com.nycloud.admin.mapper.SysRoleMapper;
-import com.nycloud.admin.mapper.SysUserGroupPkMapper;
-import com.nycloud.admin.mapper.SysUserMapper;
+import com.nycloud.admin.mapper.*;
 import com.nycloud.admin.model.SysRole;
 import com.nycloud.admin.model.SysUser;
 import com.nycloud.admin.model.SysUserGroupPk;
+import com.nycloud.admin.model.SysUserRolePk;
 import com.nycloud.admin.vo.SysUserDetail;
 import com.nycloud.admin.vo.SysUserInfo;
 import com.nycloud.common.utils.ListUtils;
@@ -29,6 +27,7 @@ import static java.util.stream.Collectors.toCollection;
  * @version: 1.0
  **/
 @Service
+@Transactional(rollbackFor = Exception.class)
 public class SysUserService extends BaseService<SysUserMapper, SysUser> {
 
     @Autowired
@@ -40,7 +39,9 @@ public class SysUserService extends BaseService<SysUserMapper, SysUser> {
     @Autowired
     private SysRoleMapper sysRoleMapper;
 
-    @Transactional(rollbackFor = Exception.class)
+    @Autowired
+    private SysUserRolePkMapper sysUserRolePkMapper;
+
     public void save(SysUserDto dto) {
         SysUser sysUser = new SysUser();
         sysUser.setId(SnowFlake.getInstance().nextId());
@@ -59,29 +60,53 @@ public class SysUserService extends BaseService<SysUserMapper, SysUser> {
         sysUserGroupPkMapper.insert(pk);
     }
 
-    @Transactional(rollbackFor = Exception.class)
     public void update(SysUserDto dto) {
-        long userId = Long.valueOf(dto.getUserId());
-        SysUserInfo userInfo = this.selectUserGroupInfo(userId);
-        if (userInfo.getGroupName() != null) {
-            SysUserGroupPk pk = new SysUserGroupPk();
-            pk.setGroupId(userInfo.getGroupId());
-            sysUserGroupPkMapper.delete(pk);
-        }
+        long userId = Long.valueOf(dto.getId());
+        int newGroupId = Integer.valueOf(dto.getGroupId());
 
+        // 判断是否修改用户组
         SysUserGroupPk pk = new SysUserGroupPk();
         pk.setUserId(userId);
-        pk.setGroupId(Integer.valueOf(dto.getGroupId()));
-        sysUserGroupPkMapper.insert(pk);
+        SysUserGroupPk newPk = sysUserGroupPkMapper.selectOne(pk);
+        if (newPk == null) {
+            pk.setGroupId(newGroupId);
+            sysUserGroupPkMapper.insert(pk);
+        } else {
+            final int originalGroupId = newPk.getGroupId();
+            if (originalGroupId != newGroupId) {
+                Map<String, Object> map = new HashMap<String, Object>(3) {{
+                    put("originalGroupId", originalGroupId);
+                    put("newGroupId", newGroupId);
+                    put("userId", userId);
+                }};
+                sysUserGroupPkMapper.updateGroupUser(map);
+            }
+        }
 
-        SysUser sysUser = new SysUser();
-        sysUser.setId(userId);
+        SysUser sysUser = this.selectById(userId);
         sysUser.setUsername(dto.getUsername());
         sysUser.setName(dto.getName());
         sysUser.setState(Integer.valueOf(dto.getState()));
         this.mapper.updateByPrimaryKey(sysUser);
     }
 
+    /**
+     * 删除用户，在删除用户的同时，需要先删除用户和角色还有用户之前的关联关系
+     * @param id 用户ID
+     */
+    public void delete(Long id) {
+        super.deleteById(id);
+        // 删除用户和角色的关联
+        SysUserRolePk userRolePk = new SysUserRolePk();
+        userRolePk.setUserId(id);
+        sysUserRolePkMapper.delete(userRolePk);
+        // 删除和用户组之间的关联
+        SysUserGroupPk userGroupPk = new SysUserGroupPk();
+        userGroupPk.setUserId(id);
+        sysUserGroupPkMapper.delete(userGroupPk);
+        // 删除用户
+        this.deleteById(id);
+    }
 
     public SysUserInfo selectUserGroupInfo(Long userId) {
         return this.mapper.selectUserGroup(userId);

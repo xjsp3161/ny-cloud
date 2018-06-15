@@ -13,4 +13,6 @@ public class SysPermission {
 
     private String description;
 
+    private int state;
+
 }
