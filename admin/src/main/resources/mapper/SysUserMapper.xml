@@ -37,7 +37,7 @@
     </if>
   </select>
   <select id="selectGroupNoUsers" parameterType="java.util.Map" resultMap="BaseResultMap">
-    select A.* from sys_user as A where A.id not in (select user_id from sys_user_group_pk AS B where B.group_id = #{userId,jdbcType=INTEGER})
+    select A.* from sys_user A left join sys_user_group_pk B on (A.id = B.user_id) where B.user_id is null
     <if  test="name != null">
       and A.name like '%'#{name,jdbcType=VARCHAR}'%'
     </if>

@@ -1,6 +1,6 @@
 package com.nycloud.admin.controller;
 
-import com.nycloud.admin.dto.SysUserDto;
+import com.nycloud.admin.model.SysUser;
 import com.nycloud.admin.model.SysUserGroup;
 import com.nycloud.admin.service.SysUserGroupService;
 import com.nycloud.common.dto.RequestDto;
@@ -67,6 +67,24 @@ public class SysUserGroupController {
         }
         sysUserGroupService.updateById(dto);
         return HttpResponse.resultSuccess();
+    }
+
+    @ApiOperation(value = "用户组编辑信息查询", notes = "根据id查询用户组修改信息")
+    @PreAuth("hasAuthority('sys_user_group_edit_info')")
+    @ResourcesMapping(elements = "查询详情", code = "sys_user_group_edit_info")
+    @GetMapping("/edit/{id}")
+    public HttpResponse editInfo(@PathVariable int id) {
+        return HttpResponse.resultSuccess(sysUserGroupService.selectById(id));
+    }
+
+    @ApiOperation(value = "用户所有可用资源查询", notes = "根据用户Id查询分配的角色权限下面的资源列表")
+    @ResourcesMapping(elements = "查询", code = "sys_user_group_name_exist")
+    @PreAuth("hasAuthority('sys_user_group_name_exist')")
+    @GetMapping("/checkUserGroupNameIsExist")
+    public HttpResponse checkUserNameIsExist(@RequestParam String name) {
+        SysUserGroup sysUserGroup = new SysUserGroup();
+        sysUserGroup.setName(name);
+        return HttpResponse.resultSuccess(sysUserGroupService.selectOne(sysUserGroup) != null ? true : false);
     }
 
 }

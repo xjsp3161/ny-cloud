@@ -9,10 +9,10 @@ public interface SysMenuMapper extends Mapper<SysMenu> {
 
     /**
      * 查询所有可用的菜单
-     * @param enable
+     * @param state
      * @return
      */
-    List<MenuTree> selectByEnableAll(Integer enable);
+    List<MenuTree> selectByAll(Integer state);
 
     /**
      * 根据权限加载已分配的菜单列表

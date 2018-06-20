@@ -9,6 +9,7 @@
     <result column="url" jdbcType="VARCHAR" property="url" />
     <result column="url_request_type" jdbcType="VARCHAR" property="urlRequestType" />
     <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="state" jdbcType="INTEGER" property="state" />
   </resultMap>
   <select id="selectPermissionNoResources" parameterType="java.util.Map" resultMap="BaseResultMap">
     select A.* from sys_resource as A where A.id not in (select B.resource_id from sys_permission_resource_pk AS B where B.permission_id = #{permissionId,jdbcType=INTEGER})

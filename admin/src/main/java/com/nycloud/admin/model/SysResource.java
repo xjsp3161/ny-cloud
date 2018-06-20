@@ -21,4 +21,5 @@ public class SysResource {
 
     private String description;
 
+    private int state;
 }

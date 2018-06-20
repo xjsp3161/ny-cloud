@@ -27,13 +27,13 @@ public class SysPermissionMenuServicePk extends BaseService<SysPermissionMenuPkM
     private SysMenuMapper sysMenuMapper;
 
     public List<MenuTree> loadPermissionNoMenuTree(Integer permissionId){
-        List<MenuTree> allList = sysMenuMapper.selectByEnableAll(1);
+        List<MenuTree> allList = sysMenuMapper.selectByAll(1);
         List<MenuTree> currentList = sysMenuMapper.selectPermissionNoExistMenus(permissionId);
         return MenuTreeUtil.filterGenerateSortMenu(allList, currentList);
     }
 
     public List<MenuTree> loadPermissionMenuTree(Integer permissionId){
-        List<MenuTree> allList = sysMenuMapper.selectByEnableAll(1);
+        List<MenuTree> allList = sysMenuMapper.selectByAll(1);
         List<MenuTree> currentList = sysMenuMapper.selectPermissionMenus(permissionId);
         return MenuTreeUtil.filterGenerateSortMenu(allList, currentList);
     }

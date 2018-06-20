@@ -20,7 +20,7 @@ import java.util.*;
 public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
 
     public List<MenuTree> loadAllMenuTree() {
-        List<MenuTree> list = this.mapper.selectByEnableAll(1);
+        List<MenuTree> list = this.mapper.selectByAll(1);
         return MenuTreeUtil.generateMenuTree(list);
     }
 

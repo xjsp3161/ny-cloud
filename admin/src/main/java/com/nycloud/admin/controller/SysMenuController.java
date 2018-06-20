@@ -85,4 +85,15 @@ public class SysMenuController {
         return HttpResponse.resultSuccess(sysMenuService.loadAllMenuTree());
     }
 
+    @ApiOperation(value = "菜单是否已存在", notes = "根据SysMenu对象设定的字段值来查询判断")
+    @ResourcesMapping(elements = "查询", code = "sys_menu_exist")
+    @PreAuth("hasAuthority('sys_menu_exist')")
+    @GetMapping("/exist")
+    public HttpResponse exist(SysMenu sysMenu) {
+        if (sysMenu == null) {
+            return HttpResponse.errorParams();
+        }
+        return HttpResponse.resultSuccess(sysMenuService.selectOne(sysMenu) != null);
+    }
+
 }

@@ -114,7 +114,7 @@ public class SysUserController {
         return HttpResponse.resultSuccess(sysPermissionMenuPkService.loadPermissionMenuTree(1));
     }
 
-    @ApiOperation(value = "用户所有可用资源查询", notes = "根据用户Id查询分配的角色权限下面的资源列表")
+    @ApiOperation(value = "查询用户名是否存在", notes = "根据用户Id查询分配的角色权限下面的资源列表")
     @ResourcesMapping(elements = "查询", code = "sys_user_name_exist")
     @PreAuth("hasAuthority('sys_user_name_exist')")
     @GetMapping(URL_MAPPING + "/checkUserNameIsExist")

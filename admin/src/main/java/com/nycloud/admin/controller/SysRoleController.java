@@ -1,5 +1,6 @@
 package com.nycloud.admin.controller;
 
+import com.nycloud.admin.model.SysPermission;
 import com.nycloud.admin.model.SysRole;
 import com.nycloud.admin.service.SysRoleService;
 import com.nycloud.common.dto.RequestDto;
@@ -66,6 +67,25 @@ public class SysRoleController {
         }
         sysRoleService.updateById(sysRole);
         return HttpResponse.resultSuccess();
+    }
+
+    @ApiOperation(value = "用户详情查询", notes = "根据id查询用户详细信息")
+    @ResourcesMapping(elements = "查询详情", code = "sys_role_detail")
+    @PreAuth("hasAuthority('sys_role_detail')")
+    @GetMapping("/{id}")
+    public HttpResponse info(@PathVariable int id) {
+        return HttpResponse.resultSuccess(sysRoleService.selectById(id));
+    }
+
+    @ApiOperation(value = "角色是否已存在", notes = "根据SysRole对象设定的字段值来查询判断")
+    @ResourcesMapping(elements = "查询", code = "sys_role_exist")
+    @PreAuth("hasAuthority('sys_role_exist')")
+    @GetMapping("/exist")
+    public HttpResponse exist(SysRole sysRole) {
+        if (sysRole == null) {
+            return HttpResponse.errorParams();
+        }
+        return HttpResponse.resultSuccess(sysRoleService.selectOne(sysRole) != null);
     }
 
 }

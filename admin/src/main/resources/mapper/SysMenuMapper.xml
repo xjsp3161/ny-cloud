@@ -4,7 +4,6 @@
   <resultMap id="BaseResultMap" type="com.nycloud.admin.model.SysMenu">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="title" jdbcType="VARCHAR" property="title" />
-    <result column="url" jdbcType="VARCHAR" property="url" />
     <result column="icon" jdbcType="VARCHAR" property="icon" />
     <result column="parent_id" jdbcType="INTEGER" property="parentId" />
     <result column="sort" jdbcType="INTEGER" property="sort" />
@@ -13,13 +12,13 @@
     <result column="path" jdbcType="VARCHAR" property="path" />
     <result column="component" jdbcType="VARCHAR" property="component" />
     <result column="description" jdbcType="VARCHAR" property="description" />
-    <result column="enable" jdbcType="INTEGER" property="enable" />
+    <result column="state" jdbcType="INTEGER" property="state" />
   </resultMap>
   <resultMap id="MenuTreeMap" type="com.nycloud.admin.vo.MenuTree" extends="BaseResultMap"></resultMap>
-  <select id="selectByEnableAll" parameterType="java.lang.Integer" resultMap="MenuTreeMap">
-    select id, title, url, icon, parent_id, sort, level, name, path, component, description,
-    enable
-    from sys_menu where enable = #{enable,jdbcType=INTEGER} order by level,sort,id asc
+  <select id="selectByAll" parameterType="java.lang.Integer" resultMap="MenuTreeMap">
+    select id, title, icon, parent_id, sort, level, name, path, component, description,
+    state
+    from sys_menu where state = #{state,jdbcType=INTEGER} order by level,sort,id asc
   </select>
   <select id="selectPermissionNoExistMenus" parameterType="java.lang.Integer" resultMap="MenuTreeMap">
     select * from sys_menu where id not in (select menu_id from sys_permission_menu_pk where permission_id = #{permissionId,jdbcType=INTEGER})
