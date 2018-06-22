@@ -7,7 +7,7 @@ ny-cloud 是基于Spring Cloud微服务开发开源权限管理系统，可用�
 			auth-server -> 服务认证授权中心<br>
 			admin ->  权限管理服务<br>
 此项目采用前后端分离的开发模式，前端为ny-vue项目，具体介绍，请移动步该项目<br>
-项目访问地址：[点击打开](http://www.stars21.cn) 线上项目目前是使用docker容器在运行，仅供演示。<br>
+项目访问地址：[点击访问](http://www.stars21.cn) 线上项目目前是使用docker容器在运行，仅供演示。<br>
 账号密码： guest  123456 <br>
 技术交流群： 807233785 <br>
 此项目前端使用ny-vue项目<br>
@@ -15,6 +15,7 @@ ny-cloud 是基于Spring Cloud微服务开发开源权限管理系统，可用�
 依次是 eureka-server(端口：8760)，auth-serve(端口：8761)，admin(端口：8762)，api-gateway(端口：7000)<br>
 以上项目全部正常启动后 再启动前端ny-vue(端口：1000) 项目即可<br>
 #### 前端项目UI截图：
+具体前端项目介绍请移步：[点击移步](https://github.com/neveryielding/ny-vue)
 登录页面
 [![登录页面](http://chuantu.biz/t6/331/1529650483x-1566688497.png "登录页面")](http://chuantu.biz/t6/331/1529650483x-1566688497.png "登录页面")
 首页
