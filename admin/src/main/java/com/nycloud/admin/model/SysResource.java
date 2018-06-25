@@ -7,7 +7,7 @@ import javax.persistence.Id;
 public class SysResource {
 
     @Id
-    private Integer id;
+    private Long id;
 
     private String name;
 

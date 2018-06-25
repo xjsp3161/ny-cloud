@@ -27,7 +27,7 @@ import java.util.List;
  * @modified By:
  * @version: 1.0
  **/
-@Api(value = "权限", tags = {"权限管理接口"})
+@Api(value = "权限管理", tags = {"权限管理接口"})
 @RestController
 @RequestMapping(value = "api/sysPermission")
 public class SysPermissionController {

@@ -1,23 +1,11 @@
 package com.nycloud.admin.model;
 
+import lombok.Data;
+
+@Data
 public class SysPermissionResourcePk {
     private Integer permissionId;
 
-    private Integer resourceId;
+    private Long resourceId;
 
-    public Integer getPermissionId() {
-        return permissionId;
-    }
-
-    public void setPermissionId(Integer permissionId) {
-        this.permissionId = permissionId;
-    }
-
-    public Integer getResourceId() {
-        return resourceId;
-    }
-
-    public void setResourceId(Integer resourceId) {
-        this.resourceId = resourceId;
-    }
 }

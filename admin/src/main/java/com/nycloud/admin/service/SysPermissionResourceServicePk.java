@@ -58,7 +58,7 @@ public class SysPermissionResourceServicePk extends BaseService<SysPermissionRes
         return this.mapper.insertPermissionResources(list);
     }
 
-    public Integer batchDelete(Integer permissionId, Integer [] resourceIds) {
+    public Integer batchDelete(Integer permissionId, Long [] resourceIds) {
         Map<String, Object> map = new HashMap<String, Object>(2){{
             put("permissionId", permissionId);
             put("resourceIds", resourceIds);

@@ -9,6 +9,7 @@ import com.nycloud.common.dto.RequestDto;
 import com.nycloud.common.vo.HttpResponse;
 import com.nycloud.security.annotation.PreAuth;
 import com.nycloud.security.annotation.ResourcesMapping;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
@@ -23,6 +24,7 @@ import java.util.List;
  * @modified By:
  * @version: 1.0
  **/
+@Api(value = "角色管理", tags = {"角色管理接口"})
 @RestController
 @RequestMapping(value = "api/sysRole")
 public class SysRoleController {

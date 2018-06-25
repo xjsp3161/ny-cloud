@@ -3,7 +3,7 @@
 <mapper namespace="com.nycloud.admin.mapper.SysPermissionResourcePkMapper">
   <resultMap id="BaseResultMap" type="com.nycloud.admin.model.SysPermissionResourcePk">
     <result column="permission_id" jdbcType="INTEGER" property="permissionId" />
-    <result column="resource_id" jdbcType="INTEGER" property="resourceId" />
+    <result column="resource_id" jdbcType="BIGINT" property="resourceId" />
   </resultMap>
   <insert id="insertPermissionResources" parameterType="java.util.List">
     insert into sys_permission_resource_pk (permission_id, resource_id)

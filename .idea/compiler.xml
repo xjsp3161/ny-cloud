@@ -9,7 +9,9 @@
         <module name="admin" />
         <module name="api-gateway" />
         <module name="auth-server" />
+        <module name="common" />
         <module name="eureka-server" />
+        <module name="security" />
         <module name="service-security" />
       </profile>
     </annotationProcessing>
