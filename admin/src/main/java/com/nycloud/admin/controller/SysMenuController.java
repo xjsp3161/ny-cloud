@@ -6,6 +6,7 @@ import com.nycloud.common.dto.RequestDto;
 import com.nycloud.common.vo.HttpResponse;
 import com.nycloud.security.annotation.PreAuth;
 import com.nycloud.security.annotation.ResourcesMapping;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -19,6 +20,7 @@ import io.swagger.annotations.ApiOperation;
  * @modified By:
  * @version: 1.0
  **/
+@Api(description = "菜单", tags = {"菜单管理接口"})
 @RestController
 @RequestMapping("api/sysMenu")
 public class SysMenuController {
@@ -27,7 +29,7 @@ public class SysMenuController {
     private SysMenuService sysMenuService;
 
     @ApiOperation(value = "菜单添加", notes = "根据SysMenu添加菜单")
-    @ResourcesMapping(elements = "添加", code = "sys_menu_add")
+    @ResourcesMapping(element = "添加", code = "sys_menu_add")
     @PreAuth("hasAuthority('sys_menu_add')")
     @PostMapping
     public HttpResponse add(@Validated @RequestBody SysMenu sysMenu, BindingResult bindingResult) {
@@ -39,7 +41,7 @@ public class SysMenuController {
     }
 
     @ApiOperation(value = "菜单删除", notes = "根据菜单id删除菜单信息")
-    @ResourcesMapping(elements = "删除", code = "sys_menu_delete")
+    @ResourcesMapping(element = "删除", code = "sys_menu_delete")
     @PreAuth("hasAuthority('sys_menu_delete')")
     @DeleteMapping("/{id}")
     public HttpResponse delete(@PathVariable int id) {
@@ -48,7 +50,7 @@ public class SysMenuController {
     }
 
     @ApiOperation(value = "菜单查询", notes = "可分页并可根据菜单名称模糊查询")
-    @ResourcesMapping(elements = "查询", code = "sys_menu_query")
+    @ResourcesMapping(element = "查询", code = "sys_menu_query")
     @PreAuth("hasAuthority('sys_menu_query')")
     @GetMapping
     public HttpResponse query(RequestDto requestDto) {
@@ -57,7 +59,7 @@ public class SysMenuController {
     }
 
     @ApiOperation(value = "菜单修改", notes = "根据传递的SysMenu对象来更新, SysMenu对象必须包含id")
-    @ResourcesMapping(elements = "修改", code = "sys_menu_update")
+    @ResourcesMapping(element = "修改", code = "sys_menu_update")
     @PreAuth("hasAuthority('sys_menu_update')")
     @PutMapping
     public HttpResponse update(@Validated @RequestBody SysMenu sysMenu, BindingResult bindingResult) {
@@ -69,7 +71,7 @@ public class SysMenuController {
     }
 
     @ApiOperation(value = "菜单详情查询", notes = "根据id查询菜单详细信息")
-    @ResourcesMapping(elements = "详情", code = "sys_menu_info")
+    @ResourcesMapping(element = "详情", code = "sys_menu_info")
     @PreAuth("hasAuthority('sys_menu_info')")
     @GetMapping("/{id}")
     public HttpResponse info(@PathVariable int id) {
@@ -78,7 +80,7 @@ public class SysMenuController {
     }
 
     @ApiOperation(value = "菜单树查询",  notes = "查询所有可用菜单并返回树状结构")
-    @ResourcesMapping(elements = "菜单树查询", code = "sys_menu_tree")
+    @ResourcesMapping(element = "菜单树查询", code = "sys_menu_tree")
     @PreAuth("hasAuthority('sys_menu_tree')")
     @GetMapping("/tree")
     public HttpResponse tree() {
@@ -86,7 +88,7 @@ public class SysMenuController {
     }
 
     @ApiOperation(value = "菜单是否已存在", notes = "根据SysMenu对象设定的字段值来查询判断")
-    @ResourcesMapping(elements = "查询", code = "sys_menu_exist")
+    @ResourcesMapping(element = "查询", code = "sys_menu_exist")
     @PreAuth("hasAuthority('sys_menu_exist')")
     @GetMapping("/exist")
     public HttpResponse exist(SysMenu sysMenu) {

@@ -27,7 +27,7 @@ public class SysRolePermissionController {
     private SysRolePermissionServicePk sysRolePermissionPkService;
 
     @ApiOperation(value = "角色关联权限批量保存",  notes = "保存多个SysRolePermissionPk对象")
-    @ResourcesMapping(elements = "添加", code = "sys_role_permission_add")
+    @ResourcesMapping(element = "添加", code = "sys_role_permission_add")
     @PreAuth("hasAuthority('sys_role_permission_add')")
     @PostMapping("/batchAdd")
     public HttpResponse batchAdd(@RequestBody List<SysRolePermissionPk> list) {
@@ -39,7 +39,7 @@ public class SysRolePermissionController {
     }
 
     @ApiOperation(value = "角色关联权限批量删除",  notes = "根据角色id和多个权限id删除关联")
-    @ResourcesMapping(elements = "删除", code = "sys_role_permission_delete")
+    @ResourcesMapping(element = "删除", code = "sys_role_permission_delete")
     @PreAuth("hasAuthority('sys_role_permission_delete')")
     @PostMapping("/batchDelete")
     public HttpResponse batchDelete(@Validated @RequestBody RolePermissionDto dto) {
@@ -51,7 +51,7 @@ public class SysRolePermissionController {
     }
 
     @ApiOperation(value = "角色未关联权限查询", notes = "根据角色id查询该角色未关联的权限并返回权限列表")
-    @ResourcesMapping(elements = "查询", code = "sys_role_no_permission")
+    @ResourcesMapping(element = "查询", code = "sys_role_no_permission")
     @PreAuth("hasAuthority('sys_role_no_permission')")
     @GetMapping("/roleNoRelationPermissionList")
     public HttpResponse roleNoRelationPermissionList(RolePermissionDto dto) {
@@ -59,7 +59,7 @@ public class SysRolePermissionController {
     }
 
     @ApiOperation(value = "角色已关联权限查询",  notes = "根据角色id查询该角色已关联的权限并返回权限列表")
-    @ResourcesMapping(elements = "查询", code = "sys_role_permission")
+    @ResourcesMapping(element = "查询", code = "sys_role_permission")
     @PreAuth("hasAuthority('sys_role_permission')")
     @GetMapping("/rolePermissionList")
     public HttpResponse rolePermissionList(RolePermissionDto dto) {

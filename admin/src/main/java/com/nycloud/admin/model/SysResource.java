@@ -21,5 +21,9 @@ public class SysResource {
 
     private String description;
 
+    private int parentId;
+
+    private String parentName;
+
     private int state;
 }

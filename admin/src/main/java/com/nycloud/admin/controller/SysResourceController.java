@@ -1,6 +1,5 @@
 package com.nycloud.admin.controller;
 
-import com.nycloud.admin.model.SysPermission;
 import com.nycloud.admin.model.SysResource;
 import com.nycloud.admin.service.SysResourceService;
 import com.nycloud.common.dto.RequestDto;
@@ -28,7 +27,7 @@ public class SysResourceController {
     private SysResourceService sysResourceService;
 
     @ApiOperation(value = "资源增加", notes = "根据SysResource对象增加资源")
-    @ResourcesMapping(elements = "增加", code = "sys_resource_add")
+    @ResourcesMapping(element = "增加", code = "sys_resource_add")
     @PreAuth("hasAuthority('sys_resource_add')")
     @PostMapping
     public HttpResponse add(@Validated @RequestBody SysResource sysResource, BindingResult bindingResult) {
@@ -40,7 +39,7 @@ public class SysResourceController {
     }
 
     @ApiOperation(value = "资源删除", notes = "根据资源id删除资源信息")
-    @ResourcesMapping(elements = "删除", code = "sys_resource_delete")
+    @ResourcesMapping(element = "删除", code = "sys_resource_delete")
     @PreAuth("hasAuthority('sys_resource_delete')")
     @DeleteMapping("/{id}")
     public HttpResponse delete(@PathVariable int id) {
@@ -49,7 +48,7 @@ public class SysResourceController {
     }
 
     @ApiOperation(value = "资源查询", notes = "可分页并可根据权限名称模糊检索")
-    @ResourcesMapping(elements = "删除", code = "sys_resource_query")
+    @ResourcesMapping(element = "删除", code = "sys_resource_query")
     @PreAuth("hasAuthority('sys_resource_query')")
     @GetMapping
     public HttpResponse query(RequestDto requestDto) {
@@ -58,7 +57,7 @@ public class SysResourceController {
     }
 
     @ApiOperation(value = "资源修改", notes = "根据传递的SysPermission对象来更新, SysPermission对象必须包含id")
-    @ResourcesMapping(elements = "修改", code = "sys_resource_update")
+    @ResourcesMapping(element = "修改", code = "sys_resource_update")
     @PreAuth("hasAuthority('sys_resource_update')")
     @PutMapping
     public HttpResponse update(@Validated @RequestBody SysResource sysResource, BindingResult bindingResult) {
@@ -70,7 +69,7 @@ public class SysResourceController {
     }
 
     @ApiOperation(value = "资源详情查询", notes = "根据id查询资源详细信息")
-    @ResourcesMapping(elements = "修改", code = "sys_resource_info")
+    @ResourcesMapping(element = "修改", code = "sys_resource_info")
     @PreAuth("hasAuthority('sys_resource_info')")
     @GetMapping("/{id}")
     public HttpResponse info(@PathVariable int id) {
@@ -78,7 +77,7 @@ public class SysResourceController {
     }
 
     @ApiOperation(value = "资源是否已存在", notes = "根据SysResource对象设定的字段值来查询判断")
-    @ResourcesMapping(elements = "修改", code = "sys_resource_exist")
+    @ResourcesMapping(element = "修改", code = "sys_resource_exist")
     @PreAuth("hasAuthority('sys_resource_exist')")
     @GetMapping("/exist")
     public HttpResponse exist(SysResource resource) {

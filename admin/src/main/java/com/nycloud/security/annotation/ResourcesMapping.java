@@ -14,6 +14,6 @@ import java.lang.annotation.*;
 @Inherited
 @Documented
 public @interface ResourcesMapping {
-    String elements();
+    String element();
     String code();
 }

@@ -29,7 +29,7 @@ public class SysUserGroupPkController {
     private SysUserGroupPkService sysUserGroupPkService;
 
     @ApiOperation(value = "用户组关联用户批量添加",  notes = "添加多个SysUserGroupPk对象")
-    @ResourcesMapping(elements = "添加", code = "sys_group_user_add")
+    @ResourcesMapping(element = "添加", code = "sys_group_user_add")
     @PreAuth("hasAuthority('sys_group_user_add')")
     @PostMapping("/batchAdd")
     public HttpResponse batchAdd(@RequestBody List<SysUserGroupPk> list) {
@@ -41,7 +41,7 @@ public class SysUserGroupPkController {
     }
 
     @ApiOperation(value = "用户组关联用户批量删除",  notes = "根据用户id和多个角色id删除关联")
-    @ResourcesMapping(elements = "删除", code = "sys_group_user_delete")
+    @ResourcesMapping(element = "删除", code = "sys_group_user_delete")
     @PreAuth("hasAuthority('sys_group_user_delete')")
     @PostMapping("/batchDelete")
     public HttpResponse batchDelete(@Validated @RequestBody UserGroupDto dto) {
@@ -53,7 +53,7 @@ public class SysUserGroupPkController {
     }
 
     @ApiOperation(value = "用户组未关联用户查询", notes = "根据用户id查询该用户未关联的角色并返回角色列表")
-    @ResourcesMapping(elements = "查询", code = "sys_group_no_user")
+    @ResourcesMapping(element = "查询", code = "sys_group_no_user")
     @PreAuth("hasAuthority('sys_group_no_user')")
     @GetMapping("/groupNoRelationUserList")
     public HttpResponse groupNoRelationUserList(UserGroupDto dto) {
@@ -61,7 +61,7 @@ public class SysUserGroupPkController {
     }
 
     @ApiOperation(value = "用户组已关联用户查询",  notes = "根据用户id查询该用户已关联的角色并返回角色列表")
-    @ResourcesMapping(elements = "查询", code = "sys_group_user")
+    @ResourcesMapping(element = "查询", code = "sys_group_user")
     @PreAuth("hasAuthority('sys_group_user')")
     @GetMapping("/groupUserList")
     public HttpResponse groupUserList(UserGroupDto dto) {

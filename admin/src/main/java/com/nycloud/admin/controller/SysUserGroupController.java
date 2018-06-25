@@ -1,6 +1,5 @@
 package com.nycloud.admin.controller;
 
-import com.nycloud.admin.model.SysUser;
 import com.nycloud.admin.model.SysUserGroup;
 import com.nycloud.admin.service.SysUserGroupService;
 import com.nycloud.common.dto.RequestDto;
@@ -28,7 +27,7 @@ public class SysUserGroupController {
     private SysUserGroupService sysUserGroupService;
 
     @ApiOperation(value = "用户组添加", notes = "根据SysUserGroup对象创建用户组")
-    @ResourcesMapping(elements = "删除", code = "sys_user_group_add")
+    @ResourcesMapping(element = "删除", code = "sys_user_group_add")
     @PreAuth("hasAuthority('sys_user_group_add')")
     @PostMapping
     public HttpResponse save(@RequestBody SysUserGroup sysUserGroup, BindingResult bindingResult) {
@@ -40,7 +39,7 @@ public class SysUserGroupController {
     }
 
     @ApiOperation(value = "用户组删除", notes = "根据用户组id删除用户组信息")
-    @ResourcesMapping(elements = "删除", code = "sys_user_group_delete")
+    @ResourcesMapping(element = "删除", code = "sys_user_group_delete")
     @PreAuth("hasAuthority('sys_user_group_delete')")
     @DeleteMapping("/{id}")
     public HttpResponse delete(@PathVariable int id) {
@@ -49,7 +48,7 @@ public class SysUserGroupController {
     }
 
     @ApiOperation(value = "用户组查询", notes = "可分页并可根据用户组名称模糊检索")
-    @ResourcesMapping(elements = "查询", code = "sys_user_group_query")
+    @ResourcesMapping(element = "查询", code = "sys_user_group_query")
     @PreAuth("hasAuthority('sys_user_group_query')")
     @GetMapping
     public HttpResponse query(RequestDto requestDto) {
@@ -58,7 +57,7 @@ public class SysUserGroupController {
     }
 
     @ApiOperation(value = "用户修改", notes = "根据传递的SysUserGroup对象来更新, SysUserGroup对象必须包含id")
-    @ResourcesMapping(elements = "修改", code = "sys_user_group_update")
+    @ResourcesMapping(element = "修改", code = "sys_user_group_update")
     @PreAuth("hasAuthority('sys_user_group_update')")
     @PutMapping
     public HttpResponse update(@Validated @RequestBody SysUserGroup dto, BindingResult bindingResult) {
@@ -71,14 +70,14 @@ public class SysUserGroupController {
 
     @ApiOperation(value = "用户组编辑信息查询", notes = "根据id查询用户组修改信息")
     @PreAuth("hasAuthority('sys_user_group_edit_info')")
-    @ResourcesMapping(elements = "查询详情", code = "sys_user_group_edit_info")
+    @ResourcesMapping(element = "查询详情", code = "sys_user_group_edit_info")
     @GetMapping("/edit/{id}")
     public HttpResponse editInfo(@PathVariable int id) {
         return HttpResponse.resultSuccess(sysUserGroupService.selectById(id));
     }
 
     @ApiOperation(value = "用户所有可用资源查询", notes = "根据用户Id查询分配的角色权限下面的资源列表")
-    @ResourcesMapping(elements = "查询", code = "sys_user_group_name_exist")
+    @ResourcesMapping(element = "查询", code = "sys_user_group_name_exist")
     @PreAuth("hasAuthority('sys_user_group_name_exist')")
     @GetMapping("/checkUserGroupNameIsExist")
     public HttpResponse checkUserNameIsExist(@RequestParam String name) {
