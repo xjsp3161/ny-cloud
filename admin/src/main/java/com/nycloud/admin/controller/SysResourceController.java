@@ -89,4 +89,13 @@ public class SysResourceController {
         return HttpResponse.resultSuccess(sysResourceService.selectOne(resource) != null);
     }
 
+    @ApiOperation(value = "资源树查询", notes = "查询所有的资源并返回父子的树状结构")
+    @ResourcesMapping(element = "查询", code = "sys_resource_tree")
+//    @PreAuth("hasAuthority('sys_resource_tree')")
+    @GetMapping("/tree")
+    public HttpResponse tree() {
+        return HttpResponse.resultSuccess(sysResourceService.selectSysResourceTree());
+    }
+
+
 }

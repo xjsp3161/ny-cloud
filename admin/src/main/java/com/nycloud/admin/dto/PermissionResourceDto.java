@@ -15,6 +15,6 @@ public class PermissionResourceDto extends RequestDto{
 
     private Integer permissionId;
 
-        private Long [] resourceIds;
+    private Long [] resourceIds;
 
 }

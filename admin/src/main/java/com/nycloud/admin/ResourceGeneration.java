@@ -1,6 +1,8 @@
 package com.nycloud.admin;
 
+import com.nycloud.common.utils.SnowFlake;
 import com.nycloud.security.annotation.ResourcesMapping;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 import java.io.File;
@@ -46,43 +48,57 @@ public class ResourceGeneration {
             for (String className : classNames) {
                 Class<?> cls = Class.forName(className);
                 RequestMapping requestMapping = cls.getDeclaredAnnotation(RequestMapping.class);
+                Api api = cls.getDeclaredAnnotation(Api.class);
                 String classUrl = null;
                 if (requestMapping != null && requestMapping.value().length > 0) {
                     classUrl = requestMapping.value()[0];
+                }
+                Long parentId = SnowFlake.getInstance().nextId();
+                String parentName = api.value();
+                String parentDescription = api.tags()[0];
+                StringBuffer parentSqlBuffer = new StringBuffer("insert into sys_resource (id, name, description, level) values('");
+                parentSqlBuffer.append(parentId).append("','");
+                parentSqlBuffer.append(parentName).append("','");
+                parentSqlBuffer.append(parentDescription).append("',");
+                parentSqlBuffer.append("1)");
+                try {
+                    stmt.executeUpdate(parentSqlBuffer.toString());
+                } catch (Exception e) {
+                    System.out.println(parentSqlBuffer.toString());
                 }
                 Method[] methods = cls.getMethods();
                 for (Method method: methods) {
                     ApiOperation apiOperation = method.getDeclaredAnnotation(ApiOperation.class);
                     RequestMapping methodRequestMapping = method.getDeclaredAnnotation(RequestMapping.class);
-                    GetMapping getMapping = method.getDeclaredAnnotation(GetMapping.class);
                     PostMapping postMapping = method.getDeclaredAnnotation(PostMapping.class);
-                    PutMapping putMapping = method.getDeclaredAnnotation(PutMapping.class);
                     DeleteMapping deleteMapping = method.getDeclaredAnnotation(DeleteMapping.class);
+                    GetMapping getMapping = method.getDeclaredAnnotation(GetMapping.class);
+                    PutMapping putMapping = method.getDeclaredAnnotation(PutMapping.class);
                     ResourcesMapping resourcesMapping = method.getDeclaredAnnotation(ResourcesMapping.class);
                     if (apiOperation != null) {
                         StringBuffer sb = new StringBuffer("url = ");
                         sb.append(classUrl);
                         String methodType;
                         String methodUrl = "";
-                        if (getMapping != null) {
-                            methodType = "GET";
-                            if (getMapping.value().length > 0) {
-                                methodUrl = getMapping.value()[0];
-                            }
-                        } else if (postMapping != null) {
+                        if (postMapping != null) {
                             methodType = "POST";
                             if (postMapping.value().length > 0) {
                                 methodUrl = postMapping.value()[0];
-                            }
-                        } else if (putMapping != null) {
-                            methodType = "PUT";
-                            if (putMapping.value().length > 0) {
-                                methodUrl = putMapping.value()[0];
                             }
                         } else if (deleteMapping != null) {
                             methodType = "DELETE";
                             if (deleteMapping.value().length > 0) {
                                 methodUrl = deleteMapping.value()[0];
+                            }
+                        } else if (getMapping != null) {
+                            methodType = "GET";
+                            if (getMapping.value().length > 0) {
+                                methodUrl = getMapping.value()[0];
+                            }
+                        } else  if (putMapping != null) {
+                            methodType = "PUT";
+                            if (putMapping.value().length > 0) {
+                                methodUrl = putMapping.value()[0];
                             }
                         } else if (methodRequestMapping != null) {
                             methodUrl = methodRequestMapping.value()[0];
@@ -102,22 +118,27 @@ public class ResourceGeneration {
                         String description = apiOperation.notes();
                         if (resourcesMapping != null) {
                             String code = resourcesMapping.code();
-                            String pageElements = resourcesMapping.elements();
-                            StringBuffer sqlBuffer = new StringBuffer("insert into sys_resource (name, url, url_request_type, description, code, page_elements) values('");
+                            String pageElements = resourcesMapping.element();
+                            StringBuffer sqlBuffer = new StringBuffer("insert into sys_resource (id, name, url, url_request_type, description, code, page_elements, parent_id, level) values('");
+                            sqlBuffer.append(SnowFlake.getInstance().nextId()).append("','");
                             sqlBuffer.append(name).append("','");
                             sqlBuffer.append(url).append("','");
                             sqlBuffer.append(urlRequestType).append("','");
                             sqlBuffer.append(description).append("','");
                             sqlBuffer.append(code).append("','");
-                            sqlBuffer.append(pageElements);
-                            sqlBuffer.append("')");
+                            sqlBuffer.append(pageElements).append("','");
+                            sqlBuffer.append(parentId).append("',");
+                            sqlBuffer.append("2)");
                             stmt.executeUpdate(sqlBuffer.toString());
                         } else {
-                            StringBuffer sqlBuffer = new StringBuffer("insert into sys_resource (name, code, page_elements, url, url_request_type, description) values('");
+                            StringBuffer sqlBuffer = new StringBuffer("insert into sys_resource (id, name, code, page_elements, url, url_request_type, description, parent_id, level) values('");
+                            sqlBuffer.append(SnowFlake.getInstance().nextId()).append("','");
                             sqlBuffer.append(name).append("','','','");
                             sqlBuffer.append(url).append("','");
                             sqlBuffer.append(urlRequestType).append("','");
-                            sqlBuffer.append(description).append("')");
+                            sqlBuffer.append(description).append("','");
+                            sqlBuffer.append(parentId).append("',");
+                            sqlBuffer.append("2)");
                             try {
                                 stmt.executeUpdate(sqlBuffer.toString());
                             } catch (Exception e) {

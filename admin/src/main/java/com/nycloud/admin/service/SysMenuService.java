@@ -24,5 +24,4 @@ public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
         return MenuTreeUtil.generateMenuTree(list);
     }
 
-
 }

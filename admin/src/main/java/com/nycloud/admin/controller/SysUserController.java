@@ -78,7 +78,7 @@ public class SysUserController {
     @ApiOperation(value = "用户修改", notes = "根据传递的SysUser对象来更新, SysUser对象必须包含id")
     @ResourcesMapping(element = "修改", code = "sys_user_update")
     @PreAuth("hasAuthority('sys_user_update')")
-    @PutMapping
+    @PutMapping(URL_MAPPING)
     public HttpResponse update(@Validated @RequestBody SysUserDto dto, BindingResult bindingResult) {
         if (bindingResult.hasErrors() || StringUtils.isBlank(dto.getId())) {
             return HttpResponse.errorParams();
@@ -145,7 +145,7 @@ public class SysUserController {
     @ApiOperation(value = "用户关联角色批量添加",  notes = "保存多个SysUserRolePk对象")
     @ResourcesMapping(element = "添加", code = "sys_user_role_add")
     @PreAuth("hasAuthority('sys_user_role_add')")
-    @PostMapping("/batchRoleAdd")
+    @PostMapping(URL_MAPPING + "/batchRoleAdd")
     public HttpResponse batchRoleAdd(@RequestBody List<SysUserRolePk> list) {
         if (list == null || list.size() == 0) {
             return HttpResponse.errorParams();
@@ -157,7 +157,7 @@ public class SysUserController {
     @ApiOperation(value = "用户关联角色批量删除",  notes = "根据用户id和多个角色id删除关联")
     @ResourcesMapping(element = "删除", code = "sys_user_role_delete")
     @PreAuth("hasAuthority('sys_user_role_delete')")
-    @PostMapping("/batchRoleDelete")
+    @PostMapping(URL_MAPPING + "/batchRoleDelete")
     public HttpResponse batchRoleDelete(@Validated @RequestBody UserRoleDto dto) {
         if (dto.getRoleIds() == null || dto.getRoleIds().length == 0) {
             return HttpResponse.errorParams();
@@ -169,7 +169,7 @@ public class SysUserController {
     @ApiOperation(value = "用户未关联角色查询", notes = "根据用户id查询该用户未关联的角色并返回角色列表")
     @ResourcesMapping(element = "查询", code = "sys_user_no_role")
     @PreAuth("hasAuthority('sys_user_no_role')")
-    @GetMapping("/userNoRelationRoleList")
+    @GetMapping(URL_MAPPING + "/userNoRelationRoleList")
     public HttpResponse userNoRelationRoleList(UserRoleDto dto) {
         return HttpResponse.resultSuccess(sysUserRolePkService.loadUserNoRelationRoles(dto));
     }
@@ -177,7 +177,7 @@ public class SysUserController {
     @ApiOperation(value = "用户已关联角色查询",  notes = "根据用户id查询该用户已关联的角色并返回角色列表")
     @ResourcesMapping(element = "查询", code = "sys_user_role")
     @PreAuth("hasAuthority('sys_user_role')")
-    @GetMapping("/userRoleList")
+    @GetMapping(URL_MAPPING + "/userRoleList")
     public HttpResponse userRoleList(UserRoleDto dto) {
         return HttpResponse.resultSuccess(sysUserRolePkService.loadUserRoles(dto));
     }

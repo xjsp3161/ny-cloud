@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiOperation;
  * @modified By:
  * @version: 1.0
  **/
-@Api(description = "菜单管理", tags = {"菜单管理接口"})
+@Api(value = "菜单管理", tags = {"菜单管理接口"})
 @RestController
 @RequestMapping("api/sysMenu")
 public class SysMenuController {

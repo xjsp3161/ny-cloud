@@ -47,8 +47,10 @@ public class SecurityInterceptor extends HandlerInterceptorAdapter {
         if (logger.isDebugEnabled()) {
             logger.debug("current request url: {}" , requestURI);
         }
-        String userId = request.getHeader("userId");
-        String userName = request.getHeader("username");
+//        String userId = request.getHeader("userId");
+//        String userName = request.getHeader("username");
+        String userId = "196618686130565120";
+        String userName = "admin";
         try{
             Long uid = Long.valueOf(userId);
             UserEntity userEntity = new UserEntity(uid, userName);

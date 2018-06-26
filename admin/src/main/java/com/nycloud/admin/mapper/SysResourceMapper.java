@@ -19,4 +19,6 @@ public interface SysResourceMapper extends Mapper<SysResource>{
     List<SysResource> selectPermissionNoResources(Map<String, Object> map);
 
     List<SysResource> selectUserResources(Long userId);
+
+    List<SysResource> selectAllResources();
 }
