@@ -146,7 +146,7 @@ public class SysPermissionController {
     @ResourcesMapping(element = "添加", code = "sys_permission_resource_add")
     @PreAuth("hasAuthority('sys_permission_resource_add')")
     @PostMapping("/batchResourceAdd")
-    public HttpResponse batchResourceAdd(@RequestBody List<SysPermissionResourcePk> list) {
+    public HttpResponse batchResourceAdd(@Validated @RequestBody PermissionResourceDto dto) {
         if (list == null || list.size() == 0) {
             return HttpResponse.errorParams();
         }

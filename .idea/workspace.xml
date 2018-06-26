@@ -6,47 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="10742edb-bb68-409f-9c21-c3cba86375be" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/db/nycloud-admin.sql" afterPath="$PROJECT_DIR$/admin/src/main/db/nycloud-admin.sql" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/ResourceGeneration.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/ResourceGeneration.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysMenuController.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysMenuController.java" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysPermissionController.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysPermissionController.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysResourceController.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysResourceController.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserController.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserController.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserGroupController.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserGroupController.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/dto/PermissionResourceDto.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/dto/PermissionResourceDto.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysResourceMapper.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysResourceMapper.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysPermissionResourcePk.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysPermissionResourcePk.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysResource.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysResource.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/AuthorizationFilter.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/FilterConfig.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/SecurityInterceptor.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/SecurityInterceptor.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysMenuService.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysMenuService.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysPermissionService.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysPermissionService.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysResourceService.java" afterPath="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysResourceService.java" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/resources/mapper/SysResourceMapper.xml" afterPath="$PROJECT_DIR$/admin/src/main/resources/mapper/SysResourceMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/common/.mvn/wrapper/maven-wrapper.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/common/.mvn/wrapper/maven-wrapper.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/common/deploy.sh" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/constants/HttpConstant.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/dto/RequestDto.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/utils/DateTimeUtil.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/utils/ListUtils.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/utils/SnowFlake.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/utils/TextUtil.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/vo/HttpResponse.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/nycloud/common/vo/ResponsePage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/security/.mvn/wrapper/maven-wrapper.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/security/.mvn/wrapper/maven-wrapper.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/security/pom.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/nycloud/security/annotation/PreAuth.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/nycloud/security/annotation/ResourcesMapping.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/nycloud/security/constants/AccessType.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/nycloud/security/constants/SecurityConstants.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/nycloud/security/filter/UserContext.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/nycloud/security/security/CustomAuthentication.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/nycloud/security/security/CustomerSecurityExpressionRoot.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/nycloud/security/security/SimpleGrantedAuthority.java" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -114,7 +74,108 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SysUserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="172" column="46" lean-forward="false" selection-start-line="172" selection-start-column="24" selection-end-line="172" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application-dev.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api-gateway/src/main/resources/application-dev.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application-prod.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api-gateway/src/main/resources/application-prod.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api-gateway/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="795">
+              <caret line="53" column="29" lean-forward="false" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth-server/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application-dev.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth-server/src/main/resources/application-dev.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SysPermissionController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysPermissionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="147" column="35" lean-forward="false" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PermissionResourceDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/dto/PermissionResourceDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SysPermissionResourcePk.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysPermissionResourcePk.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecurityInterceptor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/SecurityInterceptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="50" column="58" lean-forward="false" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -227,7 +288,6 @@
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/AuthorizationFilter.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysMenuController.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysPermissionResourcePk.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/dto/PermissionResourceDto.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/mapper/SysResourceMapper.java" />
         <option value="$PROJECT_DIR$/admin/src/main/resources/mapper/SysResourceMapper.xml" />
@@ -239,6 +299,7 @@
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysResource.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysResourceService.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysPermissionService.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysPermissionResourcePk.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysPermissionController.java" />
       </list>
     </option>
@@ -252,7 +313,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="userSettingsFile" value="E:/资料/java/tools/apache-maven-3.3.9/conf/settings.xml" />
+        <option name="userSettingsFile" value="$PROJECT_DIR$/../../资料/java/tools/apache-maven-3.3.9/conf/settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -274,8 +335,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
+    <option name="y" value="23" />
     <option name="width" value="1934" />
-    <option name="height" value="1047" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -342,6 +404,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -406,13 +471,47 @@
               <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="nycloud" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ny-cloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ny-cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -475,7 +574,7 @@
         </RuleState>
       </list>
     </option>
-    <option name="contentProportion" value="0.1799458" />
+    <option name="contentProportion" value="0.24543463" />
   </component>
   <component name="RunManager" selected="Application.ResourceGeneration">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -556,6 +655,18 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="api-gateway" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -625,18 +736,6 @@
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="api-gateway" />
-      <envs />
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.EurekaServerApplication" />
@@ -734,11 +833,14 @@
       <workItem from="1529937004516" duration="1457000" />
       <workItem from="1529938508464" duration="451000" />
       <workItem from="1529939291976" duration="92000" />
+      <workItem from="1530021958440" duration="1222000" />
+      <workItem from="1530024389725" duration="1268000" />
+      <workItem from="1530028825318" duration="150000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="746545000" />
+    <option name="totallyTimeSpent" value="749185000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -750,49 +852,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1934" height="1047" extended-state="0" />
+    <frame x="-7" y="23" width="1934" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2813187" sideWeight="0.5064034" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23212379" sideWeight="0.4826546" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23097251" sideWeight="0.4826546" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20330843" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2687704" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25244832" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2791209" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2747253" sideWeight="0.49359658" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2725275" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861805" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861805" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861805" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21237993" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2813187" sideWeight="0.5064034" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23175965" sideWeight="0.4826546" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20330843" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904148" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -803,21 +871,29 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2595908" sideWeight="0.49359658" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15245202" sideWeight="0.5173454" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27109975" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32097188" sideWeight="0.49359658" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27109975" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861805" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861805" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861805" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22603719" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23414376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21428572" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27877238" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15245202" sideWeight="0.5173454" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21428572" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -859,24 +935,12 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/security/annotation/ResourcesMapping.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysPermissionMenuController.java" />
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysPermissionResourceController.java" />
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserGroupRoleController.java" />
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserRoleController.java" />
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserGroupPkController.java" />
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysRolePermissionController.java" />
     <entry file="file://$PROJECT_DIR$/admin/src/main/resources/mapper/SysUserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -884,7 +948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="113" lean-forward="false" selection-start-line="15" selection-start-column="102" selection-end-line="15" selection-end-column="113" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -899,26 +962,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="915">
           <caret line="61" column="63" lean-forward="false" selection-start-line="61" selection-start-column="63" selection-end-line="61" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/FilterConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/AuthorizationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/FilterConfig.java" />
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/AuthorizationFilter.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -927,19 +975,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/StringBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="75" column="19" lean-forward="false" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/StringBuilder.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.46/mysql-connector-java-5.1.46.jar!/com/mysql/jdbc/StatementImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
           <caret line="953" column="0" lean-forward="false" selection-start-line="953" selection-start-column="0" selection-end-line="953" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -947,7 +987,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -955,15 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysPermissionResourcePk.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -971,7 +1001,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -979,7 +1008,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -987,7 +1015,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -995,7 +1022,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1003,7 +1029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1011,16 +1036,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding>
-            <marker date="1529980647882" expanded="true" signature="1136:1186" ph="select * fro... sys_resource" />
-            <marker date="1529980647882" expanded="true" signature="1356:1470" ph="select B.res... sys_permission_resource_pk" />
-            <marker date="1529980647882" expanded="true" signature="1728:1842" ph="select B.res... sys_permission_resource_pk" />
-            <marker date="1529980647882" expanded="true" signature="2045:2352" ph="select * fro... sys_resource" />
-            <marker date="1529980647882" expanded="true" signature="2085:2351" ph="select resou... sys_permission_resource_pk" />
-            <marker date="1529980647882" expanded="true" signature="2160:2350" ph="select id fr... sys_permission" />
-            <marker date="1529980647882" expanded="true" signature="2203:2349" ph="select permi... sys_role_permission_pk" />
-            <marker date="1529980647882" expanded="true" signature="2270:2348" ph="select role_... sys_user_role_pk" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1028,7 +1043,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1036,7 +1050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1044,7 +1057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1052,7 +1064,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1060,7 +1071,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1068,7 +1078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1076,7 +1085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1659">
           <caret line="49" column="46" lean-forward="true" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1092,15 +1100,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/SecurityInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="50" column="58" lean-forward="true" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1108,23 +1107,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/WebConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1132,15 +1114,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="784">
-          <caret line="172" column="46" lean-forward="false" selection-start-line="172" selection-start-column="24" selection-end-line="172" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1148,7 +1121,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1280">
           <caret line="93" column="48" lean-forward="true" selection-start-line="93" selection-start-column="48" selection-end-line="93" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1156,13 +1128,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
           <caret line="29" column="11" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
-          <folding>
-            <marker date="1529477410481" expanded="true" signature="1223:1401" ph="select id, t... sys_menu" />
-            <marker date="1529477410481" expanded="true" signature="1521:1690" ph="select * fro... sys_menu" />
-            <marker date="1529477410481" expanded="true" signature="1561:1658" ph="select menu_... sys_permission_menu_pk" />
-            <marker date="1529477410481" expanded="true" signature="1803:1968" ph="select * fro... sys_menu" />
-            <marker date="1529477410481" expanded="true" signature="1839:1936" ph="select menu_... sys_permission_menu_pk" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1170,15 +1135,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
           <caret line="38" column="24" lean-forward="true" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/dto/PermissionResourceDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1186,7 +1142,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="40" column="24" lean-forward="false" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1194,7 +1149,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="16" column="47" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1202,11 +1156,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="458">
           <caret line="96" column="82" lean-forward="false" selection-start-line="96" selection-start-column="61" selection-end-line="96" selection-end-column="82" />
-          <folding>
-            <element signature="e#3770#3771#0" expanded="true" />
-            <element signature="e#3863#3864#0" expanded="true" />
-            <marker date="1529982833748" expanded="true" signature="788:846" ph="@{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1214,32 +1163,109 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
           <caret line="43" column="47" lean-forward="true" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/function/Consumer.java" />
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysPermissionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="73" column="72" lean-forward="false" selection-start-line="73" selection-start-column="72" selection-end-line="73" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/WebConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/security/SecurityInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="50" column="58" lean-forward="false" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="172" column="46" lean-forward="false" selection-start-line="172" selection-start-column="24" selection-end-line="172" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/resources/application-dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/resources/application-prod.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="29" lean-forward="false" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/resources/application-dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/model/SysPermissionResourcePk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/dto/PermissionResourceDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/controller/SysPermissionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="187" column="40" lean-forward="false" selection-start-line="187" selection-start-column="40" selection-end-line="187" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/function/Consumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/nycloud/admin/service/SysPermissionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="73" column="72" lean-forward="false" selection-start-line="73" selection-start-column="72" selection-end-line="73" selection-end-column="72" />
+        <state relative-caret-position="182">
+          <caret line="147" column="35" lean-forward="false" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="35" />
           <folding />
         </state>
       </provider>
