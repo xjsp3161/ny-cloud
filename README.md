@@ -36,3 +36,5 @@ ny-cloud 是基于Spring Cloud微服务开发开源权限管理系统，可用�
 [![资源管理](http://chuantu.biz/t6/331/1529651262x-1404817533.png "资源管理")](http://chuantu.biz/t6/331/1529651262x-1404817533.png "资源管理")
 权限管理
 [![权限管理](http://chuantu.biz/t6/331/1529651300x-1404817533.png "权限管理")](http://chuantu.biz/t6/331/1529651300x-1404817533.png "权限管理")
+[![权限关联资源](https://s22.postimg.cc/sb0f7ikk1/permission_Resource.png "权限关联资源")](https://s22.postimg.cc/sb0f7ikk1/permission_Resource.png "权限关联资源")
+
