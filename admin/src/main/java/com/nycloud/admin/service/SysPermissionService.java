@@ -12,7 +12,6 @@ import com.nycloud.common.utils.ListUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -86,4 +85,12 @@ public class SysPermissionService extends BaseService<SysPermissionMapper, SysPe
         }
         return sysResources;
     }
+
+    public Integer batchInsertPermissionResource(List<SysPermissionResourcePk> list) {
+        SysPermissionResourcePk pk = new SysPermissionResourcePk();
+        pk.setPermissionId(list.get(0).getPermissionId());
+        this.sysPermissionResourcePkMapper.delete(pk);
+        return this.sysPermissionResourcePkMapper.insertPermissionResources(list);
+    }
+
 }

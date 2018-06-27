@@ -30,13 +30,13 @@ public class SysResource {
 
     private String parentName;
 
-    private int level;
+    private Integer level;
 
-    private int state;
+    private Integer state;
 
     /** 扩展属性 资源组下的资源信息 **/
     private List<SysResource> children;
     /** 扩展属性 资源是否被选中 **/
-    private boolean checked = false;
+    private boolean checked;
 
 }
